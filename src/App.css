@@ -7,3 +7,16 @@
 .App-header h1 {
   margin: 0;
 }
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.contact-list-item {
+  display: inline-block;
+}
+.contact-list-item svg{
+  width: 25px;
+  height: 25px;
+}

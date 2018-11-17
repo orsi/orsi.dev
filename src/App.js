@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
+import * as FaviconService from './services/favicon.service.js';
 
 class App extends Component {
+
+  componentDidMount() {
+    FaviconService.start();
+  }
+
   render() {
     return (
       <div className="App">
 
         <header className="App-header">
           <h1>Jonathon Orsi</h1>
-          <ul class="contact-list">
+          <ul className="contact-list">
             <li className="contact-list-item">
               <a href="mailto:jonathon.orsi@gmail.com">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

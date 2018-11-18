@@ -2,14 +2,17 @@
     position: relative;
     z-index: 1;
     height: 100vh;
-    background-color: #282c34;
     color: white;
 }
 
 .Splash-header {
     position: relative;
     z-index: 2;
-    text-align: center;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
 }
 
 .Splash-header h1 {

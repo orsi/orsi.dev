@@ -7,10 +7,9 @@ export default class Splash extends Component {
     componentDidMount() {
         // grab reference of canvas
         this.canvasElement = document.querySelector('#Splash-canvas');
-        console.log(this.canvasElement);
         if (this.canvasElement !== undefined) {
-            let gc = new GenerativeCanvasService(this.canvasElement.getContext('2d'));
-            gc.start();
+            GenerativeCanvasService.init(this.canvasElement.getContext('2d'));
+            GenerativeCanvasService.start();
         }
     }
     render() {

@@ -38,9 +38,10 @@
 }
 .contact-list-item {
     display: inline-block;
+    margin: 0 8px;
 }
 .contact-list-item svg {
-    width: 25px;
-    height: 25px;
+    width: 45px;
+    height: 45px;
     fill: #fafafa;
 }

@@ -1,0 +1,43 @@
+.Splash {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+}
+
+.Splash-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.Splash-header h1 {
+    margin: 0;
+}
+
+.Splash-canvas-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.Splash-canvas-container #Splash-canvas {
+    width: 100%;
+    height: 100%;
+}
+.contact-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.contact-list-item {
+    display: inline-block;
+}
+.contact-list-item svg {
+    width: 25px;
+    height: 25px;
+    fill: #fafafa;
+}

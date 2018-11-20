@@ -1,7 +1,7 @@
 .Splash {
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: 33vh;
     color: white;
 }
 
@@ -16,7 +16,12 @@
 }
 
 .Splash-header h1 {
-    margin: 0;
+    margin-bottom: 0px;
+    font-size: 26px;
+    font-weight: 700;
+}
+.Splash-header h2 {
+    font-size: 14px;
 }
 
 .Splash-canvas-container {
@@ -41,7 +46,7 @@
     margin: 0 8px;
 }
 .contact-list-item svg {
-    width: 45px;
-    height: 45px;
+    width: 20px;
+    height: 20px;
     fill: #fafafa;
 }

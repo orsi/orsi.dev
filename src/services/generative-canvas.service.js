@@ -11,13 +11,13 @@ let context,
     iteration = 0;
 const cellWidth = 8,
     cellHeight = 8,
-    backgroundColour = '#fafafa',
+    backgroundColour = 'rgba(255,255,255,.08)',
     hueMax = 360,
     hueMin = 0,
-    saturationMax = 85,
-    saturationMin = 0,
+    saturationMax = 100,
+    saturationMin = 30,
     lightMax = 98,
-    lightMin = 80;
+    lightMin = 60;
 let now, then = Date.now(), delta;
 function tick() {
     if (running) requestAnimationFrame(tick);
@@ -32,7 +32,7 @@ function tick() {
 function update() {
     iteration++;
     // update is run 60 fps, update automata every 4 frames
-    if (iteration % (fps * 3) === 0) {
+    if (iteration % (fps / 2) === 0) {
         if (automata.isEmpty || automata.isStale) {
             automata = new Automata(gridWidth, gridHeight);
             console.log(automata);
@@ -40,7 +40,7 @@ function update() {
             automata.next();
         }
     }
-    if (iteration % (fps / 1) === 0) {
+    if (iteration % (fps / 30) === 0) {
         for (let i = 0; i < gridWidth; i++) { // row
             for (let j = 0; j < gridHeight; j++) { // column
                 const cell = grid[i][j];

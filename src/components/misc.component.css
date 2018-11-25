@@ -9,5 +9,28 @@
     list-style: none;
 }
 .misc-item {
+    margin-bottom: 16px;
+    text-align: center;
+}
+.misc-emoji {
     margin-bottom: 8px;
+}
+.misc-description p {
+    margin: 0;
+}
+@media (min-width: 640px) {
+    .misc-item {
+        display: flex;
+        align-content: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .misc-emoji {
+        flex: 0 0 auto;
+        text-align: left;
+        width: 50px;
+    }
+    .misc-description {
+        flex: 1 1 auto;
+    }
 }

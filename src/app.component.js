@@ -34,7 +34,7 @@ class AppComponent extends Component {
           <Splash></Splash>
         </section>
 
-        <main>
+        <main className="container">
           <section>
             <Work></Work>
           </section>

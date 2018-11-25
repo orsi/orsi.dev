@@ -36,6 +36,10 @@ h3 {
 
 /* CSS classes */
 @media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
   .row {
     display: flex;
   }

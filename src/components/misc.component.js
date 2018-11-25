@@ -15,7 +15,7 @@ const miscList = [
 export default class MiscComponent extends Component {
     render() {
         return(
-            <div className="work-component">
+            <div className="misc-component">
                 <div className="row">
                     <div className="col-2">
                         <h2 className="section-title">Misc</h2>

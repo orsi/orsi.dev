@@ -40,6 +40,10 @@ class AppComponent extends Component {
           </section>
 
           <section>
+            <Portfolio></Portfolio>
+          </section>
+
+          <section>
             <Education></Education>
           </section>
 
@@ -47,9 +51,6 @@ class AppComponent extends Component {
             <Misc></Misc>
           </section>
 
-          <section>
-            <Portfolio></Portfolio>
-          </section>
         </main>
       </div>
     );

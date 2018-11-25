@@ -1,0 +1,16 @@
+.misc-component {
+    padding: 8px;
+}
+.misc-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.misc-item {
+    margin: 4px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #fafafa;
+}

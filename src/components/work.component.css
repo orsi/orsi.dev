@@ -1,0 +1,32 @@
+.work-component {
+    padding: 8px;
+}
+.work-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.work-item {
+    margin: 4px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #fafafa;
+}
+.work-item-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+.work-item ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.work-item ul li {
+    display: inline-block;
+    margin: 2px;
+    padding: 3px 5px;
+    background: #fff;
+    border-radius: 4px;
+}

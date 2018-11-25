@@ -1,0 +1,16 @@
+.portfolio-component {
+    padding: 8px;
+}
+.portfolio-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.portfolio-item {
+    margin: 4px;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #fafafa;
+}

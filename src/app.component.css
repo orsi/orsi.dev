@@ -1,0 +1,21 @@
+.app {
+    position: relative;
+    z-index: 0;
+}
+
+.app-canvas-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.app-canvas-container #app-canvas {
+    width: 100%;
+    height: 100%;
+}
+.app section {
+    position: relative;
+    z-index: 2;
+}

@@ -9,14 +9,15 @@ let context,
     gridHeight,
     automata,
     iteration = 0;
-const cellWidth = 30,
-    cellHeight = 30,
+const cellWidth = 8,
+    cellHeight = 8,
+    backgroundColour = '#fafafa',
     hueMax = 360,
     hueMin = 0,
-    saturationMax = 70,
-    saturationMin = 60,
-    lightMax = 50,
-    lightMin = 20;
+    saturationMax = 85,
+    saturationMin = 0,
+    lightMax = 98,
+    lightMin = 80;
 let now, then = Date.now(), delta;
 function tick() {
     if (running) requestAnimationFrame(tick);
@@ -31,7 +32,7 @@ function tick() {
 function update() {
     iteration++;
     // update is run 60 fps, update automata every 4 frames
-    if (iteration % (fps / 1) === 0) {
+    if (iteration % (fps * 3) === 0) {
         if (automata.isEmpty || automata.isStale) {
             automata = new Automata(gridWidth, gridHeight);
             console.log(automata);
@@ -39,7 +40,7 @@ function update() {
             automata.next();
         }
     }
-    if (iteration % (fps / 20) === 0) {
+    if (iteration % (fps / 1) === 0) {
         for (let i = 0; i < gridWidth; i++) { // row
             for (let j = 0; j < gridHeight; j++) { // column
                 const cell = grid[i][j];
@@ -65,7 +66,7 @@ function update() {
 function draw() {
     // clear canvas
     const canvas = context.canvas;
-    context.fillStyle = '#141414';
+    context.fillStyle = backgroundColour;
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     // draw
@@ -73,7 +74,7 @@ function draw() {
         for (let j = 0; j < gridHeight; j++) {
             const cell = grid[i][j];
             if (cell.alive) {
-                context.fillStyle = `hsl(${cell.hue},${cell.saturation}%,${cell.light}%)`;
+                context.fillStyle = `hsl(${cell.hue},${cell.saturation}%,${95}%)`;
                 context.fillRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
             }
         }

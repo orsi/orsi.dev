@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import './splash.component.css';
-import GenerativeCanvasService from '../services/generative-canvas.service.js';
 
 export default class SplashComponent extends Component {
-    canvasElement;
-    componentDidMount() {
-        // grab reference of canvas
-        this.canvasElement = document.querySelector('#Splash-canvas');
-        if (this.canvasElement !== undefined) {
-            GenerativeCanvasService.init(this.canvasElement.getContext('2d'));
-            GenerativeCanvasService.start();
-        }
-    }
     render() {
         return(
             <div className="Splash">
-                <div className="Splash-canvas-container">
-                    <canvas id="Splash-canvas"></canvas>
-                </div>
                 <header className="Splash-header">
                     <h1>Jonathon Orsi</h1>
                     <h2>Full Stack Developer</h2>

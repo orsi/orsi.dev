@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
-import Splash from './components/Splash.js';
+import Splash from './components/splash.component.js';
 import Work from './components/work.component.js';
 import Education from './components/education.component.js';
 import Misc from './components/misc.component.js';
 import Portfolio from './components/portfolio.component.js';
 
-class App extends Component {
+class AppComponent extends Component {
 
   componentDidMount() {
     FaviconService.start();
@@ -43,4 +43,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppComponent;

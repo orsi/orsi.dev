@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './Splash.css';
+import './splash.component.css';
 import GenerativeCanvasService from '../services/generative-canvas.service.js';
 
-export default class Splash extends Component {
+export default class SplashComponent extends Component {
     canvasElement;
     componentDidMount() {
         // grab reference of canvas

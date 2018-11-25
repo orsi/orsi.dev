@@ -22,20 +22,26 @@ const portfolioList = [
     }
 ];
 
-export default class portfolioComponent extends Component {
+export default class PortfolioComponent extends Component {
     render() {
         return(
             <div className="portfolio-component">
-            <h1>Portfolio</h1>
-                <ul className="portfolio-list">
-                    { portfolioList.map((portfolio, i) => {
-                        return (
-                            <li key={i} className="portfolio-item">
-                                <a href={ portfolio.linkHref }>{ portfolio.title }</a>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <div className="row">
+                    <div className="col-2">
+                        <h1 className="section-title">Portfolio</h1>
+                    </div>
+                    <div className="col-10">
+                        <ul className="portfolio-list">
+                            { portfolioList.map((portfolio, i) => {
+                                return (
+                                    <li key={i} className="portfolio-item">
+                                        <a href={ portfolio.linkHref }>{ portfolio.title }</a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }

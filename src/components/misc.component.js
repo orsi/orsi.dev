@@ -14,16 +14,22 @@ export default class MiscComponent extends Component {
     render() {
         return(
             <div className="work-component">
-            <h1>Miscellaneous</h1>
-            <ul className="misc-list">
-                { miscList.map((misc, i) => {
-                    return (
-                        <li key={i} className="misc-item">
-                            <p dangerouslySetInnerHTML={{__html: misc.description}}></p>
-                        </li>
-                    );
-                })}
-            </ul>
+                <div className="row">
+                    <div className="col-2">
+                        <h1 className="section-title">Misc</h1>
+                    </div>
+                    <div className="col-10">
+                        <ul className="misc-list">
+                            { miscList.map((misc, i) => {
+                                return (
+                                    <li key={i} className="misc-item">
+                                        <p dangerouslySetInnerHTML={{__html: misc.description}}></p>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }

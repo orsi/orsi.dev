@@ -32,3 +32,18 @@ h3 {
   font-size: 1.2rem;
   font-weight: 400;
 }
+
+/* CSS classes */
+@media (min-width: 768px) {
+  .row {
+    display: flex;
+  }
+  .col-2 {
+    width: 18%;
+    padding: 0 8px;
+  }
+  .col-10 {
+    width: 82%;
+    padding: 0 8px;
+  }
+}

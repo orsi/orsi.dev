@@ -9,9 +9,7 @@
     list-style: none;
 }
 .work-item {
-    margin: 4px;
     margin-bottom: 8px;
-    padding: 8px;
 }
 .work-item-title {
     font-size: 1.4rem;

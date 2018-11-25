@@ -54,23 +54,29 @@ export default class WorkComponent extends Component {
     render() {
         return(
             <div className="work-component">
-                <h1>Work</h1>
-                <ul className="work-list">
-                    { workList.map((work, i) => {
-                        return (
-                            <li key={i} className="work-item">
-                                <div className="work-item-title">
-                                    <span>{ work.jobTitle }</span> @ <span><strong>{ work.company }</strong></span>
-                                </div>
-                                <time>{ work.startDate.toLocaleDateString('en-US', dateOptions) } - { work.endDate ? work.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
-                                <p>{ work.description }</p>
-                                <ul className="keyword-list">
-                                    { work.keywords.map((keyword, i) => <li key={i} className="keyword-list-item">{ keyword }</li>) }
-                                </ul>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <div className="row">
+                    <div className="col-2">
+                        <h1 className="section-title">Work</h1>
+                    </div>
+                    <div className="col-10">
+                        <ul className="work-list">
+                            { workList.map((work, i) => {
+                                return (
+                                    <li key={i} className="work-item">
+                                        <div className="work-item-title">
+                                            <span>{ work.jobTitle }</span> @ <span><strong>{ work.company }</strong></span>
+                                        </div>
+                                        <time>{ work.startDate.toLocaleDateString('en-US', dateOptions) } - { work.endDate ? work.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
+                                        <p>{ work.description }</p>
+                                        <ul className="keyword-list">
+                                            { work.keywords.map((keyword, i) => <li key={i} className="keyword-list-item">{ keyword }</li>) }
+                                        </ul>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -32,9 +32,11 @@ export default class EducationComponent extends Component {
                             { educationList.map((education, i) => {
                                 return (
                                     <li key={i} className="education-item">
-                                        <div>{ education.school }</div>
-                                        <div>{ education.degree }</div>
-                                        <time>{ education.startDate.toLocaleDateString('en-US', dateOptions) } - { education.endDate ? education.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
+                                        <div className="education-time">
+                                            <time>{ education.startDate.toLocaleDateString('en-US', dateOptions) } - { education.endDate ? education.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
+                                        </div>
+                                        <div className="education-school">{ education.school }</div>
+                                        <div className="education-degree">{ education.degree }</div>
                                     </li>
                                 );
                             })}

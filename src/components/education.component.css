@@ -9,21 +9,26 @@
     list-style: none;
 }
 .education-item {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
-.education-item-title {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-}
-.education-item ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.education-item ul li {
+.education-school {
     display: inline-block;
-    margin: 2px;
-    padding: 3px 5px;
-    background: #fff;
-    border-radius: 4px;
+    margin-right: 24px;
+    font-weight: 600;
+}
+.education-degree {
+    font-weight: 400;
+}
+.education-time {}
+@media (min-width: 768px) {
+    .education-item {
+        display: flex;
+    }
+    .education-time {
+        width: 20%;
+    }
+    .education-school,
+    .education-degree {
+        width: 40%;
+    }
 }

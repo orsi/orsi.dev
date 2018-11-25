@@ -10,9 +10,7 @@
 }
 .work-item {
     margin-bottom: 1rem;
-    padding: 8px;
     border-radius: 1px;
-    background: hsla(240, 5%, 20%, .08);
 }
 .work-item-title {
     font-size: 1.2rem;

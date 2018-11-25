@@ -16,9 +16,12 @@
     height: 100%;
 }
 
-.app section {
+.app main {
     position: relative;
     z-index: 2;
+}
+.app main section {
+    margin-bottom: 128px;
 }
 
 @media (min-width: 768px) {

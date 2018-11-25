@@ -9,14 +9,14 @@ let context,
     gridHeight,
     automata,
     iteration = 0;
-const cellWidth = 25,
-    cellHeight = 25,
+const cellWidth = 30,
+    cellHeight = 30,
     hueMax = 360,
     hueMin = 0,
     saturationMax = 70,
     saturationMin = 60,
     lightMax = 50,
-    lightMin = 1;
+    lightMin = 20;
 let now, then = Date.now(), delta;
 function tick() {
     if (running) requestAnimationFrame(tick);
@@ -39,26 +39,28 @@ function update() {
             automata.next();
         }
     }
+    if (iteration % (fps / 20) === 0) {
+        for (let i = 0; i < gridWidth; i++) { // row
+            for (let j = 0; j < gridHeight; j++) { // column
+                const cell = grid[i][j];
 
-    for (let i = 0; i < gridWidth; i++) { // row
-        for (let j = 0; j < gridHeight; j++) { // column
-            const cell = grid[i][j];
+                cell.hue = cell.hue + (1 * cell.hueDirection);
+                if (cell.hue >= hueMax) cell.hueDirection = -1;
+                if (cell.hue <= hueMin) cell.hueDirection = 1;
 
-            cell.hue = cell.hue + (1 * cell.hueDirection);
-            if (cell.hue >= hueMax) cell.hueDirection = -1;
-            if (cell.hue <= hueMin) cell.hueDirection = 1;
+                cell.saturation = cell.saturation + (1 * cell.saturationDirection);
+                if (cell.saturation >= saturationMax) cell.saturationDirection = -1;
+                if (cell.saturation <= saturationMin) cell.saturationDirection = 1;
 
-            cell.saturation = cell.saturation + (1 * cell.saturationDirection);
-            if (cell.saturation >= saturationMax) cell.saturationDirection = -1;
-            if (cell.saturation <= saturationMin) cell.saturationDirection = 1;
+                cell.light = cell.light + (1 * cell.lightDirection);
+                if (cell.light >= lightMax) cell.lightDirection = -1;
+                if (cell.light <= lightMin) cell.lightDirection = 1;
 
-            cell.light = cell.light + (1 * cell.lightDirection);
-            if (cell.light >= lightMax) cell.lightDirection = -1;
-            if (cell.light <= lightMin) cell.lightDirection = 1;
-
-            cell.alive = automata.getGrid()[i][j];
+                cell.alive = automata.getGrid()[i][j];
+            }
         }
     }
+
 }
 function draw() {
     // clear canvas

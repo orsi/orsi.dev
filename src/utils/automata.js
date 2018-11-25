@@ -37,9 +37,9 @@ export default class Automata {
                 // rules of survivability, modified from Conway's game to increase the
                 // amount of alive cells on grid
                 if (isAlive &&
-                    (aliveNeighbours <= 0 || aliveNeighbours >= 6)) {
+                    (aliveNeighbours <= 1 || aliveNeighbours >= 4)) {
                     newGrid[i][j] = false;
-                } else if (aliveNeighbours >= 3 && aliveNeighbours <= 6) {
+                } else if (aliveNeighbours >= 2 && aliveNeighbours <= 3) {
                     newGrid[i][j] = true;
                     if (isEmpty) isEmpty = false;
                 }

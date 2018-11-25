@@ -25,7 +25,7 @@ export default class EducationComponent extends Component {
             <div className="education-component">
                 <div className="row">
                     <div className="col-2">
-                        <h1 className="section-title">Education</h1>
+                        <h2 className="section-title">Education</h2>
                     </div>
                     <div className="col-10">
                         <ul className="education-list">

@@ -16,7 +16,7 @@ export default class MiscComponent extends Component {
             <div className="work-component">
                 <div className="row">
                     <div className="col-2">
-                        <h1 className="section-title">Misc</h1>
+                        <h2 className="section-title">Misc</h2>
                     </div>
                     <div className="col-10">
                         <ul className="misc-list">

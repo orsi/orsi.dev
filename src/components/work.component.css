@@ -9,11 +9,22 @@
     list-style: none;
 }
 .work-item {
-    margin-bottom: 8px;
+    margin-bottom: 1rem;
+    padding: 8px;
+    border-radius: 1px;
+    background: hsla(240, 5%, 20%, .08);
 }
 .work-item-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    margin-bottom: .2rem;
+}
+.work-item-time {
+    display: block;
     margin-bottom: 8px;
+    color: rgba(0,0,0,.65);
+}
+.work-item-description {
+    margin: 0 0 8px 0;
 }
 .work-item ul {
     margin: 0;
@@ -23,7 +34,9 @@
 .work-item ul li {
     display: inline-block;
     margin: 2px;
-    padding: 3px 5px;
-    background: #fff;
+    padding: 4px 8px;
+    font-size: .8rem;
+    color: hsla(240, 5%, 20%, 1);
+    background: hsla(240, 80%, 70%, .6);
     border-radius: 4px;
 }

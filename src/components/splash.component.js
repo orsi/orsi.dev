@@ -4,8 +4,8 @@ import './splash.component.css';
 export default class SplashComponent extends Component {
     render() {
         return(
-            <div className="Splash">
-                <header className="Splash-header">
+            <div className="splash">
+                <header className="splash-header">
                     <h1>Jonathon Orsi</h1>
                     <h2>Full Stack Developer</h2>
                     <ul className="contact-list">

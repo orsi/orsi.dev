@@ -1,10 +1,10 @@
-.Splash {
+.splash {
     position: relative;
     z-index: 1;
     height: 33vh;
 }
 
-.Splash-header {
+.splash-header {
     position: relative;
     z-index: 2;
     display: flex;
@@ -12,15 +12,6 @@
     align-items: center;
     justify-content: center;
     flex-flow: column;
-}
-
-.Splash-header h1 {
-    margin-bottom: 0px;
-    font-size: 26px;
-    font-weight: 700;
-}
-.Splash-header h2 {
-    font-size: 14px;
 }
 
 .contact-list {

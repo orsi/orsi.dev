@@ -56,7 +56,7 @@ export default class WorkComponent extends Component {
             <div className="work-component">
                 <div className="row">
                     <div className="col-2">
-                        <h1 className="section-title">Work</h1>
+                        <h2 className="section-title">Work</h2>
                     </div>
                     <div className="col-10">
                         <ul className="work-list">
@@ -66,8 +66,8 @@ export default class WorkComponent extends Component {
                                         <div className="work-item-title">
                                             <span>{ work.jobTitle }</span> @ <span><strong>{ work.company }</strong></span>
                                         </div>
-                                        <time>{ work.startDate.toLocaleDateString('en-US', dateOptions) } - { work.endDate ? work.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
-                                        <p>{ work.description }</p>
+                                        <time className="work-item-time">{ work.startDate.toLocaleDateString('en-US', dateOptions) } - { work.endDate ? work.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
+                                        <p className="work-item-description">{ work.description }</p>
                                         <ul className="keyword-list">
                                             { work.keywords.map((keyword, i) => <li key={i} className="keyword-list-item">{ keyword }</li>) }
                                         </ul>

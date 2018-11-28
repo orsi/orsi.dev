@@ -4,7 +4,7 @@ import './misc.component.css';
 const miscList = [
     {
         emoji: '🎸',
-        description: 'I play guitar and sing in <a href="http://www.jojogun.ca">Jo Jo Gun & the Bullets</a>'
+        description: 'I play <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">bass</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">guitar</a> and <a href="http://jojogun.ca">sing</a>, a lot'
     },
     {
         emoji: '💻',

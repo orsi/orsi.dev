@@ -28,7 +28,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    color: #fafafa;
+    text-decoration: none;
 }
 .portfolio-image-container {
     position: absolute;
@@ -73,4 +73,5 @@
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
+    color: #fafafa;
 }

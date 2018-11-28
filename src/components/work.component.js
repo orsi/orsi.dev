@@ -13,6 +13,7 @@ const workList = [
         endDate: null,
         description: 'Design, develop, and maintain enterprise-level web applications for Bombardier quality and production teams.',
         keywords: [
+            'C#',
             '.Net MVC/WebApi/Core',
             'Angular',
             'AngularJS',

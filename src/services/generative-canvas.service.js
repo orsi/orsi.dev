@@ -9,15 +9,15 @@ let context,
     gridHeight,
     automata,
     iteration = 0;
-const cellWidth = 8,
-    cellHeight = 8,
-    backgroundColour = 'rgba(255,255,255,.08)',
-    hueMax = 360,
-    hueMin = 0,
+const cellWidth = 80,
+    cellHeight = 80,
+    backgroundColour = 'rgba(255,255,255,.1)',
+    hueMax = 250,
+    hueMin = 220,
     saturationMax = 100,
     saturationMin = 30,
-    lightMax = 98,
-    lightMin = 60;
+    lightMax = 97,
+    lightMin = 90;
 let now, then = Date.now(), delta;
 function tick() {
     if (running) requestAnimationFrame(tick);
@@ -32,7 +32,7 @@ function tick() {
 function update() {
     iteration++;
     // update is run 60 fps, update automata every 4 frames
-    if (iteration % (fps / 2) === 0) {
+    if (iteration % (fps * 4) === 0) {
         if (automata.isEmpty || automata.isStale) {
             automata = new Automata(gridWidth, gridHeight);
             console.log(automata);
@@ -53,9 +53,11 @@ function update() {
                 if (cell.saturation >= saturationMax) cell.saturationDirection = -1;
                 if (cell.saturation <= saturationMin) cell.saturationDirection = 1;
 
-                cell.light = cell.light + (1 * cell.lightDirection);
-                if (cell.light >= lightMax) cell.lightDirection = -1;
-                if (cell.light <= lightMin) cell.lightDirection = 1;
+                // if (iteration % 60 === 0) {
+                //     cell.light = cell.light + (1 * cell.lightDirection);
+                //     if (cell.light >= lightMax) cell.lightDirection = -1;
+                //     if (cell.light <= lightMin) cell.lightDirection = 1;
+                // }
 
                 cell.alive = automata.getGrid()[i][j];
             }
@@ -74,7 +76,7 @@ function draw() {
         for (let j = 0; j < gridHeight; j++) {
             const cell = grid[i][j];
             if (cell.alive) {
-                context.fillStyle = `hsl(${cell.hue},${cell.saturation}%,${95}%)`;
+                context.fillStyle = `hsl(${cell.hue},${cell.saturation}%,${96}%)`;
                 context.fillRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
             }
         }

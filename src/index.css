@@ -13,6 +13,18 @@ body {
   }
 }
 
+a {
+  color: hsl(230, 60%, 50%);
+}
+a:visited {
+  color: hsl(260, 60%, 50%);
+}
+a:active,
+a:focus {
+  color: hsl(230, 60%, 70%);
+
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

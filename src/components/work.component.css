@@ -32,9 +32,11 @@
 .work-item ul li {
     display: inline-block;
     margin: 2px;
-    padding: 4px 8px;
+    padding: 6px 8px;
     font-size: .8rem;
+    font-weight: 600;
+    line-height: 1;
     color: hsla(240, 5%, 20%, 1);
-    background: hsla(240, 80%, 70%, .6);
+    background: hsla(230, 60%, 80%, .7);
     border-radius: 4px;
 }

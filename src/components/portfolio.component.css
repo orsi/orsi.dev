@@ -10,7 +10,7 @@
 }
 .portfolio-item {
     height: 57vw;
-    margin-bottom: 8px;
+    margin-bottom: 3rem;
 }
 @media (min-width: 896px) {
     .portfolio-list {

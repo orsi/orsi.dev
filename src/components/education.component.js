@@ -22,7 +22,7 @@ const educationList = [
 export default class EducationComponent extends Component {
     render() {
         return(
-            <div className="education-component">
+            <div className="education">
                 <div className="row">
                     <div className="col-2">
                         <h2 className="section-title">Education</h2>

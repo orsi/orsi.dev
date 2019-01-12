@@ -1,34 +1,34 @@
-.education-component {
+.education {
     padding: 8px;
 }
-.education-list {
+.education .education-list {
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.education-item {
+.education .education-item {
     margin-bottom: 3rem;
 }
-.education-school {
+.education .education-school {
     display: inline-block;
     margin-right: 24px;
     font-weight: 600;
 }
-.education-degree {
+.education .education-degree {
     font-weight: 400;
 }
-.education-time {}
+.education .education-time {}
 @media (min-width: 768px) {
-    .education-item {
+    .education .education-item {
         display: flex;
     }
-    .education-time {
+    .education .education-time {
         width: 20%;
     }
-    .education-school,
-    .education-degree {
+    .education .education-school,
+    .education .education-degree {
         width: 40%;
     }
 }

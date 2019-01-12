@@ -1,58 +1,24 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
-import GenerativeCanvasService from './services/generative-canvas.service.js';
-import Splash from './components/splash.component.js';
-import Work from './components/work.component.js';
-import Education from './components/education.component.js';
-import Misc from './components/misc.component.js';
-import Portfolio from './components/portfolio.component.js';
+import HomeViewComponent from './views/home/home.component.js';
+import ResumeViewComponent from './views/resume/resume.component.js';
 
 class AppComponent extends Component {
 
-  canvasElement;
   componentDidMount() {
     FaviconService.start();
-
-      // grab reference of canvas
-      this.canvasElement = document.querySelector('#app-canvas');
-      if (this.canvasElement !== undefined) {
-          GenerativeCanvasService.init(this.canvasElement.getContext('2d'));
-          GenerativeCanvasService.start();
-      }
   }
 
   render() {
     return (
-      <div className="app">
-
-        <div className="app-canvas-container">
-              <canvas id="app-canvas"></canvas>
+      <BrowserRouter>
+        <div className="app">
+          <Route exact path="/" component={HomeViewComponent} />
+          <Route exact path="/resume" component={ResumeViewComponent} />
         </div>
-
-        <section>
-          <Splash></Splash>
-        </section>
-
-        <main className="container">
-          <section>
-            <Work></Work>
-          </section>
-
-          <section>
-            <Portfolio></Portfolio>
-          </section>
-
-          <section>
-            <Education></Education>
-          </section>
-
-          <section>
-            <Misc></Misc>
-          </section>
-
-        </main>
-      </div>
+      </BrowserRouter>
     );
   }
 }

@@ -1,0 +1,123 @@
+.resume {
+    margin: 16px;
+    font-size: 14px;
+    color: #3a3a3a;
+    background-color: white;
+}
+.resume a,
+.resume a:hover,
+.resume a:active,
+.resume a:visited {
+    color: inherit;
+}
+.resume em {
+    color: black;
+    letter-spacing: .1em;
+    font-weight: 700;
+    font-style: normal;
+}
+.resume p {
+    margin: 0 0 16px 0;
+}
+.resume section {
+    position: relative;
+    margin-bottom: 36px;
+}
+.resume h1 {
+    margin: 0 0 24px 0;
+}
+.resume h2 {
+    margin: 0 0 16px 0;
+}
+.resume ul > li {
+    margin-bottom: 8px;
+}
+.resume time {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* generic classes */
+.resume .container {
+    margin: 0 auto;
+    max-width: 720px;
+}
+.resume .resume-header {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid hsla(0, 25%, 25%, .2);
+}
+.resume .resume-main {
+    margin: 0 0 0 24px;
+}
+.resume .section-icon {
+    display: inline-block;
+    position: absolute;
+    font-size: 24px;
+    margin-left: -32px;
+}
+.resume .section-title {
+    flex: 0 0 180px;
+    margin: 0 0 8px 0;
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* named element classes */
+.resume .resume-contact {
+    margin: 0;
+}
+.resume .contacts-list-item {
+    margin-bottom: 0px !important;
+}
+.resume .contacts-list-item > *:first-child {
+    margin-right: 16px;
+}
+.resume .technical-list-item {
+    margin-bottom: 4px !important;
+}
+ /* atomic classes */
+
+.resume .list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.resume .list-unstyled > li {
+    margin-bottom: 16px;
+}
+.resume .flex-shrink {
+    flex: 0 1 auto;
+}
+.resume .mr-8 {
+    margin-right: 8px !important;
+}
+
+/* media queries */
+
+@media (min-width: 768px) {
+    .resume {
+        margin: 36px;
+    }
+
+    .resume .resume-main {
+        margin: 0 0 0 48px;
+    }
+    .resume .section-icon {
+        display: inline-block;
+        position: absolute;
+        font-size: 24px;
+        margin-left: -48px;
+    }
+    .resume .flex {
+        display: flex;
+        align-items: baseline;
+    }
+    .resume .contacts-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

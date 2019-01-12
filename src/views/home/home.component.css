@@ -1,0 +1,37 @@
+.home {
+    position: relative;
+    z-index: 0;
+}
+
+.home-canvas-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.home-canvas-container #home-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.home main {
+    position: relative;
+    z-index: 2;
+}
+.home main section {
+    margin-bottom: 5rem;
+}
+.home .section-title {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .home .section-title {
+        text-align: right;
+        margin-right: 24px;
+    }
+}

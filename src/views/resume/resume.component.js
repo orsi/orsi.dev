@@ -50,7 +50,7 @@ class ResumeViewComponent extends Component {
               <span className="section-icon"><MdHelpOutline /></span>
               <h2>About</h2>
               <div className="section-body">
-                <p>I am web developer focused on fast performance and intuitive user experiences. I work at Bombardier Aerospace where I digitalize production floor and quality assurance workflows into enterprise-level web applcations. I continually experiment with emerging web technologies and open-source platforms, such as my <a href="https://github.com/jorsi/zen-html"><em>Zen HTML</em></a> web component library.</p>
+                <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applcations. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
               </div>
             </section>
 

@@ -1,6 +1,7 @@
 .resume {
     margin: 16px;
     font-size: 14px;
+    line-height: 1.5;
     color: #3a3a3a;
     background-color: white;
 }
@@ -12,12 +13,11 @@
 }
 .resume em {
     color: black;
-    letter-spacing: .1em;
     font-weight: 700;
     font-style: normal;
 }
 .resume p {
-    margin: 0 0 16px 0;
+    margin: 0 0 8px 0;
 }
 .resume section {
     position: relative;
@@ -68,15 +68,31 @@
 .resume .resume-contact {
     margin: 0;
 }
-.resume .contacts-list-item {
-    margin-bottom: 0px !important;
-}
 .resume .contacts-list-item > *:first-child {
     margin-right: 16px;
 }
-.resume .technical-list-item {
-    margin-bottom: 4px !important;
+.resume .experience-title {
+    display: inline-block;
+    font-style: italic;
+    margin-bottom: 8px;
 }
+.resume .experience-list-item,
+.resume .education-list-item,
+.resume .projects-list-item {
+    margin-bottom: 48px !important;
+}
+.resume .experience-tasks-list {
+	position: relative;
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1.2em;
+}
+.resume .experience-tasks-list-item:before {
+	content: "+";
+	position: absolute;
+	left: 0;
+}
+
  /* atomic classes */
 
 .resume .list-unstyled {
@@ -100,7 +116,6 @@
     .resume {
         margin: 36px;
     }
-
     .resume .resume-main {
         margin: 0 0 0 48px;
     }
@@ -119,5 +134,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+    .resume .contacts-list-item {
+        margin-bottom: 0px !important;
     }
 }

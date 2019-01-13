@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdPermPhoneMsg, MdCode } from 'react-icons/md';
+import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdCode } from 'react-icons/md';
 import { GoMarkGithub } from 'react-icons/go';
 import './resume.component.css';
 
@@ -211,10 +211,6 @@ class ResumeViewComponent extends Component {
               </div>
             </section>
 
-            <section className="resume-references">
-              <span className="section-icon rotate-counter-clockwise"><MdPermPhoneMsg /></span>
-              <h2>References available upon request</h2>
-            </section>
           </main>
 
         </div>

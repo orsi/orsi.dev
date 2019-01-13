@@ -53,8 +53,9 @@
 .resume .section-icon {
     display: inline-block;
     position: absolute;
-    font-size: 24px;
     margin-left: -32px;
+    padding-top: 5px;
+    font-size: 24px;
 }
 .resume .section-title {
     flex: 0 0 180px;

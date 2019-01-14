@@ -128,25 +128,26 @@ class ResumeViewComponent extends Component {
                     <p className="experience-description">Design and develop enterprise-level web applications which digitize production floor and quality assurance workflows currently used to build the Global 5000/6500/7500/8000, Q Series, C Series, and Lear aircraft.</p>
                     <ul className="experience-tasks-list">
                       <li className="experience-tasks-list-item">
-                        <span>Research and understand production workflow processes and data requirements by Bombardier teams</span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Analyze functional requirements, outline project scopes, timelines, and milestones, and create <em>Software Requirement Sheets</em> for project proposals</span>
+                        <span>Research and understand business workflow processes, identify functional requirements, outline project scope, timeline, and milestones, and create <em>Software Requirement Sheets</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Design database schemas, workflow diagrams, and use case scenario models in <em>MS Visio</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Import, normalize, and organize data from multiple internal databases and data dumps through <em>SSIS and C# console applications</em></span>
+                        <span>Import, normalize, and organize data from multiple internal data sources through <em>SSIS and C# console applications</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Design user interface mockups and wireframe with <em>Adobe Photoshop and Illustrator</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Develop fast and performant <em>C# .Net Web APIs</em> which access and serve millions of records datasets</span>
+                        <span>Develop efficient and performant database queries on millions of records accessed via <em>Entity Framework</em> and RESTful apis in <em>C# .NET Web API framework</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Develop rich and intuitive web-based user experiences that display large datasets and complex workflows with <em>Angular 7, SASS, and Typescript</em></span>
+                        <span>Develop rich and intuitive user interfaces which display large datasets and complex workflows using <em>Angular 7, SASS, and Typescript</em></span>
+                      </li>
+
+                      <li className="experience-tasks-list-item">
+                        <span>Create, teach, and review <em>coding standards and best practices</em> for interns and junior developers on team</span>
                       </li>
                     </ul>
                   </li>
@@ -160,16 +161,16 @@ class ResumeViewComponent extends Component {
                     <p className="experience-description">Developed and maintained web applications used by quality assurance team members to track and organize timelines, reports, and general tasks.</p>
                     <ul className="experience-tasks-list">
                       <li className="experience-tasks-list-item">
-                        <span>Maintained and supported live production web applications through an internal <em>ticketing system</em>, <em>git</em>, and source code changes to <em>C# (.NET MVC), Razor templates, HTML, CSS, and Javascript (jQuery)</em></span>
+                        <span>Maintained and supported production web applications through an internal <em>ticketing system</em>, <em>git</em>, and source code changes to <em>C# (.NET MVC), Razor templates, HTML, CSS, and Javascript (jQuery)</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Developed a real-time updated browser-based scrum board application to aide with general task management utilizing <em>ASP.NET SignalR, and jQuery UI</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Designed and implemented a new overall aesthetic for dozens of internal web applications to improve visual consistency and user experience</span>
+                        <span>Redesigned UI/UX for dozens of internal web applications to improve visual consistency and user experience</span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Converted multiple web applications from <em>.NET MVC/Razor</em> to <em>.NET Web API/AngularJS</em> applications to improve performance and separate back-end/front-end concerns</span>
+                        <span>Modernized multiple web applications to improve performance and separate back-end/front-end concerns by converting <em>.NET MVC/Razor</em> applications to <em>.NET Web API/AngularJS</em></span>
                       </li>
                     </ul>
                   </li>

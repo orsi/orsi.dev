@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdPermPhoneMsg, MdCode } from 'react-icons/md';
+import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdCode } from 'react-icons/md';
 import { GoMarkGithub } from 'react-icons/go';
 import './resume.component.css';
 
@@ -50,43 +50,65 @@ class ResumeViewComponent extends Component {
               <span className="section-icon"><MdHelpOutline /></span>
               <h2>About</h2>
               <div className="section-body">
-                <p>I am web developer focused on fast performance and intuitive user experiences. I work at Bombardier Aerospace where I digitalize production floor and quality assurance workflows into enterprise-level web applcations. I continually experiment with emerging web technologies and open-source platforms, such as my <a href="https://github.com/jorsi/zen-html"><em>Zen HTML</em></a> web component library.</p>
+                <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
               </div>
             </section>
 
-            <section className="resume-technical">
+            <section className="resume-skills">
               <span className="section-icon"><MdSettings /></span>
-              <h2>Technical</h2>
+              <h2>Skills</h2>
               <div className="section-body">
-                <ul className="technical-list list-unstyled">
+                <ul className="skills-list list-unstyled">
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Front-end</h3>
-                      <span className="flex-shrink">AngularJS, Angular 2+, Bootstrap, Telerik Kendo UI</span>
+                      <h3 className="skills-title section-title mr-8">Languages</h3>
+                      <span className="flex-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Back-end</h3>
-                      <span className="flex-shrink">.NET, Entity Framework, Node.js</span>
+                      <h3 className="skills-title section-title mr-8">Front-end Frameworks/Libraries</h3>
+                      <span className="flex-shrink">AngularJS/Angular, Angular Material, Webpack, React, Bootstrap, Kendo UI, jQuery, Razor templates</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Database</h3>
+                      <h3 className="skills-title section-title mr-8">Back-end Frameworks/Libraries</h3>
+                      <span className="flex-shrink">.NET Web Api, .NET MVC, ASP.NET SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
+                    </div>
+                  </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Databases</h3>
                       <span className="flex-shrink">SQL Server 2012, MySQL, MongoDB</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Tools</h3>
-                      <span className="flex-shrink">npm, git, Photoshop, Illustrator, Visio, SQL Management Studio, SSIS</span>
+                      <h3 className="skills-title section-title mr-8">Testing</h3>
+                      <span className="flex-shrink">Mocha, Chai</span>
                     </div>
                   </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Software</h3>
+                      <span className="flex-shrink">Adobe Photoshop, Adobe Illustrator, MS Visio, SQL Management Studio, SSIS, Visual Studio, VS Code</span>
+                    </div>
+                  </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Methods</h3>
+                      <span className="flex-shrink">Agile development, git version control and GitHub, unit testing, UX/UI/Responsive design</span>
+                    </div>
+                  </li>
+
                 </ul>
               </div>
             </section>
@@ -106,25 +128,26 @@ class ResumeViewComponent extends Component {
                     <p className="experience-description">Design and develop enterprise-level web applications which digitize production floor and quality assurance workflows currently used to build the Global 5000/6500/7500/8000, Q Series, C Series, and Lear aircraft.</p>
                     <ul className="experience-tasks-list">
                       <li className="experience-tasks-list-item">
-                        <span>Research and understand production workflow processes and data requirements by Bombardier teams</span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Analyze functional requirements, outline project scopes, timelines, and milestones, and create <em>Software Requirement Sheets</em> for project proposals</span>
+                        <span>Research and understand business workflow processes, identify functional requirements, outline project scope, timeline, and milestones, and create <em>Software Requirement Sheets</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Design database schemas, workflow diagrams, and use case scenario models in <em>MS Visio</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Import, normalize, and organize data from multiple internal databases and data dumps through <em>SSIS and C# console applications</em></span>
+                        <span>Import, normalize, and organize data from multiple internal data sources through <em>SSIS and C# console applications</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Design user interface mockups and wireframe with <em>Adobe Photoshop and Illustrator</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Develop fast and performant <em>C# .Net Web APIs</em> which access and serve millions of records datasets</span>
+                        <span>Develop efficient and performant database queries on millions of records accessed via <em>Entity Framework</em> and RESTful apis in <em>C# .NET Web API framework</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Develop rich and intuitive web-based user experiences that display large datasets and complex workflows with <em>Angular 7, SASS, and Typescript</em></span>
+                        <span>Develop rich and intuitive user interfaces which display large datasets and complex workflows using <em>Angular 7, SASS, and Typescript</em></span>
+                      </li>
+
+                      <li className="experience-tasks-list-item">
+                        <span>Create, teach, and review <em>coding standards and best practices</em> for interns and junior developers on team</span>
                       </li>
                     </ul>
                   </li>
@@ -138,16 +161,16 @@ class ResumeViewComponent extends Component {
                     <p className="experience-description">Developed and maintained web applications used by quality assurance team members to track and organize timelines, reports, and general tasks.</p>
                     <ul className="experience-tasks-list">
                       <li className="experience-tasks-list-item">
-                        <span>Maintained and supported live production web applications through an internal <em>ticketing system</em>, <em>git</em>, and source code changes to <em>C# (.NET MVC), Razor templates, HTML, CSS, and Javascript (jQuery)</em></span>
+                        <span>Maintained and supported production web applications through an internal <em>ticketing system</em>, <em>git</em>, and source code changes to <em>C# (.NET MVC), Razor templates, HTML, CSS, and Javascript (jQuery)</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
                         <span>Developed a real-time updated browser-based scrum board application to aide with general task management utilizing <em>ASP.NET SignalR, and jQuery UI</em></span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Designed and implemented a new overall aesthetic for dozens of internal web applications to improve visual consistency and user experience</span>
+                        <span>Redesigned UI/UX for dozens of internal web applications to improve visual consistency and user experience</span>
                       </li>
                       <li className="experience-tasks-list-item">
-                        <span>Converted multiple web applications from <em>.NET MVC/Razor</em> to <em>.NET Web API/AngularJS</em> applications to improve performance and separate back-end/front-end concerns</span>
+                        <span>Modernized multiple web applications to improve performance and separate back-end/front-end concerns by converting <em>.NET MVC/Razor</em> applications to <em>.NET Web API/AngularJS</em></span>
                       </li>
                     </ul>
                   </li>
@@ -211,10 +234,6 @@ class ResumeViewComponent extends Component {
               </div>
             </section>
 
-            <section className="resume-references">
-              <span className="section-icon rotate-counter-clockwise"><MdPermPhoneMsg /></span>
-              <h2>References available upon request</h2>
-            </section>
           </main>
 
         </div>

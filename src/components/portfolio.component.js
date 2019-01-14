@@ -43,8 +43,8 @@ export default class PortfolioComponent extends Component {
                                     <li key={i} className="portfolio-item">
                                         <a className="portfolio-link" href={ portfolio.linkHref }>
                                             <div className="portfolio-image-container">
-                                                <img className="portfolio-image full" src={ portfolio.image } />
-                                                <img className="portfolio-image mobile" src={ portfolio.imageMobile } />
+                                                <img className="portfolio-image full" alt="" src={ portfolio.image } />
+                                                <img className="portfolio-image mobile" alt="" src={ portfolio.imageMobile } />
                                             </div>
                                             <span className="portfolio-screen"></span>
                                             <span className="portfolio-title">

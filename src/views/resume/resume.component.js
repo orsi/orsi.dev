@@ -54,39 +54,61 @@ class ResumeViewComponent extends Component {
               </div>
             </section>
 
-            <section className="resume-technical">
+            <section className="resume-skills">
               <span className="section-icon"><MdSettings /></span>
-              <h2>Technical</h2>
+              <h2>Skills</h2>
               <div className="section-body">
-                <ul className="technical-list list-unstyled">
+                <ul className="skills-list list-unstyled">
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Front-end</h3>
-                      <span className="flex-shrink">AngularJS, Angular 2+, Bootstrap, Telerik Kendo UI</span>
+                      <h3 className="skills-title section-title mr-8">Languages</h3>
+                      <span className="flex-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Back-end</h3>
-                      <span className="flex-shrink">.NET, Entity Framework, Node.js</span>
+                      <h3 className="skills-title section-title mr-8">Front-end Frameworks/Libraries</h3>
+                      <span className="flex-shrink">AngularJS/Angular, Angular Material, Webpack, React, Bootstrap, Kendo UI, jQuery, Razor templates</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Database</h3>
+                      <h3 className="skills-title section-title mr-8">Back-end Frameworks/Libraries</h3>
+                      <span className="flex-shrink">.NET Web Api, .NET MVC, ASP.NET SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
+                    </div>
+                  </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Databases</h3>
                       <span className="flex-shrink">SQL Server 2012, MySQL, MongoDB</span>
                     </div>
                   </li>
 
-                  <li className="technical-list-item">
+                  <li className="skills-list-item">
                     <div className="flex">
-                      <h3 className="technical-title section-title mr-8">Tools</h3>
-                      <span className="flex-shrink">npm, git, Photoshop, Illustrator, Visio, SQL Management Studio, SSIS</span>
+                      <h3 className="skills-title section-title mr-8">Testing</h3>
+                      <span className="flex-shrink">Mocha, Chai</span>
                     </div>
                   </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Software</h3>
+                      <span className="flex-shrink">Adobe Photoshop, Adobe Illustrator, MS Visio, SQL Management Studio, SSIS, Visual Studio, VS Code</span>
+                    </div>
+                  </li>
+
+                  <li className="skills-list-item">
+                    <div className="flex">
+                      <h3 className="skills-title section-title mr-8">Methods</h3>
+                      <span className="flex-shrink">Agile development, git version control and GitHub, unit testing, UX/UI/Responsive design</span>
+                    </div>
+                  </li>
+
                 </ul>
               </div>
             </section>

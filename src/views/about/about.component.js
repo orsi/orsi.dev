@@ -21,6 +21,9 @@ export default class AboutComponent extends Component {
                         <h2 className="section-title">About</h2>
                     </div>
                     <div className="col-10">
+
+                        <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
+
                         <ul className="about-list">
                             { aboutList.map((about, i) => {
                                 return (

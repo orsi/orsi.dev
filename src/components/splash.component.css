@@ -7,8 +7,12 @@
 .splash-component .flex {
     height: 100%;
 }
+.splash-component .flex > div {
+    width: 100%;
+}
 .splash-component h1 {
     margin: 0;
+    text-align: center;
     text-transform: uppercase;
 }
 .splash-component h1 .jonathon {
@@ -18,7 +22,21 @@
     font-weight: 900;
 }
 .splash-component h2 {
-    margin: 0;
+    margin: 0 0 16px 0;
     font-size: 1.2em;
+    text-align: center;
     text-transform: lowercase;
+}
+
+.splash-component .view-links-list {
+    text-align: center;
+    width: 100%;
+}
+.splash-component .view-links-list-item {
+    display: block;
+    padding: 8px;
+}
+.splash-component .view-links-list-item a {
+    text-decoration: none;
+    color: inherit;
 }

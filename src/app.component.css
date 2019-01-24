@@ -1,4 +1,21 @@
-.app {
-    position: relative;
-    z-index: 0;
+.flex {
+    display: flex;
+}
+.flex.justify-content-center {
+    justify-content: center;
+}
+.flex.align-items-center {
+    align-items: center;
+}
+.flex.flex-row {
+    flex-direction: row;
+}
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }

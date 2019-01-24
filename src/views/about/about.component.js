@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './misc.component.css';
+import './about.component.css';
 
-const miscList = [
+const aboutList = [
     {
         emoji: '🎸',
         description: 'I play <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">bass</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">guitar</a> and <a href="http://jojogun.ca">sing</a>, a lot'
@@ -12,22 +12,22 @@ const miscList = [
     }
 ];
 
-export default class MiscComponent extends Component {
+export default class AboutComponent extends Component {
     render() {
         return(
-            <div className="misc-component">
+            <div className="about-component">
                 <div className="row">
                     <div className="col-2">
-                        <h2 className="section-title">Misc</h2>
+                        <h2 className="section-title">About</h2>
                     </div>
                     <div className="col-10">
-                        <ul className="misc-list">
-                            { miscList.map((misc, i) => {
+                        <ul className="about-list">
+                            { aboutList.map((about, i) => {
                                 return (
-                                    <li key={i} className="misc-item">
-                                        <div className="misc-emoji">{ misc.emoji }</div>
-                                        <div className="misc-description">
-                                            <p dangerouslySetInnerHTML={{__html: misc.description}}></p>
+                                    <li key={i} className="about-item">
+                                        <div className="about-emoji">{ about.emoji }</div>
+                                        <div className="about-description">
+                                            <p dangerouslySetInnerHTML={{__html: about.description}}></p>
                                         </div>
                                     </li>
                                 );

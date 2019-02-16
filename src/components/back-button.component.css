@@ -1,0 +1,21 @@
+.back-button {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.back-button__link:link,
+.back-button__link:visited {
+    display: block;
+    padding: 8px;
+    color: rgba(0, 0, 0, .3);
+    text-decoration: none;
+}
+
+.back-button__icon {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1;
+}

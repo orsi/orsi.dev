@@ -8,10 +8,10 @@ const dateOptions = {
 const workList = [
     {
         company: 'Bombardier Inc.',
-        jobTitle: 'Full Stack Developer',
+        jobTitle: '',
         startDate: new Date(2016, 9),
         endDate: null,
-        description: 'Design, develop, and maintain enterprise-level web applications for Bombardier quality and production teams.',
+        description: '',
         keywords: [
             'C#',
             '.Net MVC/WebApi/Core',
@@ -60,22 +60,20 @@ export default class WorkComponent extends Component {
                         <h2 className="section-title">Work</h2>
                     </div>
                     <div className="col-10">
-                        <ul className="work-list">
-                            { workList.map((work, i) => {
-                                return (
-                                    <li key={i} className="work-item">
-                                        <div className="work-item-title">
-                                            <span>{ work.jobTitle }</span> @ <span><strong>{ work.company }</strong></span>
-                                        </div>
-                                        <time className="work-item-time">{ work.startDate.toLocaleDateString('en-US', dateOptions) } - { work.endDate ? work.endDate.toLocaleDateString('en-US', dateOptions) : 'Present' }</time>
-                                        <p className="work-item-description">{ work.description }</p>
-                                        <ul className="keyword-list">
-                                            { work.keywords.map((keyword, i) => <li key={i} className="keyword-list-item">{ keyword }</li>) }
-                                        </ul>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                        <div className="work-item">
+                            <div className="work-item-title">
+                                <span>Full Stack Developer @ <strong>Bombardier Inc.</strong></span>
+                            </div>
+                            <time className="work-item-time">October 2016</time>
+                            <p className="work-item-description">Design and develop enterprise web applications which digitize business processes currently used to build the Global, Q Series, C Series, and Lear aircraft.</p>
+                        </div>
+                        <div className="work-item">
+                            <div className="work-item-title">
+                                <span>Freelance Web Developer</span>
+                            </div>
+                            <time className="work-item-time">April 2015</time>
+                            <p className="work-item-description">Freelance web development and design work for small-to-medium sized businesses.</p>
+                        </div>
                     </div>
                 </div>
             </div>

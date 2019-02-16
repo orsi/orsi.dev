@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import './about.component.css';
-
-const aboutList = [
-    {
-        emoji: '🎸',
-        description: 'I play <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">bass</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">guitar</a> and <a href="http://jojogun.ca">sing</a>, a lot'
-    },
-    {
-        emoji: '💻',
-        description: 'I often experiment with <a href="https://www.webcomponents.org/introduction">custom web components</a> and using the browser as a platform for <a href="https://github.com/jorsi/reverie/tree/develop">experimenting</a>'
-    }
-];
+import guitar from '../../assets/guitar.jpg';
 
 export default class AboutComponent extends Component {
     render() {
@@ -22,20 +12,17 @@ export default class AboutComponent extends Component {
                     </div>
                     <div className="col-10">
 
-                        <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
+                        <p>I am a full-stack web developer with a focus on responsive and intuitive user experiences. My current work for Bombardier Aerospace involves digitizing business workflow processes into enterprise web applications.</p>
 
-                        <ul className="about-list">
-                            { aboutList.map((about, i) => {
-                                return (
-                                    <li key={i} className="about-item">
-                                        <div className="about-emoji">{ about.emoji }</div>
-                                        <div className="about-description">
-                                            <p dangerouslySetInnerHTML={{__html: about.description}}></p>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                        <div className="about__programming">
+                            <p>I often experiment with <a href="https://www.webcomponents.org/introduction">custom web components</a>, and I have a deep interest in using the browser as a platform for <a href="https://github.com/jorsi/reverie/tree/develop">experimenting</a>.</p>
+                        </div>
+
+                        <div className="about__music">
+                            <p>When I'm not coding, you can find me <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">laying down a bassline</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">shredding the guitar</a> and <a href="http://jojogun.ca">belting a few songs</a>.</p>
+                            <img src={ guitar }></img>
+                        </div>
+
                     </div>
                 </div>
             </div>

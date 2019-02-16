@@ -1,0 +1,49 @@
+img {
+    width: 100%;
+}
+
+.fade-enter,
+.fade-exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+.fade-exit {
+    opacity: 1;
+    z-index: 1;
+}
+    .fade-exit.fade-exit-active {
+        opacity: 0;
+        transition: opacity 250ms ease-in;
+    }
+
+.flex {
+    display: flex;
+}
+.flex.justify-content-center {
+    justify-content: center;
+}
+.flex.align-items-center {
+    align-items: center;
+}
+.flex.flex-row {
+    flex-direction: row;
+}
+.flex.flex-column {
+    flex-direction: column;
+}
+
+.list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

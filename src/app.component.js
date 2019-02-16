@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import './styles.css';
 import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
 import { BackButtonComponent } from './components/back-button.component.js';

@@ -7,54 +7,54 @@ import imageHumbleRootsMediaMobile from '../../assets/work-humble-roots-media-mo
 import imageJoJoGunFull from '../../assets/work-jo-jo-gun-full.jpg';
 import imageJoJoGunMobile from '../../assets/work-jo-jo-gun-mobile.jpg';
 
-const projectsList = [
-    {
-        title: 'Humble Roots Media',
-        linkHref: 'http://www.humblerootsmedia.com',
-        image: imageHumbleRootsMediaFull,
-        imageMobile: imageHumbleRootsMediaMobile
-    },
-    {
-        title: 'Betical',
-        linkHref: 'http://screencanadianelit.ca/betical/',
-        image: imageBeticalFull,
-        imageMobile: imageBeticalMobile
-    },
-    {
-        title: 'Jo Jo Gun & the Bullets',
-        linkHref: 'http://www.jojogun.ca/',
-        image: imageJoJoGunFull,
-        imageMobile: imageJoJoGunMobile
-    }
-];
-
 export default class ProjectsComponent extends Component {
     render() {
         return(
             <div className="project-component">
                 <div className="row">
                     <div className="col-2">
-                        <h2 className="section-title">Project</h2>
+                        <h2 className="section-title">Projects</h2>
                     </div>
                     <div className="col-10">
-                        <ul className="project-list">
-                            { projectsList.map((project, i) => {
-                                return (
-                                    <li key={i} className="project-item">
-                                        <a className="project-link" href={ project.linkHref }>
-                                            <div className="project-image-container">
-                                                <img className="project-image full" alt="" src={ project.image } />
-                                                <img className="project-image mobile" alt="" src={ project.imageMobile } />
-                                            </div>
-                                            <span className="project-screen"></span>
-                                            <span className="project-title">
-                                                <span>{ project.title }</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+
+                        <div className="project-item">
+                            <a className="project-link" href="">
+                                <div className="project-image-container">
+                                    <img className="project-image full" alt="" src={ imageBeticalFull } />
+                                    <img className="project-image mobile" alt="" src={ imageBeticalMobile } />
+                                </div>
+                                <span className="project-screen"></span>
+                                <span className="project-title">
+                                    <span>Betical</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div className="project-item">
+                            <a className="project-link" href="">
+                                <div className="project-image-container">
+                                    <img className="project-image full" alt="" src={ imageHumbleRootsMediaFull } />
+                                    <img className="project-image mobile" alt="" src={ imageHumbleRootsMediaMobile } />
+                                </div>
+                                <span className="project-screen"></span>
+                                <span className="project-title">
+                                    <span>Humble Roots Media</span>
+                                </span>
+                            </a>
+                        </div>
+
+                        <div className="project-item">
+                            <a className="project-link" href="">
+                                <div className="project-image-container">
+                                    <img className="project-image full" alt="" src={ imageJoJoGunFull } />
+                                    <img className="project-image mobile" alt="" src={ imageJoJoGunMobile } />
+                                </div>
+                                <span className="project-screen"></span>
+                                <span className="project-title">
+                                    <span>Jo Jo Gun & the Bullets</span>
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

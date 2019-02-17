@@ -41,7 +41,7 @@ export default class ProjectsComponent extends Component {
                             <div className="project-image-container">
                                 <img className="project-image full" alt="" src={ imageZenHtml } />
                             </div>
-                            <p>Zen HTML is a small, quick, and simple library for creating Custom Web Elements through ES5 tagged string literals. Heavily inspired by <a href="">lit-html</a> and <a href="">hyper-html</a>, Zen HTML is a learning project I've built to better understand new Javascript features, npm, custom web elements, and overall project development, maintainance, and publishing.</p>
+                            <p>Zen HTML is a small, quick, and simple library for creating Custom Web Elements through ES5 tagged string literals. Heavily inspired by <a href="https://lit-html.polymer-project.org/">lit-html</a> and <a href="https://viperhtml.js.org/hyper.html">hyper-html</a>, Zen HTML is a learning project I've built to better understand new Javascript features, npm, custom web elements, and overall project development, maintainance, and publishing.</p>
                         </div>
 
                         <div className="project-item">

@@ -17,7 +17,7 @@ export default class AboutComponent extends Component {
 
                     <div className="about__music">
                         <p>When I'm not coding, you can find me <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">laying down a bassline</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">shredding the guitar</a> and <a href="http://jojogun.ca">belting a few songs</a>.</p>
-                        <img src={guitar}></img>
+                        <img src={guitar} alt="Jon playing guitar"></img>
                     </div>
 
                 </div>

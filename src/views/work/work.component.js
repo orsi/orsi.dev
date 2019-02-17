@@ -1,56 +1,6 @@
 import React, { Component } from 'react';
 import './work.component.css';
 
-const dateOptions = {
-    month: 'long',
-    year: 'numeric'
-};
-const workList = [
-    {
-        company: 'Bombardier Inc.',
-        jobTitle: '',
-        startDate: new Date(2016, 9),
-        endDate: null,
-        description: '',
-        keywords: [
-            'C#',
-            '.Net MVC/WebApi/Core',
-            'Angular',
-            'AngularJS',
-            'SASS',
-            'Typescript',
-            'Bootstrap',
-            'jQuery',
-            'MS SQL Server',
-            'SSIS',
-            'NPM',
-            'Node.js'
-        ]
-    },
-    {
-        company: 'Self-Employed',
-        jobTitle: 'Freelance',
-        startDate: new Date(2015, 3),
-        endDate: null,
-        description: 'Freelance web development and design work for small-to-medium sized businesses.',
-        keywords: [
-            'Wordpress',
-            'MySQL',
-            'AngularJS',
-            'SASS',
-            'Shopify',
-            'Bootstrap',
-            'jQuery',
-            'MongoDB',
-            'Express',
-            'NPM',
-            'Node.js',
-            'Google Analytics',
-            'Instagram/Twitter/Facebook APIs'
-        ]
-    },
-];
-
 export default class WorkComponent extends Component {
     render() {
         return(

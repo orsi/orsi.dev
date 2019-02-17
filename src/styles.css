@@ -2,6 +2,12 @@ img {
     width: 100%;
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 16px;
+}
+
 .fade-enter,
 .fade-exit {
     position: absolute;

@@ -21,8 +21,8 @@ class AppComponent extends Component {
     return (
       <Router>
         <Route render={({ location }) => (
-          <div className="app">
-            <TransitionGroup>
+          <div className="app h-100">
+            <TransitionGroup component={null}>
               <CSSTransition
                 key={location.key}
                 timeout={300}
@@ -33,7 +33,7 @@ class AppComponent extends Component {
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
-            <TransitionGroup>
+            <TransitionGroup component={null}>
               <CSSTransition
                 timeout={300}
                 key={location.key}

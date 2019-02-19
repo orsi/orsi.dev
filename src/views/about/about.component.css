@@ -1,3 +1,26 @@
 .about {
+    position: relative;
     margin-top: 45px;
+}
+
+.about__picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    max-width: 400px;
+    border-radius: 1px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.4);
+    clip-path: polygon(30% 10%, 90% 0, 97% 50%, 5% 97%);
+    filter: saturate(60%);
+    opacity: .2;
+}
+@media (min-width: 768px) {
+    .about__picture {
+        position: relative;
+        height: 100%;
+        width: initial;
+        max-width: initial;
+        opacity: .7;
+    }
 }

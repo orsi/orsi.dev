@@ -8,7 +8,7 @@ export default class AboutComponent extends Component {
             <div className="about">
                 <div className="container">
                     <div className="row">
-                        <div className="column">
+                        <div className="column w-m-66">
                             <h2>About</h2>
 
                             <p>I am a full-stack web developer with a focus on responsive and intuitive user experiences. My current work for Bombardier Aerospace involves digitizing business workflow processes into enterprise web applications.</p>
@@ -18,11 +18,13 @@ export default class AboutComponent extends Component {
                             </div>
 
                             <div className="about__music">
-                                <p>When I'm not coding, you can find me <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">laying down a bassline</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">shredding the guitar</a> and <a href="http://jojogun.ca">belting a few songs</a>.</p>
+                                <p>When I'm not coding, you can find me <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">laying down a bassline</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">plucking the guitar</a>, or <a href="http://jojogun.ca">singing a few tunes</a>.</p>
                             </div>
                         </div>
-                        <div className="column flex align-items-center">
-                            <img src={guitar} alt="Jon playing guitar"></img>
+                        <div className="column w-m-33 flex align-items-center">
+                            <img src={guitar}
+                                alt="Jon playing guitar"
+                                className="about__picture" />
                         </div>
                     </div>
 

@@ -47,65 +47,69 @@ class ResumeViewComponent extends Component {
 
           <main className="resume-main">
             <section className="resume-about">
-              <span className="section-icon"><MdHelpOutline /></span>
-              <h2>About</h2>
+              <h2>
+                <span className="section-icon"><MdHelpOutline /></span>
+                About
+              </h2>
               <div className="section-body">
                 <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
               </div>
             </section>
 
             <section className="resume-skills">
-              <span className="section-icon"><MdSettings /></span>
-              <h2>Skills</h2>
+              <h2>
+                <span className="section-icon"><MdSettings /></span>
+                Skills
+              </h2>
               <div className="section-body">
                 <ul className="skills-list list-unstyled">
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Languages</h3>
-                      <span className="flex-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL</span>
+                      <span className="flex-m-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Front-end Frameworks/Libraries</h3>
-                      <span className="flex-shrink">AngularJS/Angular, Angular Material, Webpack, React, Bootstrap, Kendo UI, jQuery, Razor templates</span>
+                      <span className="flex-m-shrink">AngularJS/Angular, Angular Material, Webpack, React, Bootstrap, Kendo UI, jQuery, Razor templates</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Back-end Frameworks/Libraries</h3>
-                      <span className="flex-shrink">.NET Web Api, .NET MVC, ASP.NET SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
+                      <span className="flex-m-shrink">.NET Web Api, .NET MVC, ASP.NET SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Databases</h3>
-                      <span className="flex-shrink">SQL Server 2012, MySQL, MongoDB</span>
+                      <span className="flex-m-shrink">SQL Server 2012, MySQL, MongoDB</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Testing</h3>
-                      <span className="flex-shrink">Mocha, Chai</span>
+                      <span className="flex-m-shrink">Mocha, Chai</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Software</h3>
-                      <span className="flex-shrink">Adobe Photoshop, Adobe Illustrator, MS Visio, SQL Management Studio, SSIS, Visual Studio, VS Code</span>
+                      <span className="flex-m-shrink">Adobe Photoshop, Adobe Illustrator, MS Visio, SQL Management Studio, SSIS, Visual Studio, VS Code</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Methods</h3>
-                      <span className="flex-shrink">Agile development, git version control and GitHub, unit testing, UX/UI/Responsive design</span>
+                      <span className="flex-m-shrink">Agile development, git version control and GitHub, unit testing, UX/UI/Responsive design</span>
                     </div>
                   </li>
 
@@ -114,14 +118,16 @@ class ResumeViewComponent extends Component {
             </section>
 
             <section className="resume-experience">
-              <span className="section-icon" style={{ 'transform': 'rotate(-10deg)' }}><MdWork /></span>
-              <h2> Experience</h2>
+              <h2>
+                <span className="section-icon" style={{ 'transform': 'rotate(-10deg)' }}><MdWork /></span>
+                Experience
+              </h2>
               <div className="section-body">
                 <ul className="experience-list list-unstyled">
 
                   <li className="experience-list-item">
                     <time className="experience-time">June 2017 ➔ Present</time>
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
                       <span className="experience-title">Full Stack Developer</span>
                     </div>
@@ -154,7 +160,7 @@ class ResumeViewComponent extends Component {
 
                   <li className="experience-list-item">
                     <time className="experience-time">October 2016 ➔ May 2017</time>
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
                       <span className="experience-title">Intern - Front End Developer</span>
                     </div>
@@ -181,14 +187,16 @@ class ResumeViewComponent extends Component {
             </section>
 
             <section className="resume-education">
-              <span className="section-icon"  style={{ 'transform': 'rotate(10deg)' }}><MdSchool /></span>
-              <h2>Education</h2>
+              <h2>
+                <span className="section-icon"  style={{ 'transform': 'rotate(10deg)' }}><MdSchool /></span>
+                Education
+              </h2>
               <div className="section-body">
                 <ul className="education-list list-unstyled">
 
                   <li className="education-list-item">
                     <time className="education-time">September 2014 ➔ April 2017</time>
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="education-school section-title mr-8">George Brown College</h3>
                       <span className="education-program">Advanced Diploma in Computer Programming and Systems Analysis</span>
                     </div>
@@ -196,7 +204,7 @@ class ResumeViewComponent extends Component {
 
                   <li className="education-list-item">
                     <time className="education-time">September 2008 ➔ April 2013</time>
-                    <div className="flex">
+                    <div className="flex-m">
                       <h3 className="education-school section-title mr-8">University of Toronto</h3>
                       <span className="education-program">Honours Bachelor of Arts in Philosophy and Latin</span>
                     </div>
@@ -207,13 +215,33 @@ class ResumeViewComponent extends Component {
             </section>
 
             <section className="resume-projects">
-              <span className="section-icon rotate-clockwise"><MdCode /></span>
-              <h2>Projects</h2>
+              <h2>
+                <span className="section-icon rotate-clockwise"><MdCode /></span>
+                Projects
+              </h2>
               <div className="section-body">
                 <ul className="projects-list list-unstyled">
 
+                <li className="projects-list-item">
+                    <div className="flex-m">
+                      <h3 className="projects-title section-title mr-8">Betical</h3>
+                      <a className="projects-url"
+                        href="http://www.screencanadianelit.ca/betical">http://www.screencanadianelit.ca/betical</a>
+                      </div>
+                    <p className="projects-description">A born-digital paragraph generator composed with remixed typed assemblage-letters.</p>
+                  </li>
+
                   <li className="projects-list-item">
-                    <div className="flex">
+                    <div className="flex-m">
+                      <h3 className="projects-title section-title mr-8">Humble Roots Media</h3>
+                      <a className="projects-url"
+                        href="http://www.humblerootsmedia.com">http://www.humblerootsmedia.com</a>
+                      </div>
+                    <p className="projects-description">Digital content creators based in Hamilton, Ontario.</p>
+                  </li>
+
+                  <li className="projects-list-item">
+                    <div className="flex-m">
                       <h3 className="projects-title section-title mr-8">Zen HTML</h3>
                       <a className="projects-url"
                         href="https://github.com/jorsi/zen-html">https://github.com/jorsi/zen-html</a>
@@ -221,14 +249,6 @@ class ResumeViewComponent extends Component {
                     <p className="projects-description">An html templating library heavily-inspired by Google Polymer team's lit-html.</p>
                   </li>
 
-                  <li className="projects-list-item">
-                    <div className="flex">
-                      <h3 className="projects-title section-title mr-8">Betical</h3>
-                      <a className="projects-url"
-                        href="http://www.screencanadianelit.ca/betical">http://www.screencanadianelit.ca/betical</a>
-                      </div>
-                    <p className="projects-description">A born-digital paragraph generator composed with remixed typed assemblage-letters.</p>
-                  </li>
 
                 </ul>
               </div>

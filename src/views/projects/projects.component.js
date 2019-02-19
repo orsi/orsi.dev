@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './projects.component.css';
-import imageBeticalFull from '../../assets/work-betical-full.jpg';
-import imageBeticalMobile from '../../assets/work-betical-mobile.jpg';
-import imageHumbleRootsMediaFull from '../../assets/work-humble-roots-media-full.jpg';
-import imageHumbleRootsMediaMobile from '../../assets/work-humble-roots-media-mobile.jpg';
+import imageBetical from '../../assets/betical.png';
+import imageHumbleRootsMedia from '../../assets/humble-roots-media.jpg';
 import imageZenHtml from '../../assets/zen-html.png';
 import imageReverie from '../../assets/reverie.png';
 
@@ -20,11 +18,9 @@ export default class ProjectsComponent extends Component {
                                 <p>A born-digital paragraph generator composed with remixed typed assemblage-letters by Dani Spinosa of <a href="https://genericpronoun.com/">Generic Pronoun</a>. Dani came to me with a set of typed letters she had created with the idea of a randomly generated "paragraph". Using the letter images with a combination of javascript and jQuery, Betical generates random combinations of letters into words, and words into paragraphs, to give the impression of a familiar language.</p>
                             </div>
                             <div className="column w-m-50 flex align-items-center justify-content-center">
-                                <picture className="project__picture">
-                                    <source media="(min-width: 320px)" srcSet={imageBeticalMobile} />
-                                    <source media="(min-width: 768px)" srcSet={imageBeticalFull} />
-                                    <img src={imageBeticalFull} alt="Betical" />
-                                </picture>
+                                <img src={imageBetical}
+                                     alt="Betical"
+                                     className="project__picture" />
                             </div>
                         </div>
                     </div>
@@ -36,11 +32,9 @@ export default class ProjectsComponent extends Component {
                                 <p>Humble Roots Media, born from Adrian Miller and Myles Herod, is a digital content creator for businesses and corporations. They wanted a redesign of their website to better reflect their business personality and needed someone who could work with them to implement their vision. Built on Wordpress, I worked with both Adrian and Myles on a new theme template and built an api to deliver and display their beautiful cinemagraphs front and center.</p>
                             </div>
                             <div className="column w-m-50 flex align-items-center justify-content-center">
-                                <picture className="project__picture">
-                                    <source media="(min-width: 320px)" srcSet={imageHumbleRootsMediaMobile} />
-                                    <source media="(min-width: 768px)" srcSet={imageHumbleRootsMediaFull} />
-                                    <img src={imageHumbleRootsMediaFull} alt="Humble Roots Media" />
-                                </picture>
+                                <img src={imageHumbleRootsMedia}
+                                    alt="Humble Roots Media"
+                                    className="project__picture" />
                             </div>
                         </div>
 

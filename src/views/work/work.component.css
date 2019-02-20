@@ -43,18 +43,27 @@
         align-self: flex-end;
     }
 }
+.work__item {
+    padding: 8px;
+    border-radius: 3px;
+}
 
 .work__item:not(:last-child) {
     margin-bottom: 24px;
 }
 .work__title {
-    font-size: 1.2em;
+    color: #3c274c;
+    line-height: 1;
 }
 .work__duration {
     display: block;
-    color: #708090;
+    color: #969da5;
+    font-size: small;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 .work__description {
     margin: 0;
     font-size: 1em;
+    line-height: 1.4;
 }

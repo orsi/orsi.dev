@@ -21,16 +21,16 @@ export default class WorkComponent extends Component {
                         </div>
                         <div className="column">
                             <div className="work__item">
-                                <div className="work__title">
-                                    <span>Full Stack Developer @ <strong>Bombardier Inc.</strong></span>
-                                </div>
+                                <h3 className="work__title">
+                                    Full Stack Developer @ <strong>Bombardier Inc.</strong>
+                                </h3>
                                 <time className="work__duration">October 2016 &rarr; Present</time>
                                 <p className="work__description">Design and develop enterprise web applications which digitize business processes currently used to build the Global, Q Series, C Series, and Lear aircraft.</p>
                             </div>
                             <div className="work__item">
-                                <div className="work__title">
-                                    <span>Freelance Web Developer</span>
-                                </div>
+                                <h3 className="work__title">
+                                    Freelance Web Developer
+                                </h3>
                                 <time className="work__duration">April 2015 &rarr; Present</time>
                                 <p className="work__description">Freelance web development and design work for small-to-medium sized businesses.</p>
                             </div>

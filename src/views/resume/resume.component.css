@@ -1,9 +1,8 @@
 .resume {
-    margin: 16px;
+    padding-top: 45px;
     font-size: 14px;
     line-height: 1.5;
     color: #3a3a3a;
-    background-color: white;
 }
 .resume a,
 .resume a:hover,
@@ -20,7 +19,6 @@
     margin: 0 0 8px 0;
 }
 .resume section {
-    position: relative;
     margin-bottom: 36px;
 }
 .resume h1 {
@@ -38,24 +36,16 @@
 }
 
 /* generic classes */
-.resume .container {
-    margin: 0 auto;
-    max-width: 720px;
-}
 .resume .resume-header {
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid hsla(0, 25%, 25%, .2);
 }
-.resume .resume-main {
-    margin: 0 0 0 24px;
-}
 .resume .section-icon {
     display: inline-block;
-    position: absolute;
-    margin-left: -32px;
-    padding-top: 5px;
-    font-size: 24px;
+    margin-right: 16px;
+    line-height: 1.24;
+    vertical-align: bottom;
 }
 .resume .section-title {
     flex: 0 0 180px;
@@ -95,12 +85,6 @@
 }
 
  /* atomic classes */
-
-.resume .list-unstyled {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
 .resume .list-unstyled > li {
     margin-bottom: 16px;
 }
@@ -114,22 +98,6 @@
 /* media queries */
 
 @media (min-width: 768px) {
-    .resume {
-        margin: 36px;
-    }
-    .resume .resume-main {
-        margin: 0 0 0 48px;
-    }
-    .resume .section-icon {
-        display: inline-block;
-        position: absolute;
-        font-size: 24px;
-        margin-left: -48px;
-    }
-    .resume .flex {
-        display: flex;
-        align-items: baseline;
-    }
     .resume .contacts-list {
         display: flex;
         flex-direction: row;

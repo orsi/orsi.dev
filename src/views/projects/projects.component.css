@@ -1,0 +1,11 @@
+.projects {
+    padding-top: 45px;
+}
+.project-item {
+    margin-bottom: 24px;
+}
+
+.project__picture {
+    display: block;
+    margin: 0 auto;
+}

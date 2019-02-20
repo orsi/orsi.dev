@@ -8,7 +8,7 @@ class HomeViewComponent extends Component {
   }
   render() {
     return (
-      <div className="home h-100">
+      <div className="home">
         <header className="home__header h-100">
               <div className="flex justify-content-center align-items-center flex-column h-100">
                   <h1>

@@ -1,6 +1,7 @@
 .about {
-    position: relative;
-    margin-top: 45px;
+  position: relative;
+  padding-top: 45px;
+    overflow: hidden;
 }
 
 .about__picture {

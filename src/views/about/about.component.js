@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import './about.component.css';
+import { CSSTransition } from 'react-transition-group';
 import guitar from '../../assets/guitar.jpg';
 
 export default class AboutComponent extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            mounted: false
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ mounted: true });
+    }
     render() {
         return (
             <div className="about">
@@ -22,9 +34,14 @@ export default class AboutComponent extends Component {
                             </div>
                         </div>
                         <div className="column w-m-33 flex align-items-center">
-                            <img src={guitar}
-                                alt="Jon playing guitar"
-                                className="about__picture" />
+                            <CSSTransition in={this.state.mounted}
+                                classNames="picture-fade"
+                                timeout={1000}
+                                unmountOnExit>
+                                <img src={guitar}
+                                    alt="Jon playing guitar"
+                                    className="about__picture" />
+                            </CSSTransition>
                         </div>
                     </div>
 

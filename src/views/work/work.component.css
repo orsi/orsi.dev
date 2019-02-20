@@ -9,7 +9,7 @@
 .work__splash svg {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: dash 2.5s ease-in forwards;
+  animation: dash 2.5s ease 1s forwards;
 }
 .work__splash .red {
     color: #dc7c7c;
@@ -52,7 +52,7 @@
     margin-bottom: 24px;
 }
 .work__title {
-    color: #3c274c;
+    color: #44394c;
     line-height: 1;
 }
 .work__duration {

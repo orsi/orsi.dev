@@ -2,8 +2,19 @@
     padding-top: 45px;
     overflow: hidden;
 }
+
+.projects p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .special-margin-bottom {
+        margin-bottom: 100px !important;
+    }
+}
+
 .project-item {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
 }
 
 .project__visit-button {
@@ -20,13 +31,16 @@
     height: 100%;
 }
 .project__picture {
-    position: absolute;
-    z-index: -1;
-    display: block;
     margin: 0 auto;
-    width: auto;
-    height: 100%;
     border-radius: 3px;
+}
+@media (min-width: 768px) {
+    .project__picture {
+        position: absolute;
+        z-index: -1;
+        width: auto;
+        height: 100%;
+    }
 }
 
 .project__picture-right {
@@ -37,6 +51,6 @@
     top: 0;
     right: 0;
 }
-.special-margin-bottom {
-    margin-bottom: 200px;
+.project__picture-reverie {
+    height: 240px;
 }

@@ -1,11 +1,42 @@
 .projects {
     padding-top: 45px;
+    overflow: hidden;
 }
 .project-item {
     margin-bottom: 24px;
 }
 
+.project__visit-button {
+    display: inline-block;
+    padding: 2px 16px;
+    margin-left: 32px;
+    text-decoration: none;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, .15);
+}
+
+.project__picture__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 .project__picture {
+    position: absolute;
+    z-index: -1;
     display: block;
     margin: 0 auto;
+    width: auto;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.project__picture-right {
+    top: 0;
+    left: 0;
+}
+.project__picture-left {
+    top: 0;
+    right: 0;
+}
+.special-margin-bottom {
+    margin-bottom: 200px;
 }

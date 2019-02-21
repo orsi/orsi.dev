@@ -36,7 +36,7 @@ export default class AboutComponent extends Component {
                         <div className="column w-m-33 flex align-items-center">
                             <CSSTransition in={this.state.mounted}
                                 classNames="picture-fade"
-                                timeout={1000}
+                                timeout={2000}
                                 unmountOnExit>
                                 <img src={guitar}
                                     alt="Jon playing guitar"

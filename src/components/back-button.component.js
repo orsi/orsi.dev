@@ -5,10 +5,13 @@ export class BackButtonComponent extends Component {
     render() {
         return(
             <div className="back-button">
-                <Link to="/"
-                    className="back-button__link">
-                    <span className="back-button__icon">❮</span>
-                </Link>
+                <div className="container">
+                    <Link to="/"
+                        className="back-button__link">
+                        <span className="back-button__icon">❮</span>
+                        <span className="back-button__text">HOME</span>
+                    </Link>
+                </div>
             </div>
         );
     }

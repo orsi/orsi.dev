@@ -30,7 +30,7 @@
   }
   .picture-fade-enter.picture-fade-enter-active {
     opacity: .2;
-    transition: opacity 750ms ease-in;
+    transition: opacity 1500ms ease-in;
   }
   .picture-fade-enter-done {
     opacity: .2;

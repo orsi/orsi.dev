@@ -12,6 +12,33 @@ import ProjectsViewComponent from './views/projects/projects.component.js';
 import ResumeViewComponent from './views/resume/resume.component.js';
 
 class AppComponent extends Component {
+  routes = [
+    {
+      name: 'home',
+      path: '/',
+      component: HomeViewComponent
+    },
+    {
+      name: 'about',
+      path: '/about',
+      component: AboutViewComponent
+    },
+    {
+      name: 'work',
+      path: '/work',
+      component: WorkViewComponent
+    },
+    {
+      name: 'projects',
+      path: '/projects',
+      component: ProjectsViewComponent
+    },
+    {
+      name: 'resume',
+      path: '/resume',
+      component: ResumeViewComponent
+    }
+  ]
 
   componentDidMount() {
     FaviconService.start();
@@ -21,7 +48,8 @@ class AppComponent extends Component {
     return (
       <Router>
         <Route render={({ location }) => (
-          <div className="app h-100">
+          <div className={ "app current-view--" + (this.routes.find(route => route.path === location.pathname)).name }>
+            <div className="app-background"></div>
             <TransitionGroup component={null}>
               <CSSTransition
                 key={location.key}
@@ -39,11 +67,7 @@ class AppComponent extends Component {
                 key={location.key}
                 classNames='fade'>
                 <Switch location={location}>
-                  <Route exact path="/" component={HomeViewComponent} />
-                  <Route exact path="/about" component={AboutViewComponent} />
-                  <Route exact path="/work" component={WorkViewComponent} />
-                  <Route exact path="/projects" component={ProjectsViewComponent} />
-                  <Route exact path="/resume" component={ResumeViewComponent} />
+                  { this.routes.map((route, index) => <Route exact key={index} path={route.path} component={route.component} />)}
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

@@ -9,13 +9,18 @@
 .back-button__link:link,
 .back-button__link:visited {
     display: block;
-    padding: 8px;
+    padding: 8px 0;
     color: rgba(0, 0, 0, .3);
     text-decoration: none;
 }
 
 .back-button__icon {
-    font-size: 1.8rem;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-right: 8px;
+}
+.back-button__text {
+    font-size: 1.3rem;
     font-weight: 300;
     line-height: 1;
 }

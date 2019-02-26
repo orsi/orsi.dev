@@ -82,9 +82,10 @@ img {
     .row {
         display: flex;
         flex: 1 1 auto;
+        margin: 0 -16px;
     }
     .row > .column {
-        padding: 0 8px;
+        padding: 0 16px;
     }
 }
 
@@ -114,6 +115,9 @@ img {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+.ml-auto {
+    margin-left: auto;
 }
 .w-20 {
     width: 20%;
@@ -187,5 +191,4 @@ img {
 #root {
     width: 100%;
     height: 100%;
-    overflow: auto;
 }

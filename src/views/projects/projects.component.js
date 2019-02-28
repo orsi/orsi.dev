@@ -13,10 +13,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Betical</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="#">Betical</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -34,10 +31,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Humble Roots Media</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="#">Humble Roots Media</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -57,10 +51,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Zen HTML</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="#">Zen HTML</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -77,10 +68,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Reverie</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="#">Reverie</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">

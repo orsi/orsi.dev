@@ -44,8 +44,6 @@
     }
 }
 .work__item {
-    padding: 8px;
-    border-radius: 3px;
 }
 
 .work__item:not(:last-child) {

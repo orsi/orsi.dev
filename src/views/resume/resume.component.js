@@ -3,7 +3,7 @@ import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, 
 import { GoMarkGithub } from 'react-icons/go';
 import './resume.component.css';
 
-class ResumeViewComponent extends Component {
+export class ResumeViewComponent extends Component {
 
   render() {
     return (
@@ -261,5 +261,3 @@ class ResumeViewComponent extends Component {
     );
   }
 }
-
-export default ResumeViewComponent;

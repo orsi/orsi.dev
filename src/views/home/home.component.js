@@ -3,7 +3,7 @@ import './home.component.css';
 import { Link } from 'react-router-dom';
 import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
 
-class HomeViewComponent extends Component {
+export class HomeViewComponent extends Component {
   componentDidMount() {
   }
   render() {
@@ -48,5 +48,3 @@ class HomeViewComponent extends Component {
     );
   }
 }
-
-export default HomeViewComponent;

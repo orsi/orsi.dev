@@ -18,19 +18,17 @@
 .app > .app-background::after {
     content: " ";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
 }
 .current-view--about > .app-background::after {
-    background: hsl(359, 69%, 64%);
+    background: hsl(359, 80%, 64%);
     animation: background-anim 2s ease-in forwards;
 }
 .current-view--work > .app-background::after {
-    background: hsl(109, 67%, 66%);
+    background: hsl(109, 80%, 75%);
     animation: background-anim 2s ease-in forwards;
 }
 .current-view--projects > .app-background::after {
@@ -41,10 +39,8 @@
 @keyframes background-anim {
     0% {
         width: 1px;
-        height: 1px;
     }
     100% {
         width: 10000px;
-        height: 10000px;
     }
 }

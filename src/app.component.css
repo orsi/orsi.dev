@@ -26,15 +26,15 @@
     transform: translate(-50%, -50%);
 }
 .current-view--about > .app-background::after {
-    background: hsla(15, 73%, 50%, 1);;
+    background: hsl(359, 69%, 64%);
     animation: background-anim 2s ease-in forwards;
 }
 .current-view--work > .app-background::after {
-    background: hsla(160, 70%, 65%, 1);
+    background: hsl(109, 67%, 66%);
     animation: background-anim 2s ease-in forwards;
 }
 .current-view--projects > .app-background::after {
-    background:  hsl(230, 80%, 85%);
+    background:  hsla(208, 49%, 64%, 1);
     animation: background-anim 2s ease-in forwards;
 }
 

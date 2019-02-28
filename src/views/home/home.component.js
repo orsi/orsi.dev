@@ -19,25 +19,25 @@ class HomeViewComponent extends Component {
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">
               <li className="home__links-item">
-                <Link className="link" to="/about">
+                <Link className="link link--about" to="/about">
                   <span className="link-icon"><MdHelp /></span>
                   <span className="link-text">About</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/work">
+                <Link className="link link--work" to="/work">
                   <span className="link-icon"><MdWork /></span>
                   <span className="link-text">Work</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/projects">
+                <Link className="link link--projects" to="/projects">
                   <span className="link-icon"><MdCode /></span>
                   <span className="link-text">Projects</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/resume">
+                <Link className="link link--resume" to="/resume">
                   <span className="link-icon"><MdDescription /></span>
                   <span className="link-text">Resume</span>
                 </Link>

@@ -4,7 +4,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './styles.css';
 import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
-import { AutomataService } from './services/automata.service.js';
 import { BackButtonComponent } from './components/back-button.component.js';
 import { HomeViewComponent } from './views/home/home.component.js';
 import { AboutViewComponent } from './views/about/about.component.js';
@@ -13,7 +12,6 @@ import { ProjectsViewComponent } from './views/projects/projects.component.js';
 import { ResumeViewComponent } from './views/resume/resume.component.js';
 
 class AppComponent extends Component {
-  automataService;
   routes = [
     {
       name: 'home',
@@ -44,7 +42,6 @@ class AppComponent extends Component {
 
   componentDidMount() {
     FaviconService.start();
-    this.automataService = new AutomataService(document.querySelector('#life-container'), 60, 60);
   }
 
   render() {
@@ -52,7 +49,6 @@ class AppComponent extends Component {
       <Router>
         <Route render={({ location }) => (
           <div className={ "app current-view--" + (this.routes.find(route => route.path === location.pathname)).name }>
-            <div id="life-container"></div>
             <TransitionGroup component={null}>
               <CSSTransition
                 key={location.key}

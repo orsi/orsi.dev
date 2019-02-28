@@ -3,7 +3,7 @@ export default class Automata {
         this.width = width;
         this.height = height;
         this.options = options || {
-            aliveProbability: .5
+            aliveProbability: .2
         };
         this.isEmpty = false;
         this.isStale = false;
@@ -28,22 +28,21 @@ export default class Automata {
         let isEmpty = true; // optimizes checking if grid is completely empty
         this.cellCount = 0;
 
-        for (let i = 0; i < this.width; i++) {
-            newGrid[i] = [];
-            for (let j = 0; j < this.height; j++) {
-                const isAlive = this.grid[i][j];
-                const aliveNeighbours = this.countAliveNeighbours(i, j);
+        for (let x = 0; x < this.width; x++) {
+            newGrid[x] = [];
+            for (let y = 0; y < this.height; y++) {
+                const isAlive = this.grid[x][y];
+                const aliveNeighbours = this.countAliveNeighbours(x, y);
 
                 // rules of survivability, modified from Conway's game to increase the
                 // amount of alive cells on grid
-                if (isAlive &&
-                    (aliveNeighbours <= 1 || aliveNeighbours >= 4)) {
-                    newGrid[i][j] = false;
-                } else if (aliveNeighbours >= 2 && aliveNeighbours <= 3) {
-                    newGrid[i][j] = true;
+                if (isAlive) {
+                    newGrid[x][y] = (aliveNeighbours === 2 || aliveNeighbours === 3);
+                } else {
+                    newGrid[x][y] = aliveNeighbours === 3;
                     if (isEmpty) isEmpty = false;
                 }
-                if (newGrid[i][j]) this.cellCount++;
+                if (newGrid[x][y]) this.cellCount++;
             }
         }
 

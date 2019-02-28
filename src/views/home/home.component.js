@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import './home.component.css';
 import { Link } from 'react-router-dom';
 import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
+import { AutomataService } from '../../services/automata.service';
 
 export class HomeViewComponent extends Component {
+  automataService;
   componentDidMount() {
+    this.automataService = new AutomataService(document.querySelector('#life-container'));
+    this.automataService.start();
+  }
+  componentWillUnmount() {
+    this.automataService.stop();
   }
   render() {
     return (
@@ -16,6 +23,7 @@ export class HomeViewComponent extends Component {
         <h2 className="text-center">
             Web Developer
         </h2>
+        <div id="life-container"></div>
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">
               <li className="home__links-item">

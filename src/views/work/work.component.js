@@ -3,7 +3,7 @@ import './work.component.css';
 import { IconContext } from "react-icons";
 import { FiEdit, FiImage, FiCode } from 'react-icons/fi';
 
-export default class WorkComponent extends Component {
+export class WorkViewComponent extends Component {
     render() {
         return (
             <div className="work">

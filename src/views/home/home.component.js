@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import './home.component.css';
 import { Link } from 'react-router-dom';
 import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
+import { AutomataService } from '../../services/automata.service';
 
-class HomeViewComponent extends Component {
+export class HomeViewComponent extends Component {
+  automataService;
   componentDidMount() {
+    this.automataService = new AutomataService(document.querySelector('#life-container'));
+    this.automataService.start();
+  }
+  componentWillUnmount() {
+    this.automataService.stop();
   }
   render() {
     return (
@@ -16,28 +23,29 @@ class HomeViewComponent extends Component {
         <h2 className="text-center">
             Web Developer
         </h2>
+        <div id="life-container"></div>
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">
               <li className="home__links-item">
-                <Link className="link" to="/about">
+                <Link className="link link--about" to="/about">
                   <span className="link-icon"><MdHelp /></span>
                   <span className="link-text">About</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/work">
+                <Link className="link link--work" to="/work">
                   <span className="link-icon"><MdWork /></span>
                   <span className="link-text">Work</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/projects">
+                <Link className="link link--projects" to="/projects">
                   <span className="link-icon"><MdCode /></span>
                   <span className="link-text">Projects</span>
                 </Link>
               </li>
               <li className="home__links-item">
-                <Link className="link" to="/resume">
+                <Link className="link link--resume" to="/resume">
                   <span className="link-icon"><MdDescription /></span>
                   <span className="link-text">Resume</span>
                 </Link>
@@ -48,5 +56,3 @@ class HomeViewComponent extends Component {
     );
   }
 }
-
-export default HomeViewComponent;

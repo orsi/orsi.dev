@@ -1,15 +1,15 @@
 .about {
   position: relative;
   padding-top: 45px;
-    overflow: hidden;
 }
 
 .about__picture {
     position: absolute;
     z-index: -1;
-    top: 0;
+    top: 45px;
     right: 0;
     max-width: 400px;
+    max-height: 90vh;
     border-radius: 1px;
     box-shadow: 0 2px 2px rgba(0,0,0,.4);
     clip-path: polygon(30% 10%, 90% 0, 97% 50%, 5% 97%);

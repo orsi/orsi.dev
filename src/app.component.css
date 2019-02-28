@@ -1,50 +1,5 @@
 .app {
     position: relative;
     min-height: 100%;
-}
-
-/* view animations */
-.app > .app-background {
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.app > .app-background::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-.current-view--about > .app-background::after {
-    background: hsla(15, 73%, 50%, 1);;
-    animation: background-anim 2s ease-in forwards;
-}
-.current-view--work > .app-background::after {
-    background: hsla(160, 70%, 65%, 1);
-    animation: background-anim 2s ease-in forwards;
-}
-.current-view--projects > .app-background::after {
-    background:  hsl(230, 80%, 85%);
-    animation: background-anim 2s ease-in forwards;
-}
-
-@keyframes background-anim {
-    0% {
-        width: 1px;
-        height: 1px;
-    }
-    100% {
-        width: 10000px;
-        height: 10000px;
-    }
+    overflow:hidden;
 }

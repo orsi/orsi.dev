@@ -9,7 +9,6 @@ export class BackButtonComponent extends Component {
                     <Link to="/"
                         className="back-button__link">
                         <span className="back-button__icon">❮</span>
-                        <span className="back-button__text">HOME</span>
                     </Link>
                 </div>
             </div>

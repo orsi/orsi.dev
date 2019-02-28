@@ -5,7 +5,7 @@ import imageHumbleRootsMedia from '../../assets/humble-roots-media.jpg';
 import imageZenHtml from '../../assets/zen-html.png';
 import imageReverie from '../../assets/reverie.png';
 
-export default class ProjectsComponent extends Component {
+export class ProjectsViewComponent extends Component {
     render() {
         return (
             <div className="projects">
@@ -13,10 +13,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Betical</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="http://screencanadianelit.ca/betical/generate_one/">Betical</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -34,10 +31,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Humble Roots Media</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="http://humblerootsmedia.com/">Humble Roots Media</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -57,10 +51,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Zen HTML</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="http://github.com/jorsi/zen-html">Zen HTML</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -77,10 +68,7 @@ export default class ProjectsComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3>Reverie</h3>
-                            <div className="">
-                                <a href="#" className="project__visit-button">Visit</a>
-                            </div>
+                            <h3><a href="http://github.com/jorsi/reverie">Reverie</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">

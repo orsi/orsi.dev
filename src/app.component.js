@@ -5,11 +5,11 @@ import './styles.css';
 import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
 import { BackButtonComponent } from './components/back-button.component.js';
-import HomeViewComponent from './views/home/home.component.js';
-import AboutViewComponent from './views/about/about.component.js';
-import WorkViewComponent from './views/work/work.component.js';
-import ProjectsViewComponent from './views/projects/projects.component.js';
-import ResumeViewComponent from './views/resume/resume.component.js';
+import { HomeViewComponent } from './views/home/home.component.js';
+import { AboutViewComponent } from './views/about/about.component.js';
+import { WorkViewComponent } from './views/work/work.component.js';
+import { ProjectsViewComponent } from './views/projects/projects.component.js';
+import { ResumeViewComponent } from './views/resume/resume.component.js';
 
 class AppComponent extends Component {
   routes = [
@@ -49,7 +49,6 @@ class AppComponent extends Component {
       <Router>
         <Route render={({ location }) => (
           <div className={ "app current-view--" + (this.routes.find(route => route.path === location.pathname)).name }>
-            <div className="app-background"></div>
             <TransitionGroup component={null}>
               <CSSTransition
                 key={location.key}

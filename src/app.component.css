@@ -1,6 +1,7 @@
 .app {
     position: relative;
     min-height: 100%;
+    overflow:hidden;
 }
 
 /* view animations */

@@ -12,13 +12,13 @@
   animation: dash 2.5s ease 1s forwards;
 }
 .work__splash .red {
-    color: #dc7c7c;
+    color: hsl(359, 69%, 45%);
 }
 .work__splash .green {
-    color: #b5e2ab;
+    color: hsl(109, 41%, 40%);
 }
 .work__splash .blue {
-    color: #a0c4de;
+    color: hsl(208, 100%, 35%);
 }
 
 @keyframes dash {

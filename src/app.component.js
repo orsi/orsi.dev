@@ -49,7 +49,6 @@ class AppComponent extends Component {
       <Router>
         <Route render={({ location }) => (
           <div className={ "app current-view--" + (this.routes.find(route => route.path === location.pathname)).name }>
-            <div className="app-background"></div>
             <TransitionGroup component={null}>
               <CSSTransition
                 key={location.key}

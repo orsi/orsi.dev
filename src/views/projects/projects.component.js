@@ -13,7 +13,7 @@ export class ProjectsViewComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3><a href="#">Betical</a></h3>
+                            <h3><a href="http://screencanadianelit.ca/betical/generate_one/">Betical</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -31,7 +31,7 @@ export class ProjectsViewComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3><a href="#">Humble Roots Media</a></h3>
+                            <h3><a href="http://humblerootsmedia.com/">Humble Roots Media</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -51,7 +51,7 @@ export class ProjectsViewComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3><a href="#">Zen HTML</a></h3>
+                            <h3><a href="http://github.com/jorsi/zen-html">Zen HTML</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">
@@ -68,7 +68,7 @@ export class ProjectsViewComponent extends Component {
 
                     <div className="project-item">
                         <div className="flex">
-                            <h3><a href="#">Reverie</a></h3>
+                            <h3><a href="http://github.com/jorsi/reverie">Reverie</a></h3>
                         </div>
                         <div className="row">
                             <div className="column w-m-66">

@@ -4,10 +4,11 @@ export class ScribbleService {
     context;
     running = false;
     lastTime = new Date().getTime();
-    fps = 15;
+    fps = 30;
     frameRate = 1000 / this.fps;
+    frame = 0;
 
-    lastPoint;
+    lastState;
     brushSize = 4;
     hueDirection = 1;
     saturationDirection = 1;
@@ -20,10 +21,10 @@ export class ScribbleService {
         this.canvas.height = this.container.clientHeight;
         this.context = this.canvas.getContext('2d');
         this.container.appendChild(this.canvas);
-        this.lastPoint = {
+        this.lastState = {
             x: Math.round(Math.random() * this.canvas.width),
             y: Math.round(Math.random() * this.canvas.height),
-            hue: 245,
+            hue: Math.round(Math.random() * 360),
             saturation: 50,
             light: 50
         };
@@ -47,15 +48,15 @@ export class ScribbleService {
             // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             const x = Math.round(Math.random() * this.canvas.width);
             const y =  Math.round(Math.random() * this.canvas.height);
-            let hue = this.lastPoint.hue + this.hueDirection * 5;
-            if (hue < 180 || hue > 280) this.hueDirection *= -1;
-            let saturation = this.lastPoint.saturation + this.saturationDirection * 5;
+            let hue = this.lastState.hue + this.hueDirection;
+            if (hue < 200 || hue > 250) this.hueDirection *= -1;
+            let saturation = this.lastState.saturation + this.saturationDirection * 5;
             if (saturation < 40 || saturation > 80) this.saturationDirection *= -1;
-            let light = this.lastPoint.light + this.lightDirection * 5;
+            let light = this.lastState.light + this.lightDirection * 5;
             if (light < 40 || light > 80) this.lightDirection *= -1;
             this.context.strokeStyle = `hsl(${hue}, ${saturation}%, ${light}%)`;
             this.context.beginPath();
-            this.context.moveTo(this.lastPoint.x, this.lastPoint.y);
+            this.context.moveTo(this.lastState.x, this.lastState.y);
             this.context.lineTo(x, y);
             this.context.closePath();
             this.context.stroke();
@@ -63,11 +64,14 @@ export class ScribbleService {
             // console.log(`${delta} ${x} ${y}`);
             // update variables
             this.lastTime = now;
-            this.lastPoint.x = x;
-            this.lastPoint.y = y;
-            this.lastPoint.hue = hue;
-            this.lastPoint.saturation = saturation;
-            this.lastPoint.light = light;
+            this.lastState.x = x;
+            this.lastState.y = y;
+            this.lastState.hue = hue;
+            this.lastState.saturation = saturation;
+            this.lastState.light = light;
+
+            this.frame++;
+            if (this.frame > 120) this.stop();
         }
 
         if (this.running) requestAnimationFrame(_ => this.draw());

@@ -1,49 +1,10 @@
 .work {
     padding-top: 45px;
 }
-.work__splash {
-    margin: 16px auto;
-    max-width: 480px;
-    font-size: 56px;
-}
-.work__splash svg {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: dash 2.5s ease 1s forwards;
-}
-.work__splash .red {
-    color: hsl(359, 69%, 45%);
-}
-.work__splash .green {
-    color: hsl(109, 41%, 40%);
-}
-.work__splash .blue {
-    color: hsl(208, 100%, 35%);
-}
 
-@keyframes dash {
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .work__splash {
-        height: 100%;
-        margin: 0;
-        flex-direction: column;
-    }
-    .analyze {
-        align-self: flex-start;
-    }
-    .design {
-        align-self: center;
-    }
-    .develop {
-        align-self: flex-end;
-    }
-}
-.work__item {
+#scribble-container {
+    width: 100%;
+    min-height: 100px;
 }
 
 .work__item:not(:last-child) {

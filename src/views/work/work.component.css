@@ -3,25 +3,24 @@
 }
 
 #scribble-container {
-    width: 100%;
     min-height: 100px;
 }
 
-.work__item:not(:last-child) {
+.work-item:not(:last-child) {
     margin-bottom: 24px;
 }
-.work__title {
+.work-title {
     color: #44394c;
     line-height: 1;
 }
-.work__duration {
+.work-duration {
     display: block;
     color: #969da5;
     font-size: small;
     font-weight: 600;
     margin-bottom: 4px;
 }
-.work__description {
+.work-description {
     margin: 0;
     font-size: 1em;
     line-height: 1.4;

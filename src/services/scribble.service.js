@@ -17,10 +17,10 @@ export class ScribbleService {
     constructor(element) {
         this.container = element;
         this.canvas = document.createElement('canvas');
+        this.container.appendChild(this.canvas);
         this.canvas.width = this.container.clientWidth;
         this.canvas.height = this.container.clientHeight;
         this.context = this.canvas.getContext('2d');
-        this.container.appendChild(this.canvas);
         this.lastState = {
             x: Math.round(Math.random() * this.canvas.width),
             y: Math.round(Math.random() * this.canvas.height),

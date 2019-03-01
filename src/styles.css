@@ -22,11 +22,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  a {
-    color: hsl(230, 60%, 50%);
-  }
+  a,
+  a:link,
   a:visited {
-    color: hsl(260, 60%, 50%);
+    color: hsl(230, 60%, 50%);
   }
   a:active,
   a:focus {

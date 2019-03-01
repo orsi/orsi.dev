@@ -24,8 +24,8 @@ export class ScribbleService {
         this.lastState = {
             x: Math.round(Math.random() * this.canvas.width),
             y: Math.round(Math.random() * this.canvas.height),
-            hue: 245,
-            saturation: 40,
+            hue: Math.round(Math.random() * 360),
+            saturation: 50,
             light: 50
         };
 
@@ -48,12 +48,12 @@ export class ScribbleService {
             // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             const x = Math.round(Math.random() * this.canvas.width);
             const y =  Math.round(Math.random() * this.canvas.height);
-            let hue = this.lastState.hue + this.hueDirection * 5;
+            let hue = this.lastState.hue + this.hueDirection;
             if (hue < 200 || hue > 250) this.hueDirection *= -1;
             let saturation = this.lastState.saturation + this.saturationDirection * 5;
-            if (saturation < 30 || saturation > 60) this.saturationDirection *= -1;
+            if (saturation < 40 || saturation > 80) this.saturationDirection *= -1;
             let light = this.lastState.light + this.lightDirection * 5;
-            if (light < 40 || light > 90) this.lightDirection *= -1;
+            if (light < 40 || light > 80) this.lightDirection *= -1;
             this.context.strokeStyle = `hsl(${hue}, ${saturation}%, ${light}%)`;
             this.context.beginPath();
             this.context.moveTo(this.lastState.x, this.lastState.y);

@@ -29,7 +29,7 @@
         float: right;
         margin-top: -80px;
         max-width: 80%;
-        opacity: .2;
+        opacity: .1;
         transition: all .2s ease;
     }
     .project-image-container:hover {

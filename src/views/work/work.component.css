@@ -3,7 +3,8 @@
 }
 
 #scribble-container {
-    min-height: 100px;
+    height: 100%;
+    border: 4px double hsla(220, 70%, 5%, .5);
 }
 
 .work-item:not(:last-child) {

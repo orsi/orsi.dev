@@ -34,7 +34,9 @@ export class WorkViewComponent extends Component {
                                 <p className="work-description">Freelance web development and design work for small-to-medium sized businesses.</p>
                             </div>
                         </div>
-                        <div id="scribble-container" className="column"></div>
+                        <div className="column">
+                            <div id="scribble-container"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,7 @@ export class ScribbleService {
     hueDirection = 1;
     saturationDirection = 1;
     lightDirection = 1;
+    controlPointRange = 200;
 
     constructor(element) {
         this.container = element;
@@ -48,16 +49,18 @@ export class ScribbleService {
             // this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
             const x = Math.round(Math.random() * this.canvas.width);
             const y =  Math.round(Math.random() * this.canvas.height);
+            const cpx = x + (Math.round(Math.random() * this.controlPointRange) - 150);
+            const cpy =  y + (Math.round(Math.random() * this.controlPointRange) - 150);
             let hue = this.lastState.hue + this.hueDirection;
-            if (hue < 200 || hue > 250) this.hueDirection *= -1;
+            if (hue < 180 || hue > 270) this.hueDirection *= -1;
             let saturation = this.lastState.saturation + this.saturationDirection * 5;
-            if (saturation < 40 || saturation > 80) this.saturationDirection *= -1;
+            if (saturation < 30 || saturation > 70) this.saturationDirection *= -1;
             let light = this.lastState.light + this.lightDirection * 5;
-            if (light < 40 || light > 80) this.lightDirection *= -1;
-            this.context.strokeStyle = `hsl(${hue}, ${saturation}%, ${light}%)`;
+            if (light < 30 || light > 70) this.lightDirection *= -1;
+            this.context.strokeStyle = `hsla(${hue}, ${saturation}%, ${light}%, .5)`;
             this.context.beginPath();
             this.context.moveTo(this.lastState.x, this.lastState.y);
-            this.context.lineTo(x, y);
+            this.context.quadraticCurveTo(cpx, cpy, x, y);
             this.context.closePath();
             this.context.stroke();
 

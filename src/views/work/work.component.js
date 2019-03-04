@@ -35,7 +35,7 @@ export class WorkViewComponent extends Component {
                             </div>
                         </div>
                         <div className="column">
-                            <div id="canvas-container"></div>
+                            <div id="canvas-container" title="A Generative 'Piet Mondrian' Art"></div>
                         </div>
                     </div>
                 </div>

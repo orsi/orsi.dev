@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './work.component.css';
-import { ScribbleService } from '../../services/scribble.service';
+import { MondrianService } from '../../services/mondrian.service';
 
 export class WorkViewComponent extends Component {
-    artService;
+    mondrianService;
     componentDidMount() {
-        this.artService = new ScribbleService(document.querySelector('#scribble-container'));
-        this.artService.start();
+        this.mondrianService = new MondrianService(document.querySelector('#canvas-container'));
+        this.mondrianService.start();
     }
 
     componentWillUnmount() {
-        this.artService.stop();
+        // this.mondrianService.stop();
     }
     render() {
         return (
@@ -35,7 +35,7 @@ export class WorkViewComponent extends Component {
                             </div>
                         </div>
                         <div className="column">
-                            <div id="scribble-container"></div>
+                            <div id="canvas-container"></div>
                         </div>
                     </div>
                 </div>

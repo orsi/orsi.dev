@@ -2,9 +2,8 @@
     padding-top: 45px;
 }
 
-#scribble-container {
+#canvas-container {
     height: 100%;
-    border: 4px double hsla(220, 70%, 5%, .5);
 }
 
 .work-item:not(:last-child) {

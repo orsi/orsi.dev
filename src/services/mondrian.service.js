@@ -1,6 +1,6 @@
 export class MondrianService {
     white = '#f2f5f1';
-    colors = ['#D40920', '#1356A2', '#F7D842'];
+    colours = ['#D40920', '#1356A2', '#F7D842'];
     constructor(element) {
         this.container = element;
         this.canvas = document.createElement('canvas');
@@ -20,7 +20,7 @@ export class MondrianService {
         this.context.lineWidth = 8;
 
         // determines maximum columns/rows
-        this.step = Math.floor(this.canvas.width / 10);
+        this.step = Math.floor(this.container.clientWidth / 10);
 
         // create square array with base square
         this.squares = [
@@ -112,9 +112,11 @@ export class MondrianService {
         this.squares.push(squareA, squareB);
     }
     draw() {
-        // assign random colour to random amount of squares
-        for (let i = 0; i < Math.floor(Math.random() * this.squares.length); i++) {
-            this.squares[Math.floor(Math.random() * this.squares.length)].color = this.colors[Math.floor(Math.random() * this.colors.length)];
+        // assign random colour randomly to squares
+        for (let i = 0; i < this.squares.length; i++) {
+            if (Math.random() < 0.25) { // 1/4 chance to be coloured
+                this.squares[i].colour = this.colours[Math.floor(Math.random() * this.colours.length)];
+            }
         }
 
         // draw the final result
@@ -126,8 +128,8 @@ export class MondrianService {
                 this.squares[i].width,
                 this.squares[i].height
             );
-            if(this.squares[i].color) {
-                this.context.fillStyle = this.squares[i].color;
+            if(this.squares[i].colour) {
+                this.context.fillStyle = this.squares[i].colour;
             } else {
                 this.context.fillStyle = this.white;
             }

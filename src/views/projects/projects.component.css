@@ -7,6 +7,11 @@
     display: table;
     clear: both;
 }
+.projects-title {
+    text-transform: uppercase;
+    color: hsla(244, 16%, 30%, 1);
+    font-weight: 800;
+}
 
 .project {
     position: relative;

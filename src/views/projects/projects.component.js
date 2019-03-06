@@ -10,6 +10,7 @@ export class ProjectsViewComponent extends Component {
         return (
             <div className="projects">
                 <div className="container">
+                    <h2 className="projects-title">Projects</h2>
 
                     <div className="project project--betical">
 

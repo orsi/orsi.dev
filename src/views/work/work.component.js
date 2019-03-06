@@ -16,26 +16,22 @@ export class WorkViewComponent extends Component {
         return (
             <div className="work">
                 <div className="container">
-                    <h2>Work</h2>
+                    <h2 className="work-title">Work</h2>
                     <div className="row">
                         <div className="column">
-                            <div className="work-item">
-                                <h3 className="work-title">
-                                    Full Stack Developer @ <strong>Bombardier Inc.</strong>
-                                </h3>
-                                <time className="work-duration">October 2016 &rarr; Present</time>
-                                <p className="work-description">Design and develop enterprise web applications which digitize business processes currently used to build the Global, Q Series, C Series, and Lear aircraft.</p>
-                            </div>
-                            <div className="work-item">
-                                <h3 className="work-title">
-                                    Freelance Web Developer
-                                </h3>
-                                <time className="work-duration">April 2015 &rarr; Present</time>
-                                <p className="work-description">Freelance web development and design work for small-to-medium sized businesses.</p>
-                            </div>
+                            <div id="canvas-container" title="A Generative 'Piet Mondrian' Art"></div>
                         </div>
                         <div className="column">
-                            <div id="canvas-container" title="A Generative 'Piet Mondrian' Art"></div>
+                            <div className="work-item">
+                                <time className="work-duration">October 2016 &rarr; Present</time>
+                                <h3 className="work-company">Bombardier Inc.</h3>
+                                <h3 className="work-position">Full Stack Developer</h3>
+                            </div>
+                            <div className="work-item">
+                                <time className="work-duration">September 2014 &rarr; Present</time>
+                                <h3 className="work-company">Freelance</h3>
+                                <h3 className="work-position">Web Developer</h3>
+                            </div>
                         </div>
                     </div>
                 </div>

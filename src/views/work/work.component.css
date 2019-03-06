@@ -1,27 +1,35 @@
 .work {
     padding-top: 45px;
 }
-
+.work-title {
+    color: hsla(0, 67%, 46%, 1);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.work .column {
+    margin-bottom: 36px;
+}
 #canvas-container {
     height: 100%;
 }
 
 .work-item:not(:last-child) {
-    margin-bottom: 24px;
-}
-.work-title {
-    color: #44394c;
-    line-height: 1;
+    margin-bottom: 36px;
 }
 .work-duration {
     display: block;
-    color: #969da5;
+    margin-bottom: 8px;
+    color: hsla(218, 100%, 40%, 1);;
     font-size: small;
     font-weight: 600;
-    margin-bottom: 4px;
+    line-height: 1;
 }
-.work-description {
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.4;
+.work-company {
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.work-position {
+    font-weight: 400;
+    line-height: 1;
 }

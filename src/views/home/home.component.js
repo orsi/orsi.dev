@@ -16,13 +16,15 @@ export class HomeViewComponent extends Component {
   render() {
     return (
       <div className="home h-100 flex justify-content-center align-items-center flex-column h-100">
-        <h1>
-          <span className="jonathon">Jonathon</span>
-          <span className="orsi">Orsi</span>
-        </h1>
-        <h2 className="text-center">
-            Web Developer
-        </h2>
+        <div className="home-title">
+          <h1>
+            <span className="jonathon">Jonathon</span>
+            <span className="orsi">Orsi</span>
+          </h1>
+          <h2 className="text-center">
+              A Web Developer
+          </h2>
+        </div>
         <div id="life-container"></div>
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">

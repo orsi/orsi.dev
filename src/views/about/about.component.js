@@ -20,7 +20,7 @@ export class AboutViewComponent extends Component {
             <div className="about">
                 <div className="container">
                     <div className="about-description">
-                        <h2>About</h2>
+                        <h2 className="about-title">About</h2>
                         <div className="about-image-container">
                             <CSSTransition in={this.state.mounted}
                                 classNames="picture-fade"

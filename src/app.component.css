@@ -3,3 +3,6 @@
     min-height: 100%;
     overflow:hidden;
 }
+.app-section {
+    margin-bottom: 48px;
+}

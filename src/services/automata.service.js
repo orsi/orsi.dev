@@ -12,7 +12,7 @@ export class AutomataService {
         // create a canvas
         this.canvas = document.createElement('canvas');
         this.canvas.width = this.container.clientWidth;
-        this.canvas.height = 100;
+        this.canvas.height = this.container.clientHeight;
         this.container.appendChild(this.canvas);
         this.context = this.canvas.getContext('2d');
         this.automata = new Automata(this.canvas.width, this.canvas.height);

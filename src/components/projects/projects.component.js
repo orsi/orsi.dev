@@ -5,7 +5,7 @@ import imageHumbleRootsMedia from '../../assets/humble-roots-media.png';
 import imageZenHtml from '../../assets/zen-html.png';
 import imageReverie from '../../assets/reverie.png';
 
-export class ProjectsViewComponent extends Component {
+export class ProjectsComponent extends Component {
     render() {
         return (
             <div className="projects">

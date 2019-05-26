@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './home.component.css';
-import { Link } from 'react-router-dom';
+import './header.component.css';
 import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
 import { AutomataService } from '../../services/automata.service';
 
-export class HomeViewComponent extends Component {
+export class HeaderComponent extends Component {
   automataService;
   componentDidMount() {
     this.automataService = new AutomataService(document.querySelector('#life-container'));
@@ -21,36 +20,35 @@ export class HomeViewComponent extends Component {
             <span className="jonathon">Jonathon</span>
             <span className="orsi">Orsi</span>
           </h1>
-          <h2 className="text-center">
-              A Web Developer
-          </h2>
         </div>
-        <div id="life-container"></div>
+        <div id="life-box">
+          <div id="life-container"></div>
+        </div>
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">
               <li className="home__links-item">
-                <Link className="link link--about" to="/about">
+                <a className="link link--about" href="#about">
                   <span className="link-icon"><MdHelp /></span>
                   <span className="link-text">About</span>
-                </Link>
+                </a>
               </li>
               <li className="home__links-item">
-                <Link className="link link--work" to="/work">
+                <a className="link link--work" href="#work">
                   <span className="link-icon"><MdWork /></span>
                   <span className="link-text">Work</span>
-                </Link>
+                </a>
               </li>
               <li className="home__links-item">
-                <Link className="link link--projects" to="/projects">
+                <a className="link link--projects" href="#projects">
                   <span className="link-icon"><MdCode /></span>
                   <span className="link-text">Projects</span>
-                </Link>
+                </a>
               </li>
               <li className="home__links-item">
-                <Link className="link link--resume" to="/resume">
+                <a className="link link--resume" href="#resume">
                   <span className="link-icon"><MdDescription /></span>
                   <span className="link-text">Resume</span>
-                </Link>
+                </a>
               </li>
           </ul>
         </nav>

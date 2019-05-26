@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './work.component.css';
 import { MondrianService } from '../../services/mondrian.service';
 
-export class WorkViewComponent extends Component {
+export class WorkComponent extends Component {
     mondrianService;
     componentDidMount() {
         this.mondrianService = new MondrianService(document.querySelector('#canvas-container'));

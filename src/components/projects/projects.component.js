@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './projects.component.css';
-import imageBetical from '../../assets/betical.png';
+import 'betical';
 import imageHumbleRootsMedia from '../../assets/humble-roots-media.png';
 import imageZenHtml from '../../assets/zen-html.png';
 import imageReverie from '../../assets/reverie.png';
 
-export class ProjectsViewComponent extends Component {
+export class ProjectsComponent extends Component {
     render() {
         return (
             <div className="projects">
@@ -20,9 +20,7 @@ export class ProjectsViewComponent extends Component {
                             <p>A born-digital paragraph generator composed with remixed typed assemblage-letters by Dani Spinosa of <a href="https://genericpronoun.com/">Generic Pronoun</a>. Dani came to me with a set of typed letters she had created with the idea of a randomly generated "paragraph". Using the letter images with a combination of javascript and jQuery, Betical generates random combinations of letters into words, and words into paragraphs, to give the impression of a familiar language.</p>
                         </div>
                         <div className="project-image-container">
-                            <img src={imageBetical}
-                                alt="Betical"
-                                className="project-image" />
+                            <bet-ical></bet-ical>
                         </div>
 
                     </div>

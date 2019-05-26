@@ -3,7 +3,7 @@ import './about.component.css';
 import { CSSTransition } from 'react-transition-group';
 import guitar from '../../assets/guitar.jpg';
 
-export class AboutViewComponent extends Component {
+export class AboutComponent extends Component {
     constructor() {
         super();
 

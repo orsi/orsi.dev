@@ -7,7 +7,6 @@ import { AboutComponent } from './components/about/about.component.js';
 import { WorkComponent } from './components/work/work.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
 import { ResumeComponent } from './components/resume/resume.component.js';
-import { BeticalComponent } from './components/betical/betical.component.js';
 
 class AppComponent extends Component {
   routes = [
@@ -35,11 +34,6 @@ class AppComponent extends Component {
       name: 'resume',
       path: '/resume',
       component: ResumeComponent
-    },
-    {
-      name: 'betical',
-      path: '/betical',
-      component: BeticalComponent
     }
   ]
 

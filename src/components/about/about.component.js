@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './about.component.css';
-import { CSSTransition } from 'react-transition-group';
-import guitar from '../../assets/guitar.jpg';
 
 export class AboutComponent extends Component {
     constructor() {
@@ -11,7 +9,6 @@ export class AboutComponent extends Component {
             mounted: false
         };
     }
-
     componentDidMount() {
         this.setState({ mounted: true });
     }
@@ -21,19 +18,8 @@ export class AboutComponent extends Component {
                 <div className="container">
                     <div className="about-description">
                         <h2 className="about-title">About</h2>
-                        <div className="about-image-container">
-                            <CSSTransition in={this.state.mounted}
-                                classNames="picture-fade"
-                                timeout={2000}
-                                unmountOnExit>
-                                <img src={guitar}
-                                    alt="Jon playing guitar"
-                                    className="about-image" />
-                            </CSSTransition>
-                        </div>
-                        <p>I am a full-stack web developer with a focus on responsive and intuitive user experiences. My current work for Bombardier Aerospace involves digitizing business workflow processes into enterprise web applications.</p>
-                        <p>I often experiment with <a href="https://www.webcomponents.org/introduction">custom web components</a>, and I have a deep interest in using the browser as a platform for <a href="https://github.com/jorsi/reverie/tree/develop">experimenting</a>.</p>
-                        <p>When I'm not coding, you can find me <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">laying down a bassline</a>, <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">plucking the guitar</a>, or <a href="http://jojogun.ca">singing a few tunes</a>.</p>
+                        <p>Hello, my name is Jonathon Orsi and I am a software developer. I gravitate towards web technologies and front-end user experience. I currently work as a senior software developer at Bombardier Inc. transitioning business workflow processes into web applications.</p>
+                        <p>I often experiment with <a href="https://www.webcomponents.org/introduction">custom web components</a> and have a deep interest in using the browser as a platform for <a href="https://github.com/jorsi/reverie/tree/develop">experimenting</a>. When I'm not coding I am usually playing <a href="https://www.youtube.com/watch?v=eyLexd5MCCw&feature=youtu.be&t=14">some</a> <a href="https://www.youtube.com/watch?v=zOHUfhNQsoc&feature=youtu.be&t=1231">sort</a> of <a href="http://jojogun.ca">instrument</a>.</p>
                     </div>
                 </div>
             </div>

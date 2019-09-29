@@ -1,23 +1,3 @@
 .projects {
-    padding-top: 45px;
-    overflow: hidden;
+    padding-top: 32px;
 }
-.project::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.projects-title {
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.project {
-    position: relative;
-    margin-bottom: 32px;
-}
-.project--zen-html .project-image-container {
-    float: right;
-    max-width: 240px;
-}
-

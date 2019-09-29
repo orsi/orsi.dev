@@ -7,7 +7,7 @@ export class HeaderComponent extends Component {
     return (
       <div className="home">
         <div className="container">
-          <h1 className="home-title">Jonathon Orsi</h1>
+          <h1>Jonathon Orsi</h1>
           <nav className="home-nav">
             <ul className="home-links-list list-unstyled">
                 <li className="home-links-item">

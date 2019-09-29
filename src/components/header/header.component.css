@@ -32,20 +32,6 @@
     margin-bottom: 8px;
 }
 
-#life-box {
-    margin-bottom: 36px;
-    padding: 16px;
-    width: 320px;
-    height: 240px;
-}
-#life-container {
-    width: 100%;
-    height: 100%;
-    border: 1px solid hsla(221, 37%, 77%, .6);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
 .link,
 .link:link,
 .link:visited {

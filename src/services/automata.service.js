@@ -6,7 +6,9 @@ export class AutomataService {
     container;
     canvas;
     lastTime = new Date().getTime();
-    cellSize = 2;
+    cellSize = 12;
+    cellColour = 'hsla(220, 50%, 50%, .02)';
+    fps = 4;
     constructor(element) {
         this.container = element;
         // create a canvas
@@ -27,9 +29,9 @@ export class AutomataService {
         const now = new Date().getTime();
         const delta = now - this.lastTime;
 
-        if (delta > 1000 / 12) {
+        if (delta > 1000 / this.fps) {
             this.clear();
-            this.context.fillStyle = 'hsla(220, 50%, 50%, .2)';
+            this.context.fillStyle = this.cellColour;
             this.automata.next();
             const grid = this.automata.getGrid();
             for (let x = 0; x < this.automata.width; x++) {

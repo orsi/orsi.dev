@@ -7,6 +7,7 @@ import { AboutComponent } from './components/about/about.component.js';
 import { WorkComponent } from './components/work/work.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
 import { ResumeComponent } from './components/resume/resume.component.js';
+import { AutomataService } from './services/automata.service';
 
 class AppComponent extends Component {
   routes = [
@@ -36,14 +37,20 @@ class AppComponent extends Component {
       component: ResumeComponent
     }
   ]
-
+  automataService;
+  componentWillUnmount() {
+    this.automataService.stop();
+  }
   componentDidMount() {
+    this.automataService = new AutomataService(document.querySelector('#life-container'));
+    this.automataService.start();
     FaviconService.start();
   }
 
   render() {
     return (
       <main>
+        <div id="life-container"></div>
         <section id="top" className="app-section">
           <HeaderComponent></HeaderComponent>
         </section>

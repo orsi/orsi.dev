@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import './header.component.css';
 import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
-import { AutomataService } from '../../services/automata.service';
 
 export class HeaderComponent extends Component {
-  automataService;
-  componentDidMount() {
-    this.automataService = new AutomataService(document.querySelector('#life-container'));
-    this.automataService.start();
-  }
-  componentWillUnmount() {
-    this.automataService.stop();
-  }
   render() {
     return (
       <div className="home h-100 flex justify-content-center align-items-center flex-column h-100">
@@ -20,9 +11,6 @@ export class HeaderComponent extends Component {
             <span className="jonathon">Jonathon</span>
             <span className="orsi">Orsi</span>
           </h1>
-        </div>
-        <div id="life-box">
-          <div id="life-container"></div>
         </div>
         <nav className="home__nav">
           <ul className="home__links-list list-unstyled">

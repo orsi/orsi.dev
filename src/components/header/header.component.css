@@ -1,63 +1,26 @@
 .home {
     position: relative;
-    margin-top: 48px;
+    padding-top: 32px;
 }
 .home-title {
-    margin-bottom: 36px;
-}
-.home h1 {
-    margin: 0;
-    color: hsla(220, 20%, 10%, 1);
-    line-height: 1;
-    text-align: left;
-    text-transform: uppercase;
-}
-.home h1 .jonathon {
-    color: hsla(350, 17%, 37%, 1);
-    font-weight: 300;
-}
-.home h1 .orsi {
-    color: hsla(221, 17%, 37%, 1);
-    font-weight: 900;
-}
-.home h2 {
-    margin: 0;
-    color: hsla(220, 20%, 20%, 1);
-    font-size: 1.2em;
-    text-align: left;
-    text-transform: uppercase;
-}
-
-.home__links-item {
-    margin-bottom: 8px;
+    margin-bottom: 32px;
 }
 
 .link,
 .link:link,
 .link:visited {
-    display: inline-flex;
     align-items: center;
-    padding: 0 16px;
+    display: flex;
+    padding: 8px 0;
     color: inherit;
-    text-align: center;
     text-decoration: none;
-    border-radius: 32px;
-    transition: all .2s ease;
 }
 .link-icon {
-    display: inline-block;
-    padding-top: 3px;
-    line-height: 1;
-    white-space: nowrap;
     color: hsla(222, 14%, 44%, 1);
+    display: inline-block;
+    line-height: 1;
 }
 .link-text {
     display: inline-block;
     margin-left: 16px;
-}
-
-@media (min-width: 768px) {
-    .home__links-item {
-        display: inline-block;
-    }
 }

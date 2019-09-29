@@ -4,7 +4,6 @@ import './app.component.css';
 import * as FaviconService from './services/favicon.service.js';
 import { HeaderComponent } from './components/header/header.component.js';
 import { AboutComponent } from './components/about/about.component.js';
-import { WorkComponent } from './components/work/work.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
 import { ResumeComponent } from './components/resume/resume.component.js';
 import { AutomataService } from './services/automata.service';
@@ -20,11 +19,6 @@ class AppComponent extends Component {
       name: 'about',
       path: '/about',
       component: AboutComponent
-    },
-    {
-      name: 'work',
-      path: '/work',
-      component: WorkComponent
     },
     {
       name: 'projects',
@@ -56,9 +50,6 @@ class AppComponent extends Component {
         </section>
         <section id="about" className="app-section">
           <AboutComponent></AboutComponent>
-        </section>
-        <section id="work" className="app-section">
-          <WorkComponent></WorkComponent>
         </section>
         <section id="projects" className="app-section">
           <ProjectsComponent></ProjectsComponent>

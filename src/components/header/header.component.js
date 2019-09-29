@@ -17,12 +17,6 @@ export class HeaderComponent extends Component {
                   </a>
                 </li>
                 <li className="home-links-item">
-                  <a className="link link--work" href="#work">
-                    <span className="link-icon"><MdWork /></span>
-                    <span className="link-text">Work</span>
-                  </a>
-                </li>
-                <li className="home-links-item">
                   <a className="link link--projects" href="#projects">
                     <span className="link-icon"><MdCode /></span>
                     <span className="link-text">Projects</span>

@@ -64,7 +64,6 @@
 }
 .resume .experience-title {
     display: inline-block;
-    font-style: italic;
     margin-bottom: 8px;
 }
 .resume .experience-list-item,
@@ -72,14 +71,15 @@
 .resume .projects-list-item {
     margin-bottom: 48px !important;
 }
-.resume .experience-tasks-list {
-	position: relative;
-	list-style: none;
+.resume .experience-highlight {
+    font-size: 14px;
+    font-style: italic;
 	margin-left: 0;
 	padding-left: 1.2em;
+	position: relative;
 }
-.resume .experience-tasks-list-item:before {
-	content: "+";
+.resume .experience-highlight:before {
+	content: "*";
 	position: absolute;
 	left: 0;
 }

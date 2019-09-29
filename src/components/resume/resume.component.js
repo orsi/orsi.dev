@@ -52,7 +52,7 @@ export class ResumeComponent extends Component {
                 About
               </h2>
               <div className="section-body">
-                <p>I am a full-stack web developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
+                <p>I am a software developer committed to responsive and intuitive user experiences. At Bombardier Aerospace, I digitize current QA business processes into enterprise web applications. I continually learn and experiment with emerging web technologies and open-source platforms.</p>
               </div>
             </section>
 
@@ -67,21 +67,21 @@ export class ResumeComponent extends Component {
                   <li className="skills-list-item">
                     <div className="flex-m">
                       <h3 className="skills-title section-title mr-8">Languages</h3>
-                      <span className="flex-m-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL</span>
+                      <span className="flex-m-shrink">HTML5, CSS/SASS/LESS, Javascript, Typescript, C#, T-SQL, Rust</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
                     <div className="flex-m">
-                      <h3 className="skills-title section-title mr-8">Front-end Frameworks/Libraries</h3>
+                      <h3 className="skills-title section-title mr-8">Front-end</h3>
                       <span className="flex-m-shrink">AngularJS/Angular, Angular Material, Webpack, React, Bootstrap, Kendo UI, jQuery, Razor templates</span>
                     </div>
                   </li>
 
                   <li className="skills-list-item">
                     <div className="flex-m">
-                      <h3 className="skills-title section-title mr-8">Back-end Frameworks/Libraries</h3>
-                      <span className="flex-m-shrink">.NET Web Api, .NET MVC, ASP.NET SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
+                      <h3 className="skills-title section-title mr-8">Back-end</h3>
+                      <span className="flex-m-shrink">.NET Web Api, .NET MVC, SignalR, Entity Framework, Node.js, npm, Express, Mongoose</span>
                     </div>
                   </li>
 
@@ -124,38 +124,27 @@ export class ResumeComponent extends Component {
               </h2>
               <div className="section-body">
                 <ul className="experience-list list-unstyled">
-
                   <li className="experience-list-item">
-                    <time className="experience-time">June 2017 ➔ Present</time>
+                    <time className="experience-time">June 2019 ➔ Present</time>
+                    <div className="flex-m">
+                      <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
+                      <span className="experience-title">Senior Software Developer</span>
+                    </div>
+                    <p className="experience-description">Manage and guide the development platform used by many quality and production teams within the Bombardier De Havilland facility. Responsibilities include collaborating with teams to understand and improve business processes, training and project managing junior developers and student interns, and improving overall development experience.</p>
+                    <div className="experience-highlight">
+                      Project managed junior developers and ensured the successful development and publishing of a scheduling application. Improved new web application development by reducing build-time from <em>several minutes to seconds</em>.
+                    </div>
+                  </li>
+                  <li className="experience-list-item">
+                    <time className="experience-time">June 2017 ➔ May 2019</time>
                     <div className="flex-m">
                       <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
                       <span className="experience-title">Full Stack Developer</span>
                     </div>
-                    <p className="experience-description">Design and develop enterprise-level web applications which digitize production floor and quality assurance workflows currently used to build the Global 5000/6500/7500/8000, Q Series, C Series, and Lear aircraft.</p>
-                    <ul className="experience-tasks-list">
-                      <li className="experience-tasks-list-item">
-                        <span>Research and understand business workflow processes, identify functional requirements, outline project scope, timeline, and milestones, and create <em>Software Requirement Sheets</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Design database schemas, workflow diagrams, and use case scenario models in <em>MS Visio</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Import, normalize, and organize data from multiple internal data sources through <em>SSIS and C# console applications</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Design user interface mockups and wireframe with <em>Adobe Photoshop and Illustrator</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Develop efficient and performant database queries on millions of records accessed via <em>Entity Framework</em> and RESTful apis in <em>C# .NET Web API framework</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Develop rich and intuitive user interfaces which display large datasets and complex workflows using <em>Angular 7, SASS, and Typescript</em></span>
-                      </li>
-
-                      <li className="experience-tasks-list-item">
-                        <span>Create, teach, and review <em>coding standards and best practices</em> for interns and junior developers on team</span>
-                      </li>
-                    </ul>
+                    <p className="experience-description">Develop, design, and maintain 6 enterprise-level web applications, 12 web reports, and 24 SSIS packages for teams producing the Global series aircraft.</p>
+                    <div className="experience-highlight">
+                      Modernized multiple web applications to improve performance and separate back-end/front-end concerns by converting <em>.NET MVC/Razor</em> applications to <em>.NET Web API/AngularJS</em>
+                    </div>
                   </li>
 
                   <li className="experience-list-item">
@@ -164,21 +153,8 @@ export class ResumeComponent extends Component {
                       <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
                       <span className="experience-title">Intern - Front End Developer</span>
                     </div>
-                    <p className="experience-description">Developed and maintained web applications used by quality assurance team members to track and organize timelines, reports, and general tasks.</p>
-                    <ul className="experience-tasks-list">
-                      <li className="experience-tasks-list-item">
-                        <span>Maintained and supported production web applications through an internal <em>ticketing system</em>, <em>git</em>, and source code changes to <em>C# (.NET MVC), Razor templates, HTML, CSS, and Javascript (jQuery)</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Developed a real-time updated browser-based scrum board application to aide with general task management utilizing <em>ASP.NET SignalR, and jQuery UI</em></span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Redesigned UI/UX for dozens of internal web applications to improve visual consistency and user experience</span>
-                      </li>
-                      <li className="experience-tasks-list-item">
-                        <span>Modernized multiple web applications to improve performance and separate back-end/front-end concerns by converting <em>.NET MVC/Razor</em> applications to <em>.NET Web API/AngularJS</em></span>
-                      </li>
-                    </ul>
+                    <p className="experience-description">Maintained web applications used by quality assurance team members to track and organize timelines, reports, and general tasks.</p>
+                    <div className="experience-highlight">Created a drag-and-drop digital scrum-board web application for teams to organize and easily share tasks and ideas. Technologies included <em>C# .NET MVC, SignalR, and jQuery UI</em>.</div>
                   </li>
 
                 </ul>

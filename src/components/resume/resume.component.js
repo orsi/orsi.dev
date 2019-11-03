@@ -190,46 +190,6 @@ export class ResumeComponent extends Component {
               </div>
             </section>
 
-            <section className="resume-projects">
-              <h2>
-                <span className="section-icon rotate-clockwise"><MdCode /></span>
-                Projects
-              </h2>
-              <div className="section-body">
-                <ul className="projects-list list-unstyled">
-
-                <li className="projects-list-item">
-                    <div className="flex-m">
-                      <h3 className="projects-title section-title mr-8">Betical</h3>
-                      <a className="projects-url"
-                        href="http://www.screencanadianelit.ca/betical">http://www.screencanadianelit.ca/betical</a>
-                      </div>
-                    <p className="projects-description">A born-digital paragraph generator composed with remixed typed assemblage-letters.</p>
-                  </li>
-
-                  <li className="projects-list-item">
-                    <div className="flex-m">
-                      <h3 className="projects-title section-title mr-8">Humble Roots Media</h3>
-                      <a className="projects-url"
-                        href="http://www.humblerootsmedia.com">http://www.humblerootsmedia.com</a>
-                      </div>
-                    <p className="projects-description">Digital content creators based in Hamilton, Ontario.</p>
-                  </li>
-
-                  <li className="projects-list-item">
-                    <div className="flex-m">
-                      <h3 className="projects-title section-title mr-8">Zen HTML</h3>
-                      <a className="projects-url"
-                        href="https://github.com/jorsi/zen-html">https://github.com/jorsi/zen-html</a>
-                      </div>
-                    <p className="projects-description">An html templating library heavily-inspired by Google Polymer team's lit-html.</p>
-                  </li>
-
-
-                </ul>
-              </div>
-            </section>
-
           </main>
 
         </div>

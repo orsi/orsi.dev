@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './projects.component.css';
 import 'betical';
+import imageDeno from '../../assets/deno-logo.svg';
+import imagePaperMountainPost from '../../assets/paper-mountain-post.png';
 import imageHumbleRootsMedia from '../../assets/humble-roots-media.png';
 import imageZenHtml from '../../assets/zen-html.png';
 import imageReverie from '../../assets/reverie.png';
@@ -11,6 +13,31 @@ export class ProjectsComponent extends Component {
             <div className="projects">
                 <div className="container">
                     <h2>Projects</h2>
+
+                    <div className="project project--deno">
+
+                        <h4><a href="https://deno.land/">Deno</a></h4>
+                        <div className="project-image-container">
+                            <img src={imageDeno}
+                                style={ {width: '80px' }}/>
+                        </div>
+                        <div className="project-description">
+                            <p>From the creator of NodeJS, Ryan Dahl, Deno is a JavaScript/TypeScript runtime with secure defaults built on V8, Rust, and Tokio. I started and contributed towards the <a href="https://github.com/denoland/deno/commits?author=jorsi">Rust and Typescript TLS features</a>.</p>
+                        </div>
+                    </div>
+
+                    <div className="project project--paper-mountain-post">
+
+                        <h4><a href="http://www.papermountainpostltd.com/">Paper Mountain Post</a></h4>
+                        <div className="project-image-container">
+                            <img src={imagePaperMountainPost}
+                                style={ {width: '80px' }}/>
+                        </div>
+                        <div className="project-description">
+                            <p>Paper Mountain Post services feature film, episodic web and television, and virtual reality, at both the independent and studio level. I redesigned and created a custom Squarespace theme which they could update and maintain.</p>
+                        </div>
+
+                    </div>
 
                     <div className="project project--betical">
 

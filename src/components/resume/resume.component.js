@@ -125,7 +125,7 @@ export class ResumeComponent extends Component {
               <div className="section-body">
                 <ul className="experience-list list-unstyled">
                   <li className="experience-list-item">
-                    <time className="experience-time">June 2019 ➔ Present</time>
+                    <time className="experience-time">June 2019 ➔ February 2020</time>
                     <div className="flex-m">
                       <h3 className="experience-company section-title mr-8">Bombardier Aerospace</h3>
                       <span className="experience-title">Senior Software Developer</span>

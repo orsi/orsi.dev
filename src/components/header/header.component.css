@@ -2,7 +2,7 @@
 .link:link,
 .link:visited {
     align-items: center;
-    display: flex;
+    display: inline-flex;
     padding: 8px 0;
 }
 .link-icon {

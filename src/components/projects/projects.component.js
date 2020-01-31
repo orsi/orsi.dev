@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './projects.component.css';
 import 'betical';
 import imageDeno from '../../assets/deno-logo.svg';
-import imagePaperMountainPost from '../../assets/paper-mountain-post.png';
-import imageHumbleRootsMedia from '../../assets/humble-roots-media.png';
-import imageZenHtml from '../../assets/zen-html.png';
-import imageReverie from '../../assets/reverie.png';
+import imageBetical from '../../assets/betical.png';
 
 export class ProjectsComponent extends Component {
     render() {
@@ -21,7 +18,7 @@ export class ProjectsComponent extends Component {
                         </h4>
                         <div className="project-description">
                             <p>
-                            <a href="https://codex.jonorsi.com/"
+                            <a href="https://jonorsi.com/code-x"
                                 target="_blank">Code X</a> is an interactive exploration of text, image and sound. Conceptualized in 1999 during a residency at the Visual Studies Workshop in Rochester, New York by <a href="https://www.wmarksutherland.com/code-x" target="_blank">W. Mark Sutherland</a>. Orginally coded in Adobe Flash, Mark reached out to develop a newer version of Code X built with supported technology. I recreated Code X for the browser using the Web Audio API.
                             </p>
                         </div>
@@ -42,8 +39,12 @@ export class ProjectsComponent extends Component {
                     <div className="project project--betical">
 
                         <h4>Betical</h4>
+                        <div className="project-image-container">
+                            <img src={imageBetical}
+                                style={ {width: '80px' }}/>
+                        </div>
                         <div className="project-description">
-                            <p>A born-digital paragraph generator composed with remixed typed assemblage-letters by Dani Spinosa of <a href="https://genericpronoun.com/" target="_blank">Generic Pronoun</a>. Using Dani's letters with a combination of javascript and jQuery, Betical generates random combinations of letters into words, and words into paragraphs, to give the impression of a familiar language.</p>
+                            <p><a href="https://jonorsi.com/betical" target="_blank">Betical</a> is born-digital paragraph generator composed with remixed typed assemblage-letters by Dani Spinosa of <a href="https://genericpronoun.com/" target="_blank">Generic Pronoun</a>. A randomly generated combination of letters turn into words, words into paragraphs, and the reader is left with the impression of a familiar language.</p>
                         </div>
                         {/* <div className="project-image-container">
                             <bet-ical></bet-ical>

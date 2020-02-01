@@ -1,36 +1,54 @@
-import React, { Component } from 'react';
 import './header.component.css';
-import { MdHelp, MdWork, MdCode, MdDescription } from 'react-icons/md';
+import React, { Component } from 'react';
+import { FaLinkedin } from 'react-icons/fa';
+import { GoMarkGithub } from 'react-icons/go';
+import { MdEmail } from 'react-icons/md';
 
 export class HeaderComponent extends Component {
   render() {
     return (
-      <div className="home">
-        <div className="container">
-          <h1>Jonathon Orsi</h1>
-          <nav className="home-nav">
-            <ul className="home-links-list list-unstyled">
-                <li className="home-links-item">
-                  <a className="link link--about" href="#about">
-                    <span className="link-icon"><MdHelp /></span>
-                    <span className="link-text">About</span>
-                  </a>
-                </li>
-                <li className="home-links-item">
-                  <a className="link link--projects" href="#projects">
-                    <span className="link-icon"><MdCode /></span>
-                    <span className="link-text">Projects</span>
-                  </a>
-                </li>
-                <li className="home-links-item">
-                  <a className="link link--resume" href="#resume">
-                    <span className="link-icon"><MdDescription /></span>
-                    <span className="link-text">Resume</span>
-                  </a>
-                </li>
-            </ul>
-          </nav>
-        </div>
+      <div id="home">
+        <h1 id="jonathon-orsi">Jonathon Orsi</h1>
+
+        <ul className="media-list">
+          <li className="media-list-item">
+            <a href="mailto:jonathon.orsi@gmail.com">
+              <MdEmail />
+            </a>
+          </li>
+          <li className="media-list-item">
+            <a href="https://github.com/jorsi"
+              target="_blank">
+              <GoMarkGithub />
+            </a>
+          </li>
+          <li className="media-list-item">
+            <a href="https://www.linkedin.com/in/jonorsi/"
+              target="_blank">
+              <FaLinkedin />
+            </a>
+          </li>
+        </ul>
+
+        <nav id="navigation-main">
+          <ul className="navigation-list">
+            <li className="navigation-list-item">
+              <a href="#about">
+                About
+              </a>
+            </li>
+            <li className="navigation-list-item">
+              <a href="#projects">
+                Projects
+              </a>
+            </li>
+            <li className="navigation-list-item">
+              <a href="#work">
+                Work
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     );
   }

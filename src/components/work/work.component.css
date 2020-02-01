@@ -1,95 +1,56 @@
-.resume {
-    margin-top: 64px;
-    line-height: 1.5;
-    color: #3a3a3a;
+.works-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
 }
-.resume a,
-.resume a:hover,
-.resume a:active,
-.resume a:visited {
-    color: inherit;
+.works-list-item {
+
 }
-.resume em {
-    color: black;
+.works-list-item:not(:first-of-type) {
+    margin-top: 24px;
+}
+
+.work-company {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.positions-list {
+    list-style: none;
+    margin: 16px auto 0 auto;
+    padding: 0;
+}
+.positions-list-item:not(:first-of-type) {
+    margin-top: 16px;
+}
+    .positions-list-item {
+        position: relative;
+        margin: 0;
+        padding-left: 20px;
+    }
+    .positions-list-item:before {
+        content: '';
+        background-color: #ddd;
+        position: absolute;
+        bottom: 0px;
+        top: 0px;
+        left: 6px;
+        width: 3px;
+    }
+.position-title {
+    font-size: 16px;
     font-weight: 700;
-    font-style: normal;
+    margin: 0 auto;
+    line-height: 1;
 }
-.resume p {
-    margin: 0 0 8px 0;
+.work-duration,
+.position-time {
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
 }
-.resume section {
-    margin-bottom: 36px;
-}
-.resume h1 {
-    margin: 0 0 24px 0;
-}
-.resume h2 {
-    margin: 0 0 16px 0;
-}
-.resume ul > li {
-    margin-bottom: 8px;
-}
-.resume time {
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* generic classes */
-.resume .resume-header {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid hsla(0, 25%, 25%, .2);
-}
-.resume .section-icon {
-    display: inline-block;
-    margin-right: 16px;
-    line-height: 1.24;
-    vertical-align: bottom;
-}
-.resume .section-title {
-    flex: 0 0 180px;
-    margin: 0 0 8px 0;
-    color: black;
-    font-size: 1em;
-    font-weight: 600;
-}
-
-/* named element classes */
-.resume .resume-contact {
+.position-description {
+    font-size: 16px;
+    line-height: 1.4;
     margin: 0;
-}
-.resume .contacts-list-item > *:first-child {
-    margin-right: 16px;
-}
-.resume .experience-title {
-    display: inline-block;
-    margin-bottom: 8px;
-}
-.resume .experience-list-item,
-.resume .education-list-item,
-.resume .projects-list-item {
-    margin-bottom: 48px !important;
-}
-.resume .experience-highlight {
-    font-size: 14px;
-    font-style: italic;
-	margin-left: 0;
-	padding-left: 1.2em;
-	position: relative;
-}
-.resume .experience-highlight:before {
-	content: "*";
-	position: absolute;
-	left: 0;
-}
-
- /* atomic classes */
-.resume .list-unstyled > li {
-    margin-bottom: 16px;
-}
-.resume .flex-shrink {
-    flex: 0 1 auto;
-}
-.resume .mr-8 {
-    margin-right: 8px !important;
 }

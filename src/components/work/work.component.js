@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
-import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdCode } from 'react-icons/md';
-import { GoMarkGithub } from 'react-icons/go';
 import './work.component.css';
+import React, { Component } from 'react';
+import { GoMarkGithub } from 'react-icons/go';
+import { 
+  MdEmail, 
+  MdPhone, 
+  MdHome, 
+  MdHelpOutline, 
+  MdSettings, 
+  MdWork, 
+  MdSchool
+} from 'react-icons/md';
 
 export class WorkComponent extends Component {
 

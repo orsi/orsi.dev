@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
 import './styles.css';
 import './app.component.css';
+import React, { Component } from 'react';
 import * as FaviconService from './services/favicon.service.js';
+import { AutomataService } from './services/automata.service';
 import { HeaderComponent } from './components/header/header.component.js';
 import { AboutComponent } from './components/about/about.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
 import { WorkComponent } from './components/work/work.component.js';
-import { AutomataService } from './services/automata.service';
 
 class AppComponent extends Component {
   automataService;

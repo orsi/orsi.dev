@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import './about.component.css';
+import React, { Component } from 'react';
 
 export class AboutComponent extends Component {
     constructor() {

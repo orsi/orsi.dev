@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
 import './projects.component.css';
-import 'betical';
+import React, { Component } from 'react';
 import imageDeno from '../../assets/deno-logo.svg';
 import imageBetical from '../../assets/betical.png';
 

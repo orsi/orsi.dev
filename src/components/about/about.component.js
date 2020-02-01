@@ -30,7 +30,7 @@ export class AboutComponent extends Component {
                     </div>
 
                     <div className="currently">
-                        I am currently looking for new work and taking digital media design courses at OCAD University. If you are looking for a developer, <a href="mailto:jonathon.orsi@gmail.com">let me know.</a>
+                        I am currently looking for new work. If you are looking for a developer, <a href="mailto:jonathon.orsi@gmail.com">let me know.</a>
                     </div>
                 </div>
             </div>

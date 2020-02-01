@@ -23,7 +23,7 @@
 @media (min-width: 768px) {
     .section {
         position: relative;
-        padding-top: 24px;
+        padding-top: 48px;
     }
     .section-title {
         color: rgba(0,0,0,.04);

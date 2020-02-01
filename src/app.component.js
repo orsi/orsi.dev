@@ -21,19 +21,27 @@ class AppComponent extends Component {
 
   render() {
     return (
-      <main>
+      <main className="app">
         <div id="life-container"></div>
-        <section id="top" className="app-section">
+        <section id="top" 
+          className="section">
           <HeaderComponent></HeaderComponent>
         </section>
-        <section id="about" className="app-section">
+        <section id="about" 
+          className="section">
+          <h2 className="section-title">About</h2>
           <AboutComponent></AboutComponent>
         </section>
-        <section id="projects" className="app-section">
+        <section id="projects" 
+          className="section">
+          <h2 className="section-title">Projects</h2>
           <ProjectsComponent></ProjectsComponent>
         </section>
-        <section id="work" className="app-section"></section>
+        <section id="work" 
+          className="section">
+          <h2 className="section-title">Work</h2>
           <WorkComponent></WorkComponent>
+        </section>
       </main>
     );
   }

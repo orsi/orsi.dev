@@ -7,9 +7,6 @@ export class WorkComponent extends Component {
     return (
       <div className="resume">
         <div className="container">
-          
-          <h2>Work</h2>
-
           <ul className="works-list">
       
             <li className="works-list-item">

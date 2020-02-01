@@ -8,8 +8,6 @@ export class ProjectsComponent extends Component {
         return (
             <div className="projects">
                 <div className="container">
-                    <h2>Projects</h2>
-
                     <div className="project project--deno">
 
                         <h4 className="code-x">

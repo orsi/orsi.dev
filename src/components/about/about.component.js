@@ -17,7 +17,6 @@ export class AboutComponent extends Component {
             <div className="about">
                 <div className="container">
                     <div className="about-description">
-                        <h2 className="about-title">About</h2>
                         <p>
                             <em>Hello!</em> I am Jonathon Orsi, a software developer in Toronto, Canada. I specialize in web development and user experience.
                         </p>

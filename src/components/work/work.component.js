@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { MdEmail, MdPhone, MdHome, MdHelpOutline, MdSettings, MdWork, MdSchool, MdCode } from 'react-icons/md';
 import { GoMarkGithub } from 'react-icons/go';
-import './resume.component.css';
+import './work.component.css';
 
-export class ResumeComponent extends Component {
+export class WorkComponent extends Component {
 
   render() {
     return (

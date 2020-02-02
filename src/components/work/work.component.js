@@ -25,7 +25,7 @@ export class WorkComponent extends Component {
                 </li>
 
                 <li className="positions-list-item">
-                  <h3 className="position-title">Intern - Front End Developer</h3>
+                  <h3 className="position-title">Front End Developer</h3>
                   <time className="position-time">October 2016 ➔ May 2017, 9 months</time>
                 </li>
 

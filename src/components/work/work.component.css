@@ -54,3 +54,15 @@
     line-height: 1.4;
     margin: 0;
 }
+.position-stack {
+    display: flex;
+    font-variant: small-caps;
+    margin-top: 8px;
+}
+.position-stack .label {
+    font-weight: 600;
+    margin-right: 16px;
+}
+.position-stack .tech {
+    font-weight: 300;
+}

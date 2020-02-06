@@ -8,7 +8,6 @@ export class SkillsComponent extends Component {
     render() {
         return (
             <div className="skills">
-                <div className="container">
                 <div className="skills-container">
                     <h4 className="skills-title">Languages</h4>
                     <ul className="skills-list">
@@ -132,7 +131,6 @@ export class SkillsComponent extends Component {
                             git
                         </li>
                     </ul>
-                </div>
                 </div>
             </div>
         );

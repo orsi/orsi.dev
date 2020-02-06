@@ -6,7 +6,6 @@ export class WorkComponent extends Component {
   render() {
     return (
       <div className="resume">
-        <div className="container">
           <ul className="works-list">
       
             <li className="works-list-item">
@@ -18,10 +17,6 @@ export class WorkComponent extends Component {
                   <h3 className="position-title">Senior Software Developer</h3>
                   <time className="position-time">June 2019 ➔ February 2020, 8 months</time>
                   <p className="position-description">Build and maintain enterprise-level applications that aide Bombardier quality and production teams. Project lead junior developers.</p>
-                  <div className="position-stack">
-                    <span className="label">Tech</span>
-                    <span className="tech">C#, .NET MVC/WebAPI, AngularJS/Angular, Typescript, Entity Framework, NodeJS/NPM, MS SQL Server, jQuery, Bootstrap, Material</span>
-                    </div>
                 </li>
                 <li className="positions-list-item">
                   <h3 className="position-title">Full Stack Developer</h3>
@@ -45,7 +40,6 @@ export class WorkComponent extends Component {
             </li>
 
           </ul>
-        </div>
       </div>
     );
   }

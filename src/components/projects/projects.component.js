@@ -7,7 +7,6 @@ export class ProjectsComponent extends Component {
     render() {
         return (
             <div className="projects">
-                <div className="container">
                     <div className="project project--deno">
 
                         <h4 className="code-x">
@@ -62,7 +61,6 @@ export class ProjectsComponent extends Component {
                             <p>Reverie is a disc-world generator written with Nodejs. After being fascinated by the immense complexity of <a href="http://www.bay12games.com/dwarves/">Dwarf Fortress</a>, I wanted to experiment with world generation myself.</p>
                         </div>
                     </div> */}
-                </div>
             </div>
         );
     }

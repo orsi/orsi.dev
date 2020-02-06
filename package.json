@@ -1,29 +1,40 @@
 {
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
   "name": "jonorsi.com",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "betical": "^1.1.5",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-icons": "^3.4.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "react-transition-group": "^2.5.3"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --mode development --hot --open",
+    "build": "webpack --mode production"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-react": "7.8.3",
+    "babel-loader": "8.0.6",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "3.4.2",
+    "file-loader": "5.0.2",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "4.13.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-icons": "3.9.0",
+    "react-router-dom": "5.1.2",
+    "sass-loader": "8.0.2",
+    "webpack": "4.41.5",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.3"
+  }
 }

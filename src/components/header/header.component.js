@@ -33,8 +33,8 @@ export class HeaderComponent extends Component {
         <nav id="navigation-main">
           <ul className="navigation-list">
             <li className="navigation-list-item">
-              <a href="#about">
-                About
+              <a href="#skills">
+                Skills
               </a>
             </li>
             <li className="navigation-list-item">

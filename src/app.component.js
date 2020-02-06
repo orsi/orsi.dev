@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component.js';
 import { AboutComponent } from './components/about/about.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
 import { WorkComponent } from './components/work/work.component.js';
+import { SkillsComponent } from './components/skills/skills.component';
 
 class AppComponent extends Component {
   automataService;
@@ -36,6 +37,11 @@ class AppComponent extends Component {
           className="section">
           <h2 className="section-title">Projects</h2>
           <ProjectsComponent></ProjectsComponent>
+        </section>
+        <section id="skills" 
+          className="section">
+          <h2 className="section-title">Skills</h2>
+          <SkillsComponent></SkillsComponent>
         </section>
         <section id="work" 
           className="section">

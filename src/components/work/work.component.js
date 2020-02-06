@@ -20,7 +20,7 @@ export class WorkComponent extends Component {
                   <p className="position-description">Build and maintain enterprise-level applications that aide Bombardier quality and production teams. Project lead junior developers.</p>
                   <div className="position-stack">
                     <span className="label">Tech</span>
-                    <span className="tech">C#, .NET MVC/WebAPI, AngularJS/Angular, Typescript, Entity Framework, NodeJS/NPM, MS SQL Server, jQuery</span>
+                    <span className="tech">C#, .NET MVC/WebAPI, AngularJS/Angular, Typescript, Entity Framework, NodeJS/NPM, MS SQL Server, jQuery, Bootstrap, Material</span>
                     </div>
                 </li>
                 <li className="positions-list-item">

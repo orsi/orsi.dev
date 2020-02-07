@@ -1,10 +1,11 @@
-import './main.css';
+import './main.scss';
+import './layout.scss';
 import React, { Component } from 'react';
 import * as FaviconService from './services/favicon.service.js';
 import { HeaderComponent } from './components/header/header.component.js';
 import { ProjectsComponent } from './components/projects/projects.component.js';
-import { WorkComponent } from './components/work/work.component.js';
 import { SkillsComponent } from './components/skills/skills.component';
+import { WorkComponent } from './components/work/work.component.js';
 
 class AppComponent extends Component {
   componentDidMount() {
@@ -33,28 +34,23 @@ class AppComponent extends Component {
         <section id="top">
           <HeaderComponent></HeaderComponent>
         </section>
-        
-        <div className="container">
 
-          <section id="projects" 
-            className="section">
-            <h2 className="section-title">Projects</h2>
-            <ProjectsComponent></ProjectsComponent>
-          </section>
+        <section id="projects" 
+          className="section projects">
+          <ProjectsComponent></ProjectsComponent>
+        </section>
 
-          <section id="skills" 
-            className="section">
-            <h2 className="section-title">Skills</h2>
-            <SkillsComponent></SkillsComponent>
-          </section>
+        <section id="skills" 
+          className="section skills">
+          <h2 className="section-title">Skills</h2>
+          <SkillsComponent></SkillsComponent>
+        </section>
 
-          <section id="work" 
-            className="section">
-            <h2 className="section-title">Work</h2>
-            <WorkComponent></WorkComponent>
-          </section>
-
-        </div>
+        <section id="work" 
+          className="section experience">
+          <h2 className="section-title">Work</h2>
+          <WorkComponent></WorkComponent>
+        </section>
       </main>
     );
   }

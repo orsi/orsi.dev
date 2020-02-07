@@ -1,4 +1,4 @@
-import './work.component.css';
+import './work.scss';
 import React, { Component } from 'react';
 
 export class WorkComponent extends Component {

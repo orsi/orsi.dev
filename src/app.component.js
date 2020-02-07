@@ -30,8 +30,7 @@ class AppComponent extends Component {
     return (
       <main className="app">
         
-        <section id="top" 
-          className="section">
+        <section id="top">
           <HeaderComponent></HeaderComponent>
         </section>
         

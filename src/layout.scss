@@ -18,20 +18,40 @@
 .flex {
     display: flex;
 }
+.align-items-center {
+    align-items: center;;
+}
+.justify-content-center {
+    justify-content: center;;
+}
 .row-reverse {
     flex-direction: row-reverse;
-}
-@media (min-width:568px) {
-    .sm-flex {
-        display: flex;
-    }
-}
-@media (min-width:768px) {
-    .md-flex {
-        display: flex;
-    }
 }
 
 .mt-16 {
     margin-top: 16px;
+}
+
+@media (min-width:568px) {
+    .sm-flex {
+        display: flex;
+    }
+    .sm-ml-16 {
+        margin-left: 16px;
+    }
+    .sm-mr-16 {
+        margin-right: 16px;
+    }
+    .sm-pl-16 {
+        padding-left: 16px;
+    }
+    .sm-pr-16 {
+        padding-right: 16px;
+    }
+}
+
+@media (min-width:768px) {
+    .md-flex {
+        display: flex;
+    }
 }

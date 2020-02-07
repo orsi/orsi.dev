@@ -19,11 +19,11 @@ body {
 a,
 a:link,
 a:visited {
-    color: hsl(230, 60%, 50%);
+    color: inherit;
 }
 a:active,
 a:focus {
-    color: hsl(230, 60%, 70%);
+    color: inherit;
 }
 canvas {
     display: block;

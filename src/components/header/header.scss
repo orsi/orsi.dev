@@ -1,14 +1,7 @@
 #header {
     position: relative;
     
-    a {
-        color: white;
-    }
-        
     #hero-background {
-        background: #757F9A;
-        background: -webkit-linear-gradient(#002042 5%, #131313);
-        background: linear-gradient(#002042 5%, #131313);
         position: absolute;
         top: 0;
         left: 0;
@@ -21,13 +14,12 @@
     }
 
     .hero {
-        color: #fafafa;
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: 0 auto;
         max-width: 720px;
-        padding: 64px 16px 160px 16px;
+        padding: 64px 16px;
         position: relative;
     }
 
@@ -58,15 +50,6 @@
     }
     .media-list-item:not(:first-of-type) {
         margin-left: 32px;
-    }
-    .media-list-item a.red {
-        color: #b79393;
-    }
-    .media-list-item a.green {
-        color: #94bda6;
-    }
-    .media-list-item a.blue {
-        color: #adc6e6;
     }
 
     .navigation-main {
@@ -99,7 +82,7 @@
         left: 0;
         width: 0px;
         height: 1px;
-        background-color: white;
+        background-color: currentColor;
         transition: width .3s;
     }
     .navigation-list-item a:hover::after {

@@ -1,16 +1,14 @@
 #projects {
+    padding: 32px 0;
 
+    .section-title {
+        text-align: center;
+        padding-top: 24px;
+    }
     .project {
-        padding-top: 32px;
-    }
-    .project-container {
-        margin: 0 auto;
-        max-width: 720px;
-        padding: 16px;
-    }
-    .project-media,
-    .project-content {
-        padding: 0 8px;
+        &:not(:first-of-type) {
+            margin-top: 96px;
+        }
     }
     .project-title {
         font-family: 'IBM Plex Mono', monospace;
@@ -23,63 +21,57 @@
     .project-button {
         align-items: center;
         color: inherit;
-        display: inline-flex;
-        position: relative;
+        display: flex;
+        font-size: 13.3px;
+        font-variant: small-caps;
+        margin-top: 16px;
+        opacity: .8;
         text-decoration: none;
-        .arrow,
-        .box {
-            border-radius: 50%;
-            display: inline-block;
-            height: 30px;
-            width: 30px;
-        }
-        .arrow {
-            border: 4px solid black;
-            left: 0;
-            position: absolute;
-            text-align: center;
-            top: 0;
-            transition: transform .2s;
-            transform: translate(-4px, 0);
-        }
-        &:hover .arrow {
-            transform: translate(0,0);
-        }
-        .box {
-            border: 4px solid white;
-        }
-        .text {
+        text-transform: uppercase;
+        span {
             margin-left: 16px;
         }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .project-media img {
+        display: block;
     }
 
     .project.code-x {
-        background-color: #131313;
-        color: #fafafa;
         .project-media {
             flex: 0 0 240px;
             margin: 0 auto;
-            max-width: 240px;
         }
         .project-media img {
             border-radius: 3px;
         }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
     }
 
     .project.deno {
-        background: linear-gradient(#131313, #7a032b 96px);
-        color: #fafafa;
-        padding-top: 96px;
         .project-title {
             align-items: center;
             display: flex;
         }
         .project-media {
-            flex: 0 0 20%;
+            flex: 0 0 240px;
+            margin: 0 auto;
+            max-width: 240px;
         }
         .project-media svg {
             max-width: 300px;
-            fill: #fafafa;
+            fill: currentColor;
+        }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
         }
 
         .deno-eyes {
@@ -105,28 +97,27 @@
     }
 
     .project.betical {
-        background: linear-gradient(#7a032b, #0a2239 96px);
-        color: #fafafa;
-        padding-top: 96px;
         .project-media {
-            flex: 0 0 50%;
+            flex: 0 0 40%;
         }
         .project-media img {
             border-radius: 3px;
         }
-        @media (min-width: 568px) {
-            text-align: right;
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
         }
     }
     .project.humble-roots-media {
-        background: linear-gradient(#0a2239, #0d3051 96px);
-        color: #fafafa;
-        padding-top: 96px;
         .project-media {
             flex: 0 0 20%;
         }
         .project-media img {
             border-radius: 3px;
+        }
+        .project-content {
+            margin-top: 16px;
         }
     }
 }

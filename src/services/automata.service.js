@@ -4,6 +4,7 @@ export class AutomataService {
     container;
     context;
     cellSize = 3;
+    fadeOut;
     fps = 12;
     fpsMs = 1000 / this.fps;
     grid;
@@ -12,7 +13,8 @@ export class AutomataService {
     isRunning = false;
     lastRender = new Date().getTime();
     lastTick = new Date().getTime();
-    constructor(element) {
+    constructor(element, fadeOut = false) {
+        this.fadeOut = fadeOut;
         this.container = element;
         
         // create a canvas
@@ -84,7 +86,7 @@ export class AutomataService {
         for (let y = 0; y < this.gridY; y++) {
             const cellHeight = y * this.cellSize;
             const distance = (this.canvas.height - cellHeight) / this.canvas.height
-            const alpha = distance * .2;
+            const alpha = this.fadeOut ? distance * .4 : 1;
             for (let x = 0; x < this.gridX; x++) {
                 if (this.grid[x][y] === true) {
                     const cellWidth = x * this.cellSize;

@@ -8,7 +8,7 @@ import { MdEmail } from 'react-icons/md';
 export class HeaderComponent extends Component {
   automataService;
   componentDidMount() {
-    this.automataService = new AutomataService(document.querySelector('#hero-background'));
+    this.automataService = new AutomataService(document.querySelector('#hero-background'), true);
     this.automataService.start();
   }
 

@@ -8,7 +8,6 @@
     position: relative;
 }
 .section-title {
-    color: #111;
     font-family: 'IBM Plex Mono', sans-serif;
     font-size: 36px;
     margin: 0 auto 16px auto;
@@ -17,7 +16,11 @@
 
 .flex {
     display: flex;
+    margin: 0 -16px;
 }
+.flex > * {
+    padding: 0 16px;
+} 
 .align-items-center {
     align-items: center;;
 }
@@ -35,7 +38,11 @@
 @media (min-width:568px) {
     .sm-flex {
         display: flex;
+        margin: 0 -16px;
     }
+    .sm-flex > * {
+        padding: 0 16px;
+    } 
     .sm-ml-16 {
         margin-left: 16px;
     }
@@ -53,5 +60,9 @@
 @media (min-width:768px) {
     .md-flex {
         display: flex;
+        margin: 0 -16px;
     }
+    .md-flex > * {
+        padding: 0 16px;
+    } 
 }

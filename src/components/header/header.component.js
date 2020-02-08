@@ -14,7 +14,7 @@ export class HeaderComponent extends Component {
 
   render() {
     return (
-      <div className="header">
+      <div id="header">
 
         <div id="hero-background"></div>
 

@@ -31,23 +31,19 @@ class AppComponent extends Component {
     return (
       <main className="app">
         
-        <section id="top">
+        <section>
           <HeaderComponent></HeaderComponent>
         </section>
 
-        <section id="projects" 
-          className="section projects">
+        <section className="section projects">
           <ProjectsComponent></ProjectsComponent>
         </section>
 
-        <section id="skills" 
-          className="section skills">
+        <section className="section skills">
           <SkillsComponent></SkillsComponent>
         </section>
 
-        <section id="work" 
-          className="section experience">
-          <h2 className="section-title">Work</h2>
+        <section className="section experience">
           <WorkComponent></WorkComponent>
         </section>
       </main>

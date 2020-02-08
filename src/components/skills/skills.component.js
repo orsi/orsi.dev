@@ -1,5 +1,6 @@
 import './skills.scss';
 import React, { Component } from 'react';
+import { MondrianService } from '../../services/mondrian.service';
 import angularImage from '../../assets/angular.png';
 import angularJsImage from '../../assets/angularjs.png';
 import apacheImage from '../../assets/apache.png';
@@ -41,12 +42,17 @@ import wordpressImage from '../../assets/wordpress.png';
 import xdImage from '../../assets/xd.png';
 
 export class SkillsComponent extends Component {
-    constructor() {
-        super();
+    mondrianService;
+    componentDidMount() {
+        const mondrianElement = document.querySelector('#mondrian');
+        this.mondrianService = new MondrianService(mondrianElement);
+        this.mondrianService.start();
     }
     render() {
         return (
-            <div className="skills">
+            <div id="skills">
+                <div id="mondrian"></div>
+
                 <div className="container">
 
                     <h2 className="section-title">Skills</h2>

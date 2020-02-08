@@ -1,10 +1,24 @@
 #skills {
+    background-color: #efefef;
+    #mondrian {
+        background: linear-gradient(#0d3051, #efefef);
+
+        content: "";
+        display: block;
+        height: 240px;
+        canvas {
+            border: 3px solid black;
+            opacity: .2;
+        }
+    }
     .section-title {
         padding: 48px 0;
         text-align: center;
     }
     .skills-container {
-        margin-bottom: 24px;
+        &:not(:last-of-type) {
+            margin-bottom: 24px;
+        }
     }
     .skills-title {
         font-size: 18px;

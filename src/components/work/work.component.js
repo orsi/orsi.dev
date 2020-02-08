@@ -5,9 +5,13 @@ export class WorkComponent extends Component {
 
   render() {
     return (
-      <div className="resume">
+      <div id="work">
+        <div className="container">
+        
+          <h2 className="section-title">Work</h2>
+
           <ul className="works-list">
-      
+
             <li className="works-list-item">
               <h4 className="work-company">Bombardier Aerospace</h4>
               <div className="work-duration">3 years, 5 months</div>
@@ -40,6 +44,7 @@ export class WorkComponent extends Component {
             </li>
 
           </ul>
+        </div>
       </div>
     );
   }

@@ -1,26 +1,57 @@
 export class MondrianService {
-    white = '#f2f5f1';
-    colours = ['#D40920', '#1356A2', '#F7D842'];
+    white = 'rgba(255,255,255,1)';
+    colours = [
+        'rgba(209, 10, 15, 1)', 
+        'rgba(61,72,126, 1)', 
+        'rgba(253, 209, 0, 1)'
+    ];
     constructor(element) {
         this.container = element;
         this.canvas = document.createElement('canvas');
         this.container.appendChild(this.canvas);
+        this.setupCanvas();
+        this.setup();
 
-        // setup canvas width/height properly for retina
-        // and non-retina displays
-        const dpr = window.devicePixelRatio || 1;
-        const width = this.container.clientWidth * dpr;
-        const height = this.container.clientHeight * dpr;
-        this.canvas.width = width;
-        this.canvas.height = height;
-        this.canvas.style.width = Math.round(width / dpr) + 'px';
-        this.canvas.style.height = Math.round(height / dpr) + 'px';
-        this.context = this.canvas.getContext('2d');
-        this.context.scale(dpr, dpr);
-        this.context.lineWidth = 8;
+        // resize
+        window.addEventListener('resize', () => {
+            this.setupCanvas();
+            this.setup();
+            this.render(); // render initial state immediately
+        });
+    }
 
+    render() {
+        // assign random colour randomly to squares
+        for (let i = 0; i < this.squares.length; i++) {
+            if (Math.random() < 0.66) { // 2/3 chance to be coloured
+                this.squares[i].colour = this.colours[
+                    Math.floor(Math.random() * this.colours.length)
+                ];
+            }
+        }
+
+        // draw the final result
+        for (let i = 0; i < this.squares.length; i++) {
+            this.context.beginPath();
+            this.context.rect(
+                this.squares[i].x,
+                this.squares[i].y,
+                this.squares[i].width,
+                this.squares[i].height
+            );
+            if(this.squares[i].colour) {
+                this.context.fillStyle = this.squares[i].colour;
+            } else {
+                this.context.fillStyle = this.white;
+            }
+            this.context.fill()
+            this.context.stroke();
+        }
+    }
+
+    setup() {
         // determines maximum columns/rows
-        this.step = Math.floor(this.container.clientWidth / 10);
+        this.step = Math.floor(this.container.clientWidth / 25);
 
         // create square array with base square
         this.squares = [
@@ -39,10 +70,19 @@ export class MondrianService {
         }
     }
 
-    start() {
-        this.draw();
+    setupCanvas() {
+        // setup canvas width/height properly for retina
+        // and non-retina displays
+        const dpr = window.devicePixelRatio || 1;
+        this.canvas.width = this.container.clientWidth * dpr;
+        this.canvas.height = this.container.clientHeight * dpr;
+        this.canvas.style.width = Math.round(this.canvas.width / dpr) + 'px';
+        this.canvas.style.height = Math.round(this.canvas.height / dpr) + 'px';
+        this.context = this.canvas.getContext('2d');
+        this.context.scale(dpr, dpr);
+        this.context.lineWidth = 8;
     }
-
+    
     /**
      * Splits a square at specified coordinate
      * @param {*} coordinates
@@ -111,30 +151,9 @@ export class MondrianService {
 
         this.squares.push(squareA, squareB);
     }
-    draw() {
-        // assign random colour randomly to squares
-        for (let i = 0; i < this.squares.length; i++) {
-            if (Math.random() < 0.25) { // 1/4 chance to be coloured
-                this.squares[i].colour = this.colours[Math.floor(Math.random() * this.colours.length)];
-            }
-        }
 
-        // draw the final result
-        for (let i = 0; i < this.squares.length; i++) {
-            this.context.beginPath();
-            this.context.rect(
-                this.squares[i].x,
-                this.squares[i].y,
-                this.squares[i].width,
-                this.squares[i].height
-            );
-            if(this.squares[i].colour) {
-                this.context.fillStyle = this.squares[i].colour;
-            } else {
-                this.context.fillStyle = this.white;
-            }
-            this.context.fill()
-            this.context.stroke();
-        }
+    start() {
+        this.render();
     }
+
 }

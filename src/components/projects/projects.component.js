@@ -8,7 +8,7 @@ import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
 export class ProjectsComponent extends Component {
     render() {
         return (
-            <div className="projects">
+            <div id="projects">
                 <div className="project code-x">
                     <div className="project-container">
                         <div className="sm-flex align-items-center">

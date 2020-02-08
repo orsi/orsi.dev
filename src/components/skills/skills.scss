@@ -1,0 +1,59 @@
+#skills {
+    .section-title {
+        padding: 48px 0;
+        text-align: center;
+    }
+    .skills-container {
+        margin-bottom: 24px;
+    }
+    .skills-title {
+        font-size: 18px;
+        line-height: 1;
+        margin: 0 0 16px 0;
+    
+        .small {
+            color: rgba(0,0,0,.4);
+            font-size: 12px;
+            margin-left: 8px;
+        }
+    }
+    @media (min-width: 568px) {
+        .skills-container {
+            display: flex;
+            align-items: center;
+        }
+        .skills-title {
+            flex: 0 0 180px;
+            text-align: right;
+            margin-right: 16px;
+            .small {
+                display: block;
+                margin: 0;
+            }
+        }
+    }
+    .skills-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .skills-list-item {
+        display: inline-block;
+        font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+        font-weight: 700;
+        line-height: 1;
+        position: relative;
+        &:not(:last-of-type) {
+            margin-right: 16px;
+        }
+    
+        img {
+            display: inline-block;
+            height: 32px;
+            width: auto;
+        }
+        .sr-only {
+            display: none;
+        }
+    }
+}

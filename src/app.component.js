@@ -42,7 +42,6 @@ class AppComponent extends Component {
 
         <section id="skills" 
           className="section skills">
-          <h2 className="section-title">Skills</h2>
           <SkillsComponent></SkillsComponent>
         </section>
 

@@ -1,3 +1,50 @@
+
+/* default */
+body {
+    background-color: #020202;
+    color: #fafafa;
+}
+#header {
+    #hero-background {
+        background: #002042;
+        background: -webkit-linear-gradient(#002042, #020202);
+        background: linear-gradient(#002042, #020202);
+    }
+    .media-list-item a.red {
+        color: #b79393;
+    }
+    .media-list-item a.green {
+        color: #94bda6;
+    }
+    .media-list-item a.blue {
+        color: #adc6e6;
+    }
+}
+#projects {
+    background: #000;
+    background: -webkit-linear-gradient(#020202, #090909);
+    background: linear-gradient(#020202, #090909);
+    color: #fafafa;
+} 
+#skills {
+    background: #fff;
+    background: -webkit-linear-gradient(#fff, #e3e3e3);
+    background: linear-gradient(#fff, #e3e3e3);
+    color: #020202;
+}
+#work {
+    background-color: #e3e3e3;
+    color: #020202;
+}
+#end {
+    background: #002042;
+    background: -webkit-linear-gradient(#020202, #002042);
+    background: linear-gradient(#020202, #002042);
+    color: #fafafa;
+    #end-background {
+        opacity: .4;
+    }
+}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #020202;
@@ -57,7 +104,7 @@
             background: linear-gradient(#fdfbfb, #ebedee);
 
             canvas {
-                opacity: .05;
+                opacity: .1;
             }
         }
         .media-list-item a.red {

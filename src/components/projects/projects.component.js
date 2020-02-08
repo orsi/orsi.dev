@@ -1,9 +1,8 @@
 import './projects.scss';
 import React, { Component } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import imageDeno from '../../assets/deno-logo.svg';
-import imageBetical from '../../assets/project-betical.jpg';
-import imageCodeX from '../../assets/project-code-x.jpg';
+import imageBetical from '../../assets/project-betical.gif';
+import imageCodeX from '../../assets/project-code-x.gif';
 import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
 
 export class ProjectsComponent extends Component {

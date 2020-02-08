@@ -57,7 +57,9 @@
         background-color: #131313;
         color: #fafafa;
         .project-media {
-            flex: 0 0 50%;
+            flex: 0 0 240px;
+            margin: 0 auto;
+            max-width: 240px;
         }
         .project-media img {
             border-radius: 3px;

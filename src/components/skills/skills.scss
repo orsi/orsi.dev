@@ -9,8 +9,10 @@
         }
     }
     .skills-title {
+        font-family: 'IBM Plex Mono', sans-serif;
         font-size: 18px;
         font-weight: 300;
+        line-height: 1;
         margin: 0 0 16px 0;
         text-transform: uppercase;
     
@@ -42,9 +44,6 @@
     }
     .skills-list-item {
         display: inline-block;
-        font-family: 'IBM Plex Mono', 'Courier New', Courier, monospace;
-        font-weight: 700;
-        line-height: 1;
         position: relative;
         &:not(:last-of-type) {
             margin-right: 16px;

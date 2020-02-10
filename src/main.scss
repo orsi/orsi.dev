@@ -1,3 +1,6 @@
+$font-prefix: "~@ibm/plex";
+@import "~@ibm/plex/scss/ibm-plex.scss";
+
 /* general classes */
 *,
 *::after,

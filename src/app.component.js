@@ -57,7 +57,7 @@ class AppComponent extends Component {
         <div id="end">
           <div id="end-background"></div>
           <div className="container">
-            <h1>Thanks for stopping by. If you're looking for a developer or designer to consult or build your next project, <a href="mailto:jonathon.orsi@gmail.com">contact me.</a></h1>
+            <span>Thanks for stopping by. If you're looking for a developer or designer to consult or build your next project, <a href="mailto:jonathon.orsi@gmail.com">contact me.</a></span>
           </div>
         </div>
       </main>

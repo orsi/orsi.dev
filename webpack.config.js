@@ -21,42 +21,55 @@ module.exports = {
         new MiniCssExtractPlugin()
     ],
     module: {
-        rules: [{
-            test: /\.(png|jpe?g|gif|svg)$/i,
-            use: [
-                {
-                    loader: 'file-loader',
-                },
-            ],
-        },
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader'
-            }
-        },
-        {
-            test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader, 'css-loader']
-        },
-        {
-            test: /\.s[ac]ss$/i,
-            exclude: /node_modules/,
-            use: [
-                {
-                    loader: MiniCssExtractPlugin.loader,
-                    options: {
-                    // only enable hot in development
-                    hmr: process.env.NODE_ENV === 'development',
-                    // if hmr does not work, this is a forceful method.
-                    reloadAll: true,
+        rules: [
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
                     },
-                },
-                'css-loader',
-                'sass-loader'
-            ]
-        }
+                ],
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // only enable hot in development
+                            hmr: process.env.NODE_ENV === 'development',
+                            // if hmr does not work, this is a forceful method.
+                            reloadAll: true,
+                        },
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
         ]
     }
 }

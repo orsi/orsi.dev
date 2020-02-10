@@ -2,6 +2,15 @@
     #end {
         padding: 16px 0;
         position: relative;
+        
+        span {
+            font-family: 'IBM Plex Mono', sans-serif;
+            // font-size: 24px;
+            font-weight: 900;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
     }
     #end-background {
         position: absolute;
@@ -13,13 +22,5 @@
         height: 100%;
         overflow: hidden;
         z-index: 0;
-    }
-    span {
-        font-family: 'IBM Plex Mono', sans-serif;
-        // font-size: 24px;
-        font-weight: 900;
-        margin: 0;
-        position: relative;
-        z-index: 1;
     }
 }

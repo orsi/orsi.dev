@@ -31,6 +31,7 @@ import reactImage from '../../assets/react.png';
 import rustImage from '../../assets/rust.png';
 import rxjsImage from '../../assets/rxjs.png';
 import sassImage from '../../assets/sass.png';
+import shopifyImage from '../../assets/shopify.png';
 import sketchImage from '../../assets/sketch.png';
 import socketioImage from '../../assets/socketio.png';
 import squarespaceImage from '../../assets/squarespace.png';
@@ -279,6 +280,12 @@ export class SkillsComponent extends Component {
                                     title="Python"
                                     alt="Python" />
                                 <span className="sr-only">Python</span>
+                            </li>
+                            <li className="skills-list-item">
+                                <img src={shopifyImage} 
+                                    title="Shopify"
+                                    alt="Shopify" />
+                                <span className="sr-only">Shopify</span>
                             </li>
                             <li className="skills-list-item">
                                 <img src={swiftImage} 

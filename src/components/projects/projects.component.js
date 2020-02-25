@@ -1,6 +1,7 @@
 import './projects.scss';
 import React, { Component } from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import PaperMountainPost from './project-paper-mountain-post.svg';
 import imageBetical from '../../assets/project-betical.gif';
 import imageCodeX from '../../assets/project-code-x.gif';
 import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
@@ -11,6 +12,32 @@ export class ProjectsComponent extends Component {
             <div id="projects">
                 <div className="container">
                     <h2 className="section-title">Projects</h2>
+
+                    <div className="project paper-mountain-post">
+                        <div className="sm-flex align-items-center row-reverse">
+                            <div className="project-media">
+
+                                <PaperMountainPost />
+
+                            </div>
+                            <div className="project-content">
+
+                                <h4 className="project-title">Paper Mountain Post</h4>
+                                <div><small>FEB 2020</small></div>
+                                <div className="project-description">
+                                    <p>A post production film company based in Los Angeles and Toronto. They wanted a design that made them stand out from other often bland and similar film production websites they would be compared to. I redesigned and built a custom Squarespace template that they could easily modify text blocks, services, team members, and works from.</p>
+                                </div>
+
+                                <a href="https://papermountainpostltd.com"
+                                        target="_blank"
+                                        className="project-button">
+                                    <FaExternalLinkAlt></FaExternalLinkAlt>
+                                    <span>visit paper mountain</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="project code-x">
                         <div className="sm-flex align-items-center">
                             <div className="project-media">

@@ -5,6 +5,9 @@ import PaperMountainPost from './project-paper-mountain-post.svg';
 import imageBetical from '../../assets/project-betical.gif';
 import imageCodeX from '../../assets/project-code-x.gif';
 import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
+import imageJojoGun from '../../assets/project-jojogun-960w.gif';
+import imageDiscworld from '../../assets/project-discworld-360w.gif';
+import imageEmojiland from '../../assets/project-emojiland-360w.gif';
 
 export class ProjectsComponent extends Component {
     render() {
@@ -12,6 +15,31 @@ export class ProjectsComponent extends Component {
             <div id="projects">
                 <div className="container">
                     <h2 className="section-title">Projects</h2>
+
+                    <div className="project jojogun">
+                        <div className="project-media">
+
+                            <div className="project-image">
+                                <img src={imageJojoGun} />
+                            </div>
+
+                        </div>
+                        <div className="project-content">
+
+                            <h4 className="project-title">JoJo Gun & the Bullets</h4>
+                            <div><small>MAY 2020</small></div>
+                            <div className="project-description">
+                                <p>A creative "glitch" landing page for Hamilton-based rock band Jojo Gun & the Bullets to direct fans to their social media and music catalogue. Created in React, random glitches happen to elements as you watch.</p>
+                            </div>
+
+                            <a href="https://www.jojogun.ca"
+                                target="_blank"
+                                className="project-button">
+                                <FaExternalLinkAlt></FaExternalLinkAlt>
+                                <span>visit jojogun</span>
+                            </a>
+                        </div>
+                    </div>
 
                     <div className="project paper-mountain-post">
                         <div className="sm-flex align-items-center row-reverse">
@@ -29,8 +57,8 @@ export class ProjectsComponent extends Component {
                                 </div>
 
                                 <a href="https://papermountainpostltd.com"
-                                        target="_blank"
-                                        className="project-button">
+                                    target="_blank"
+                                    className="project-button">
                                     <FaExternalLinkAlt></FaExternalLinkAlt>
                                     <span>visit paper mountain</span>
                                 </a>
@@ -56,8 +84,8 @@ export class ProjectsComponent extends Component {
                                 </div>
 
                                 <a href="https://code-x.live"
-                                        target="_blank"
-                                        className="project-button">
+                                    target="_blank"
+                                    className="project-button">
                                     <FaExternalLinkAlt></FaExternalLinkAlt>
                                     <span>experiment with code x</span>
                                 </a>
@@ -70,14 +98,14 @@ export class ProjectsComponent extends Component {
 
                                 <div className="project-image">
                                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 1024.000000 1024.000000"
-                                    preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                    Created by potrace 1.15, written by Peter Selinger 2001-2017
+                                        viewBox="0 0 1024.000000 1024.000000"
+                                        preserveAspectRatio="xMidYMid meet">
+                                        <metadata>
+                                            Created by potrace 1.15, written by Peter Selinger 2001-2017
                                     </metadata>
-                                    <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
-                                    stroke="none">
-                                    <path d="M4720 9174 c-19 -2 -80 -9 -135 -14 -782 -82 -1552 -413 -2180 -939
+                                        <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M4720 9174 c-19 -2 -80 -9 -135 -14 -782 -82 -1552 -413 -2180 -939
                                     -116 -96 -380 -360 -476 -476 -520 -621 -824 -1318 -936 -2143 -25 -183 -25
                                     -801 0 -984 112 -825 416 -1522 936 -2143 96 -116 360 -380 476 -476 621 -520
                                     1318 -824 2143 -936 183 -25 801 -25 984 0 825 112 1522 416 2143 936 116 96
@@ -152,11 +180,11 @@ export class ProjectsComponent extends Component {
                                     -20 210 -4 58 -13 164 -21 235 -19 175 -18 195 4 195 10 0 23 -5 30 -12z m473
                                     -673 c3 -22 9 -104 13 -182 7 -150 4 -161 -37 -130 -12 9 -20 47 -32 161 -21
                                     206 -22 198 17 194 29 -3 33 -7 39 -43z"/>
-                                    <path className="deno-eyes" d="M3184 5756 c-104 -45 -112 -186 -14 -236 71 -36 143 -19 180 43 70
+                                            <path className="deno-eyes" d="M3184 5756 c-104 -45 -112 -186 -14 -236 71 -36 143 -19 180 43 70
                                     114 -44 246 -166 193z"/>
-                                    <path className="deno-eyes" d="M3862 5660 c-96 -59 -96 -201 0 -260 95 -57 218 18 218 132 0 110
+                                            <path className="deno-eyes" d="M3862 5660 c-96 -59 -96 -201 0 -260 95 -57 218 18 218 132 0 110
                                     -126 184 -218 128z"/>
-                                    </g>
+                                        </g>
                                     </svg>
                                 </div>
 
@@ -170,14 +198,69 @@ export class ProjectsComponent extends Component {
                                 </div>
 
                                 <a href="https://deno.land"
-                                        target="_blank"
-                                        className="project-button">
+                                    target="_blank"
+                                    className="project-button">
                                     <FaExternalLinkAlt></FaExternalLinkAlt>
                                     <span>check out the Deno project</span>
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <div className="project discworld">
+                        <div className="sm-flex align-items-center">
+                            <div className="project-media">
+
+                                <div className="project-image">
+                                    <img src={imageDiscworld} />
+                                </div>
+
+                            </div>
+                            <div className="project-content">
+
+                                <h4 className="project-title">Discworld</h4>
+                                <div><small>MAR 2018</small></div>
+                                <div className="project-description">
+                                    <p>A browser based procedural discworld generator using cellular automaton, perlin noise, elevation, temperature, and precipitation maps to create a variety of 'biomes' that colour the landscape. Create a new discworld by typing <span className="code">/destroy</span>, and then <span className="code">/create seed width height</span>, where seed is any non-space phrase, and width and height are numbers (150-300 is ideal, any more will severely impact performance). You can zoom in and out with the mouse scroll wheel and move around by right-clicking the mouse in any direction.</p>
+                                </div>
+
+                                <a href="https://jonorsi.com/discworld/"
+                                    target="_blank"
+                                    className="project-button">
+                                    <FaExternalLinkAlt></FaExternalLinkAlt>
+                                    <span>create a discworld</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="project emojiland">
+                        <div className="sm-flex align-items-center row-reverse">
+                            <div className="project-media">
+
+                                <div className="project-image">
+                                    <img src={imageEmojiland} />
+                                </div>
+
+                            </div>
+                            <div className="project-content">
+
+                                <h4 className="project-title">Emojiland</h4>
+                                <div><small>DEC 2017</small></div>
+                                <div className="project-description">
+                                    <p>Inspired by Dwarf Fortress, one of the most complex simulation games made, I wanted to learn about procedural generation, perlin noise, and graphics rendering. Users can explore the map, generate a new world, and chat with other users on screen. Right-click the mouse button in the direction you want to walk, type and press enter to chat, and type <span className="code">/generate hello world</span> to make a new map (replace 'hello world' with different phrases for different maps). Built in Typescript using NodeJS, socket.io, and browserify.</p>
+                                </div>
+
+                                <a href="https://jonorsi.com/emojiland/"
+                                    target="_blank"
+                                    className="project-button">
+                                    <FaExternalLinkAlt></FaExternalLinkAlt>
+                                    <span>explore emojiland</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="project betical">
                         <div className="sm-flex align-items-center">
                             <div className="project-media">
@@ -204,6 +287,7 @@ export class ProjectsComponent extends Component {
                             </div>
                         </div>
                     </div>
+
                     <div className="project humble-roots-media">
                         <div className="project-media">
 
@@ -228,6 +312,7 @@ export class ProjectsComponent extends Component {
                             </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         );

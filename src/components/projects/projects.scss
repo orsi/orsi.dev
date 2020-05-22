@@ -1,6 +1,12 @@
 #projects {
     padding: 32px 0;
 
+    .code {
+        color: #CCFFCC;
+        display: inline;
+        font-weight: 900;
+    }
+
     .section-title {
         text-align: center;
         padding-top: 24px;
@@ -35,6 +41,19 @@
     }
     .project-media img {
         display: block;
+    }
+
+    .project.jojogun {
+
+        .project-image {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .project-content {
+            margin-top: 16px;
+        }
+
     }
 
     .project.paper-mountain-post {
@@ -141,6 +160,38 @@
             }
             100% {
                 opacity: 1;
+            }
+        }
+    }
+
+    .project.discworld {
+
+        .project-media {
+            flex: 0 0 40%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .project.emojiland {
+
+        .project-media {
+            flex: 0 0 40%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
             }
         }
     }

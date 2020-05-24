@@ -10,7 +10,8 @@ module.exports = {
         filename: 'index.js'
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        historyApiFallback: true,
     },
     plugins: [
         new CleanWebpackPlugin(),

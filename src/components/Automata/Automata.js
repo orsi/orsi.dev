@@ -1,6 +1,6 @@
 import './Automata.scss';
 import React from 'react';
-import { AutomataService } from '../../../services/automata.service';
+import { AutomataService } from '../../services/automata.service';
 
 export default class Automata extends React.Component {
   automataService;

@@ -2,12 +2,12 @@ import './projects.scss';
 import React from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import PaperMountainPost from './project-paper-mountain-post.svg';
-import imageBetical from '../../../assets/project-betical.gif';
-import imageCodeX from '../../../assets/project-code-x.gif';
-import imageHumbleRootsMedia from '../../../assets/project-humble-roots-media.gif';
-import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
-import imageDiscworld from '../../../assets/project-discworld-360w.gif';
-import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
+import imageBetical from '../../assets/project-betical.gif';
+import imageCodeX from '../../assets/project-code-x.gif';
+import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
+import imageJojoGun from '../../assets/project-jojogun-960w.gif';
+import imageDiscworld from '../../assets/project-discworld-360w.gif';
+import imageEmojiland from '../../assets/project-emojiland-360w.gif';
 
 export default function ProjectsList() {
     return (

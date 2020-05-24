@@ -34,6 +34,9 @@ export default class MusicView extends React.Component {
     render() {
         return (
             <div className="MusicView">
+                <section>
+                    <p>Custom music, sound design, and a programmer who can implement audio.</p>
+                </section>
                 <ResponsiveYoutubeContainer>
                     <iframe width="560"
                         height="315"

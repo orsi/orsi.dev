@@ -5,57 +5,32 @@ import DeveloperSocialMediaList from '../DeveloperSocialMediaList/DeveloperSocia
 import MusicSocialMediaList from '../MusicSocialMediaList/MusicSocialMediaList';
 import { FcMultipleDevices } from 'react-icons/fc';
 import { FcMusic } from 'react-icons/fc';
+import { FiArrowLeft, FiHome } from 'react-icons/fi';
+import { FaQuestion } from 'react-icons/fa';
 
 const StyledTopBar = styled.div`
     display: flex;
     flex-direction: column;
-    height: ${props => {
-        let { pathname } = useLocation();
-        return pathname.substr(1).length === 0 ? '100vh' : 'auto';
-    }};
 `;
-const OrsiHeader = styled.div`
+const BarHeader = styled.header`
+    display: flex;
     flex: 0 1 auto;
-    font-size: 32px;
+    font-size: 18px;
     font-weight: 900;
+    justify-content: center;
     text-align: center;
     a { text-decoration: none; }
-`;
-const NavigationLink = styled.div`
-    align-items: center;
-    display: flex;
-    flex: 1 0 auto;
-    justify-content: center;
-    a {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        text-decoration: none;
-        width: 100%;
-    }
-
-    &.music {
-        background: #111;
-        color: #eee;
-    }
-    &.developer {
-        background: #eee;
-        color: #111;
-    }
 `;
 export default function TopBar() {
     return (
         <StyledTopBar>
-            <OrsiHeader><Link to="/">Jonathon Orsi</Link></OrsiHeader>
-            <NavigationLink className="music">
-                <Link to="/music">Music <FcMusic /></Link>
-                {/* <MusicSocialMediaList /> */}
-            </NavigationLink>
-            <NavigationLink className="developer">
-                <Link to="/developer">Developer <FcMultipleDevices /></Link>
-                {/* <DeveloperSocialMediaList /> */}
-            </NavigationLink>
+            <BarHeader>
+                <Link to="/"><FiHome /></Link>
+                <Link to="/about"><FaQuestion /></Link>
+                <Link to="/music"><FcMusic /></Link>
+                <Link to="/developer"><FcMultipleDevices /></Link>
+                Jonathon Orsi
+            </BarHeader>
         </StyledTopBar>
     )
 };

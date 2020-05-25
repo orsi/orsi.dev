@@ -4,8 +4,10 @@ import './App.scss';
 import React from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import TopBar from './components/TopBar/TopBar';
+import HomeView from './components/HomeView/HomeView.js';
 import DeveloperView from './components/DeveloperView/DeveloperView.js';
 import MusicView from './components/MusicView/MusicView.js';
+import AboutView from './components/AboutView/AboutView';
 
 export default function App() {
   // get current route to add class to main element
@@ -17,6 +19,9 @@ export default function App() {
     <main className={"App view-" + pathname }>
       <TopBar />
       <Switch>
+        <Route path="/about">
+          <AboutView />
+        </Route>
         <Route path="/music">
           <MusicView />
         </Route>
@@ -24,7 +29,7 @@ export default function App() {
           <DeveloperView />
         </Route>
         <Route path="/">
-          {/* <HomeView /> */}
+          <HomeView />
         </Route>
       </Switch>
 

@@ -32,7 +32,6 @@ const SkillsListContainer = styled.section`
     }
     .skills-title {
         flex: 0 0 180px;
-        text-align: right;
         margin: 0 16px 0 0;
         .small {
             display: block;
@@ -62,7 +61,7 @@ const SkillsListContainer = styled.section`
     }
 }
 `;
-export default function SkillsList() {
+export default function SkillsSection() {
     return (
         <SkillsListContainer>
             <h2 className="section-title">Skills</h2>

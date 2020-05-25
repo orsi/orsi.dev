@@ -1,7 +1,7 @@
 import React from 'react';
 import Automata from '../Automata/Automata.js';
 import ProjectsList from './ProjectsList/ProjectsList.js';
-import SkillsList from './SkillsList/SkillsList.js';
+import SkillsSection from './SkillsSection/SkillsSection.js';
 import WorksList from './WorksList/WorksList.js';
 
 export default class DeveloperView extends React.Component {
@@ -12,16 +12,14 @@ export default class DeveloperView extends React.Component {
                     <Automata></Automata>
                 </section>
 
-                <p>
-                    I am developer and designer based in Toronto, Canada. I specialize in web development with a focus on elegant and intuitive user experiences.
-                </p>
+                <p>Creative digital spaces and elegant user experiences.</p>
 
                 <section>
                     <ProjectsList></ProjectsList>
                 </section>
 
                 <section>
-                    <SkillsList></SkillsList>
+                    <SkillsSection />
                 </section>
 
                 <section>

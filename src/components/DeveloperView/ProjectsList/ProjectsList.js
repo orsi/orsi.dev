@@ -9,236 +9,233 @@ import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
 import imageDiscworld from '../../../assets/project-discworld-360w.gif';
 import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
 
-const ProjectsContainer = styled.section`
-    padding: 32px 0;
+const ProjectsListContainer = styled.section`
+.code {
+    color: #CCFFCC;
+    display: inline;
+    font-weight: 900;
+}
+`;
+const ProjectsStyledList = styled.ul`
+list-style: none;
+margin: 0;
+padding: 0;
+`;
+const ProjectsListItem = styled.li`
+margin-top: 96px;
 
-    .code {
-        color: #CCFFCC;
-        display: inline;
-        font-weight: 900;
+.project-title {
+    font-family: 'IBM Plex Mono', sans-serif;
+    line-height: 1;
+    margin: 0 0 8px 0;
+}
+.project-description {
+    text-align: justify;
+}
+.project-button {
+    align-items: center;
+    color: inherit;
+    display: flex;
+    font-size: 13.3px;
+    font-variant: small-caps;
+    margin-top: 16px;
+    opacity: .8;
+    text-decoration: none;
+    text-transform: uppercase;
+    span {
+        margin-left: 16px;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}
+.project-media img {
+    display: block;
+}
+
+&#jojogun {
+
+    .project-image {
+        border-radius: 4px;
+        overflow: hidden;
     }
 
-    .section-title {
-        text-align: center;
-        padding-top: 24px;
-    }
-    .project {
-        margin-top: 96px;
-    }
-    .project-title {
-        font-family: 'IBM Plex Mono', sans-serif;
-        line-height: 1;
-        margin: 0 0 8px 0;
-    }
-    .project-description {
-        text-align: justify;
-    }
-    .project-button {
-        align-items: center;
-        color: inherit;
-        display: flex;
-        font-size: 13.3px;
-        font-variant: small-caps;
+    .project-content {
         margin-top: 16px;
-        opacity: .8;
-        text-decoration: none;
-        text-transform: uppercase;
-        span {
-            margin-left: 16px;
+    }
+
+}
+
+&#paper-mountain-post {
+    .project-title {
+        align-items: center;
+        display: flex;
+    }
+    .project-media {
+        flex: 0 0 240px;
+        margin: 0 auto;
+        max-width: 240px;
+    }
+    .project-media svg {
+        max-width: 300px;
+        // fill: currentColor;
+    }
+    
+    .sky{
+        fill:#7dcccc;
+    }
+    .mountain{
+        fill:#eba396;
+        stroke: #22222f;
+        stroke-width: 1px;
+        transform: translate(-22px, 0);
+        -webkit-animation: mountainRise 10s ease-in-out infinite;
+        animation: mountainRise 10s ease-in-out infinite;
+        
+        @keyframes mountainRise {
+            from {
+                transform: translate(-22px, 0) rotate(0);
+            }
+            50% {
+                transform: translate(-22px, 10px) rotate(1deg);
+            }
+            to {
+                transform: translate(-22px, 0) rotate(0);
+            }
         }
-        &:hover {
+    }
+    .border {
+        fill: transparent;
+        stroke: #22222f;
+        stroke-width: 64px;
+    }
+    @media (max-width: 567px) {
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+
+}
+
+&#code-x {
+    .project-media {
+        flex: 0 0 240px;
+        margin: 0 auto;
+    }
+    .project-media img {
+        border-radius: 3px;
+    }
+    @media (max-width: 567px) {
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+}
+
+&#deno {
+    .project-title {
+        align-items: center;
+        display: flex;
+    }
+    .project-media {
+        flex: 0 0 240px;
+        margin: 0 auto;
+        max-width: 240px;
+    }
+    .project-media svg {
+        max-width: 300px;
+        fill: currentColor;
+    }
+    @media (max-width: 567px) {
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+
+    .deno-eyes {
+        animation: denoBlink 5s step-end infinite;
+    }
+    @keyframes denoBlink {
+        0%, 90% {
+            opacity: 1;
+        }
+        92% {
+            opacity: 0;
+        }
+        94% {
+            opacity: 1;
+        }
+        98% {
+            opacity: 0;
+        }
+        100% {
             opacity: 1;
         }
     }
+}
+
+&#discworld {
+    .project-media {
+        flex: 0 0 40%;
+    }
     .project-media img {
-        display: block;
+        border-radius: 3px;
     }
-
-    .project.jojogun {
-
-        .project-image {
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .project-content {
-            margin-top: 16px;
-        }
-
-    }
-
-    .project.paper-mountain-post {
-        .project-title {
-            align-items: center;
-            display: flex;
-        }
-        .project-media {
-            flex: 0 0 240px;
-            margin: 0 auto;
-            max-width: 240px;
-        }
-        .project-media svg {
-            max-width: 300px;
-            // fill: currentColor;
-        }
-        
-        .sky{
-            fill:#7dcccc;
-        }
-        .mountain{
-            fill:#eba396;
-            stroke: #22222f;
-            stroke-width: 1px;
-            transform: translate(-22px, 0);
-            -webkit-animation: mountainRise 10s ease-in-out infinite;
-            animation: mountainRise 10s ease-in-out infinite;
-            
-            @keyframes mountainRise {
-                from {
-                    transform: translate(-22px, 0) rotate(0);
-                }
-                50% {
-                    transform: translate(-22px, 10px) rotate(1deg);
-                }
-                to {
-                    transform: translate(-22px, 0) rotate(0);
-                }
-            }
-        }
-        .border {
-            fill: transparent;
-            stroke: #22222f;
-            stroke-width: 64px;
-        }
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-
-    }
-
-    .project.code-x {
-        .project-media {
-            flex: 0 0 240px;
-            margin: 0 auto;
-        }
-        .project-media img {
-            border-radius: 3px;
-        }
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-    }
-
-    .project.deno {
-        .project-title {
-            align-items: center;
-            display: flex;
-        }
-        .project-media {
-            flex: 0 0 240px;
-            margin: 0 auto;
-            max-width: 240px;
-        }
-        .project-media svg {
-            max-width: 300px;
-            fill: currentColor;
-        }
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-
-        .deno-eyes {
-            animation: denoBlink 5s step-end infinite;
-        }
-        @keyframes denoBlink {
-            0%, 90% {
-                opacity: 1;
-            }
-            92% {
-                opacity: 0;
-            }
-            94% {
-                opacity: 1;
-            }
-            98% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-    }
-
-    .project.discworld {
-
-        .project-media {
-            flex: 0 0 40%;
-        }
-        .project-media img {
-            border-radius: 3px;
-        }
-        
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-    }
-
-    .project.emojiland {
-
-        .project-media {
-            flex: 0 0 40%;
-        }
-        .project-media img {
-            border-radius: 3px;
-        }
-        
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-    }
-
-    .project.betical {
-        .project-media {
-            flex: 0 0 40%;
-        }
-        .project-media img {
-            border-radius: 3px;
-        }
-        @media (max-width: 567px) {
-            .project-content {
-                margin-top: 16px;
-            }
-        }
-    }
-    .project.humble-roots-media {
-        .project-media {
-            flex: 0 0 20%;
-        }
-        .project-media img {
-            border-radius: 3px;
-        }
+    
+    @media (max-width: 567px) {
         .project-content {
             margin-top: 16px;
         }
     }
+}
 
+&#emojiland {
+    .project-media {
+        flex: 0 0 40%;
+    }
+    .project-media img {
+        border-radius: 3px;
+    }
+    
+    @media (max-width: 567px) {
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+}
+
+&#betical {
+    .project-media {
+        flex: 0 0 40%;
+    }
+    .project-media img {
+        border-radius: 3px;
+    }
+    @media (max-width: 567px) {
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+}
+
+&#humble-roots-media {
+    .project-media {
+        flex: 0 0 20%;
+    }
+    .project-media img {
+        border-radius: 3px;
+    }
+    .project-content {
+        margin-top: 16px;
+    }
+}
 `;
+
 export default function ProjectsList() {
     return (
-        <ProjectsContainer>
-                <h2 className="section-title">Projects</h2>
-
-                <div className="project jojogun">
+        <ProjectsListContainer>
+            <ProjectsStyledList>
+                <ProjectsListItem id="jojogun">
                     <div className="project-media">
 
                         <div className="project-image">
@@ -261,9 +258,8 @@ export default function ProjectsList() {
                             <span>visit jojogun</span>
                         </a>
                     </div>
-                </div>
-
-                <div className="project paper-mountain-post">
+                </ProjectsListItem>
+                <ProjectsListItem id="paper-mountain-post">
                     <div className="sm-flex align-items-center row-reverse">
                         <div className="project-media">
 
@@ -286,9 +282,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div className="project code-x">
+                </ProjectsListItem>
+                <ProjectsListItem id="code-x">
                     <div className="sm-flex align-items-center">
                         <div className="project-media">
 
@@ -313,8 +308,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-                <div className="project deno">
+                </ProjectsListItem>
+                <ProjectsListItem id="deno">
                     <div className="sm-flex align-items-center row-reverse">
                         <div className="project-media">
 
@@ -427,9 +422,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div className="project discworld">
+                </ProjectsListItem>
+                <ProjectsListItem id="discworld">
                     <div className="sm-flex align-items-center">
                         <div className="project-media">
 
@@ -454,9 +448,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div className="project emojiland">
+                </ProjectsListItem>
+                <ProjectsListItem id="emojiland">
                     <div className="sm-flex align-items-center row-reverse">
                         <div className="project-media">
 
@@ -481,9 +474,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div className="project betical">
+                </ProjectsListItem>
+                <ProjectsListItem id="betical">
                     <div className="sm-flex align-items-center">
                         <div className="project-media">
 
@@ -508,9 +500,8 @@ export default function ProjectsList() {
                             </a>
                         </div>
                     </div>
-                </div>
-
-                <div className="project humble-roots-media">
+                </ProjectsListItem>
+                <ProjectsListItem id="humble-roots-media">
                     <div className="project-media">
 
                         <div className="project-image">
@@ -533,8 +524,8 @@ export default function ProjectsList() {
                             <span>visit humble roots media</span>
                         </a>
                     </div>
-                </div>
-
-        </ProjectsContainer>
+                </ProjectsListItem>
+            </ProjectsStyledList>
+        </ProjectsListContainer>
     );
 }

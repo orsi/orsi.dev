@@ -1,14 +1,46 @@
 import './index.scss';
 import './layout.scss';
-import './App.scss';
 import React from 'react';
+import styled from 'styled-components';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import TopBar from './components/TopBar/TopBar';
-import HomeView from './components/HomeView/HomeView.js';
+import NavigationBar from './components/TopBar/TopBar';
 import DeveloperView from './components/DeveloperView/DeveloperView.js';
 import MusicView from './components/MusicView/MusicView.js';
 import AboutView from './components/AboutView/AboutView';
 
+const AppContainer = styled.main`
+padding-top: 45px;
+
+.navigation-view {
+  flex: 0 0 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  display: flex;
+  padding-top: 0;
+  postition: relative;
+  overflow: hidden;
+ 
+  .navigation-view {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 300px;
+  }
+  .section-view {
+    margin-left: 300px;
+  }
+}
+`;
+const ViewContainer = styled.div``;
 export default function App() {
   // get current route to add class to main element
   let { pathname } = useLocation();
@@ -16,23 +48,25 @@ export default function App() {
   if (pathname.length === 0) pathname = 'home';
 
   return (
-    <main className={"App view-" + pathname }>
-      <TopBar />
-      <Switch>
-        <Route path="/about">
-          <AboutView />
-        </Route>
-        <Route path="/music">
-          <MusicView />
-        </Route>
-        <Route path="/developer">
-          <DeveloperView />
-        </Route>
-        <Route path="/">
-          <HomeView />
-        </Route>
-      </Switch>
-
-    </main>
+    <AppContainer className={"view-" + pathname }>
+      <ViewContainer className="navigation-view">
+        <NavigationBar />
+      </ViewContainer>
+      <ViewContainer className="section-view">
+        <Switch>
+          <Route path="/about">
+            <AboutView />
+          </Route>
+          <Route path="/music">
+            <MusicView />
+          </Route>
+          <Route path="/developer">
+            <DeveloperView />
+          </Route>
+          <Route path="/">
+          </Route>
+        </Switch>
+      </ViewContainer>
+    </AppContainer>
 );
 }

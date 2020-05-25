@@ -1,18 +1,241 @@
-import './projects.scss';
 import React from 'react';
+import styled from 'styled-components';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import PaperMountainPost from './project-paper-mountain-post.svg';
-import imageBetical from '../../assets/project-betical.gif';
-import imageCodeX from '../../assets/project-code-x.gif';
-import imageHumbleRootsMedia from '../../assets/project-humble-roots-media.gif';
-import imageJojoGun from '../../assets/project-jojogun-960w.gif';
-import imageDiscworld from '../../assets/project-discworld-360w.gif';
-import imageEmojiland from '../../assets/project-emojiland-360w.gif';
+import imageBetical from '../../../assets/project-betical.gif';
+import imageCodeX from '../../../assets/project-code-x.gif';
+import imageHumbleRootsMedia from '../../../assets/project-humble-roots-media.gif';
+import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
+import imageDiscworld from '../../../assets/project-discworld-360w.gif';
+import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
 
+const ProjectsContainer = styled.section`
+    padding: 32px 0;
+
+    .code {
+        color: #CCFFCC;
+        display: inline;
+        font-weight: 900;
+    }
+
+    .section-title {
+        text-align: center;
+        padding-top: 24px;
+    }
+    .project {
+        margin-top: 96px;
+    }
+    .project-title {
+        font-family: 'IBM Plex Mono', sans-serif;
+        line-height: 1;
+        margin: 0 0 8px 0;
+    }
+    .project-description {
+        text-align: justify;
+    }
+    .project-button {
+        align-items: center;
+        color: inherit;
+        display: flex;
+        font-size: 13.3px;
+        font-variant: small-caps;
+        margin-top: 16px;
+        opacity: .8;
+        text-decoration: none;
+        text-transform: uppercase;
+        span {
+            margin-left: 16px;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .project-media img {
+        display: block;
+    }
+
+    .project.jojogun {
+
+        .project-image {
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .project-content {
+            margin-top: 16px;
+        }
+
+    }
+
+    .project.paper-mountain-post {
+        .project-title {
+            align-items: center;
+            display: flex;
+        }
+        .project-media {
+            flex: 0 0 240px;
+            margin: 0 auto;
+            max-width: 240px;
+        }
+        .project-media svg {
+            max-width: 300px;
+            // fill: currentColor;
+        }
+        
+        .sky{
+            fill:#7dcccc;
+        }
+        .mountain{
+            fill:#eba396;
+            stroke: #22222f;
+            stroke-width: 1px;
+            transform: translate(-22px, 0);
+            -webkit-animation: mountainRise 10s ease-in-out infinite;
+            animation: mountainRise 10s ease-in-out infinite;
+            
+            @keyframes mountainRise {
+                from {
+                    transform: translate(-22px, 0) rotate(0);
+                }
+                50% {
+                    transform: translate(-22px, 10px) rotate(1deg);
+                }
+                to {
+                    transform: translate(-22px, 0) rotate(0);
+                }
+            }
+        }
+        .border {
+            fill: transparent;
+            stroke: #22222f;
+            stroke-width: 64px;
+        }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+
+    }
+
+    .project.code-x {
+        .project-media {
+            flex: 0 0 240px;
+            margin: 0 auto;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .project.deno {
+        .project-title {
+            align-items: center;
+            display: flex;
+        }
+        .project-media {
+            flex: 0 0 240px;
+            margin: 0 auto;
+            max-width: 240px;
+        }
+        .project-media svg {
+            max-width: 300px;
+            fill: currentColor;
+        }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+
+        .deno-eyes {
+            animation: denoBlink 5s step-end infinite;
+        }
+        @keyframes denoBlink {
+            0%, 90% {
+                opacity: 1;
+            }
+            92% {
+                opacity: 0;
+            }
+            94% {
+                opacity: 1;
+            }
+            98% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+
+    .project.discworld {
+
+        .project-media {
+            flex: 0 0 40%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .project.emojiland {
+
+        .project-media {
+            flex: 0 0 40%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .project.betical {
+        .project-media {
+            flex: 0 0 40%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        @media (max-width: 567px) {
+            .project-content {
+                margin-top: 16px;
+            }
+        }
+    }
+    .project.humble-roots-media {
+        .project-media {
+            flex: 0 0 20%;
+        }
+        .project-media img {
+            border-radius: 3px;
+        }
+        .project-content {
+            margin-top: 16px;
+        }
+    }
+
+`;
 export default function ProjectsList() {
     return (
-        <div id="projects">
-            <div className="container">
+        <ProjectsContainer>
                 <h2 className="section-title">Projects</h2>
 
                 <div className="project jojogun">
@@ -312,7 +535,6 @@ export default function ProjectsList() {
                     </div>
                 </div>
 
-            </div>
-        </div>
+        </ProjectsContainer>
     );
 }

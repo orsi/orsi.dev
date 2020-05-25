@@ -1,8 +1,8 @@
 import React from 'react';
 import Automata from '../Automata/Automata.js';
-import ProjectsList from '../ProjectsList/ProjectsList.js';
-import SkillsList from '../SkillsList/SkillsList.js';
-import Work from '../Work/Work.js';
+import ProjectsList from './ProjectsList/ProjectsList.js';
+import SkillsList from './SkillsList/SkillsList.js';
+import WorksList from './WorksList/WorksList.js';
 
 export default class DeveloperView extends React.Component {
     render() {
@@ -16,24 +16,21 @@ export default class DeveloperView extends React.Component {
                     I am developer and designer based in Toronto, Canada. I specialize in web development with a focus on elegant and intuitive user experiences.
                 </p>
 
-                <section className="section projects">
+                <section>
                     <ProjectsList></ProjectsList>
                 </section>
 
-                <section className="section skills">
+                <section>
                     <SkillsList></SkillsList>
                 </section>
 
-                <section className="section experience">
-                    <Work></Work>
+                <section>
+                    <WorksList></WorksList>
                 </section>
 
-                <div id="end">
-                    <div id="end-background"></div>
-                    <div className="container">
-                        <p>If you're looking for a developer or designer to consult or build your next project, feel free to <a href="mailto:jonathon.orsi@gmail.com">send me a message.</a></p>
-                    </div>
-                </div>
+                <section>
+                    <p>Interested in creating a digital presence together? Feel free to <a href="mailto:jonathon.orsi@gmail.com">send me a message.</a></p>
+                </section>
 
             </div>
         );

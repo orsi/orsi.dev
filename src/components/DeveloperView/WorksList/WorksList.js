@@ -1,10 +1,75 @@
-import './work.scss';
 import React from 'react';
+import styled from 'styled-components';
 
-export default function Work () {
+const WorksListContainer = styled.section`
+padding-bottom: 48px;
+    
+    .section-title {
+        padding: 48px 0;
+        text-align: center;
+    }
+
+    .works-list {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .works-list-item {
+    
+    }
+    .works-list-item:not(:first-of-type) {
+        margin-top: 24px;
+    }
+    
+    .work-company {
+        font-size: 18px;
+        margin: 0 auto;
+    }
+    
+    .positions-list {
+        list-style: none;
+        margin: 16px auto 0 auto;
+        padding: 0;
+    }
+    .positions-list-item:not(:first-of-type) {
+        margin-top: 16px;
+    }
+        .positions-list-item {
+            position: relative;
+            margin: 0;
+            padding-left: 20px;
+        }
+        .positions-list-item:before {
+            content: '';
+            background-color: #ddd;
+            position: absolute;
+            bottom: 0px;
+            top: 0px;
+            left: 6px;
+            width: 3px;
+        }
+    .position-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 auto;
+        line-height: 1;
+    }
+    .work-duration,
+    .position-time {
+        color: #999;
+        font-size: 12px;
+        line-height: 1;
+    }
+    .position-description {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+    }
+`;
+
+export default function WorksList () {
   return (
-    <div id="work">
-      <div className="container">
+    <WorksListContainer>
       
         <h2 className="section-title">Work</h2>
 
@@ -42,7 +107,6 @@ export default function Work () {
           </li>
 
         </ul>
-      </div>
-    </div>
+    </WorksListContainer>
   );
 }

@@ -7,18 +7,26 @@ import { FcMultipleDevices, FcQuestions } from 'react-icons/fc';
 import { FiArrowLeft, FiHome, FiMenu } from 'react-icons/fi';
 
 const NavigationBarContainer = styled.div`
+align-items: center;
 display: flex;
 flex-direction: column;
+justify-content: center;
 
-@media (min-width: 768px) {
+&.is-open {
+    height: 100vh;
+    #navigation-menu {
+        opacity: 1;
+        pointer-events: initial;
+    }
 }
 `;
 const NavigationBarHeader = styled.header`
-    display: flex;
-    flex: 0 1 auto;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
+display: flex;
+flex: 0 1 auto;
+justify-content: center;
+position: relative;
+z-index: 1;
+width: 100%;
 `;
 const NameH1 = styled.h1`
 font-size: 18px;
@@ -41,19 +49,11 @@ width: 45px;
 const NavigationMenu = styled.nav`
 background: white;
 display: flex;
+flex: 1 0 auto;
 flex-direction: column;
-height: 100vh;
 opacity: 0;
 pointer-events: none;
-position: absolute;
-top: 0;
-left: 0;
-width: 100vw;
 z-index: 0;
-&.is-open {
-    opacity: 1;
-    pointer-events: initial;
-}
 
 @media (min-width: 768px) {
     display: block;
@@ -89,25 +89,26 @@ export default function NavigationBar() {
     if (pathname.length === 0) pathname = 'home';
 
     function onClickHamburgerButton(e) {
-        const navigationMenuElement = document.querySelector('#navigation-menu');
-        if (navigationMenuElement.classList.contains('is-open')) {
-            navigationMenuElement.classList.remove('is-open');
+        const navigationBarElement = document.querySelector('#navigation-bar');
+        if (navigationBarElement.classList.contains('is-open')) {
+            navigationBarElement.classList.remove('is-open');
         } else {
-            navigationMenuElement.classList.add('is-open');
+            navigationBarElement.classList.add('is-open');
         }
     }
 
     function onClickNavigationLink(e) {
-        const navigationMenuElement = document.querySelector('#navigation-menu');
+        const navigationMenuElement = document.querySelector('#navigation-bar');
         navigationMenuElement.classList.remove('is-open');
     }
 
     return (
-        <NavigationBarContainer>
+        <NavigationBarContainer id="navigation-bar"
+            className={ pathname === 'home' ? 'is-open' : '' }>
 
             <NavigationBarHeader>
                 <NameH1>Jonathon Orsi</NameH1>
-                <HamburgerButton onClick={onClickHamburgerButton}><FiMenu /></HamburgerButton>
+                { pathname === 'home' ? null : <HamburgerButton onClick={onClickHamburgerButton}><FiMenu /></HamburgerButton> }
             </NavigationBarHeader>
 
             <NavigationMenu id="navigation-menu">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Automata from '../Automata/Automata.js';
+import Automata from './Automata/Automata.js';
 import ProjectsList from './ProjectsList/ProjectsList.js';
 import SkillsSection from './SkillsSection/SkillsSection.js';
 import WorksList from './WorksList/WorksList.js';

@@ -9,18 +9,88 @@ import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
 import imageDiscworld from '../../../assets/project-discworld-360w.gif';
 import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
 
+const FlexBox = styled.div`
+align-items: center;
+display: flex;
+`;
+const FlexBoxReversed = styled(FlexBox)`
+flex-direction: row-reverse;
+`;
 const ProjectsListContainer = styled.section`
 .code {
     color: #CCFFCC;
     display: inline;
     font-weight: 900;
 }
+.container {
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 0 16px;
+}
+
+.section {
+    position: relative;
+}
+.section-title {
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 36px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.align-items-center {
+    align-items: center;;
+}
+.justify-content-center {
+    justify-content: center;;
+}
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+@media (min-width:568px) {
+    .sm-flex {
+        display: flex;
+        margin: 0 -16px;
+    }
+    .sm-flex > * {
+        padding: 0 16px;
+    } 
+    .sm-ml-16 {
+        margin-left: 16px;
+    }
+    .sm-mr-16 {
+        margin-right: 16px;
+    }
+    .sm-pl-16 {
+        padding-left: 16px;
+    }
+    .sm-pr-16 {
+        padding-right: 16px;
+    }
+}
+
+@media (min-width:768px) {
+    .md-flex {
+        display: flex;
+        margin: 0 -16px;
+    }
+    .md-flex > * {
+        padding: 0 16px;
+    } 
+}
 `;
+
 const ProjectsStyledList = styled.ul`
 list-style: none;
 margin: 0;
 padding: 0;
 `;
+
 const ProjectsListItem = styled.li`
 margin-top: 96px;
 
@@ -260,7 +330,7 @@ export default function ProjectsList() {
                     </div>
                 </ProjectsListItem>
                 <ProjectsListItem id="paper-mountain-post">
-                    <div className="sm-flex align-items-center row-reverse">
+                    <FlexBoxReversed>
                         <div className="project-media">
 
                             <PaperMountainPost />
@@ -281,10 +351,10 @@ export default function ProjectsList() {
                                 <span>visit paper mountain</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="code-x">
-                    <div className="sm-flex align-items-center">
+                    <FlexBox>
                         <div className="project-media">
 
                             <div className="project-image">
@@ -307,10 +377,10 @@ export default function ProjectsList() {
                                 <span>experiment with code x</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="deno">
-                    <div className="sm-flex align-items-center row-reverse">
+                    <FlexBoxReversed>
                         <div className="project-media">
 
                             <div className="project-image">
@@ -421,10 +491,10 @@ export default function ProjectsList() {
                                 <span>check out the Deno project</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="discworld">
-                    <div className="sm-flex align-items-center">
+                    <FlexBox>
                         <div className="project-media">
 
                             <div className="project-image">
@@ -447,10 +517,10 @@ export default function ProjectsList() {
                                 <span>create a discworld</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="emojiland">
-                    <div className="sm-flex align-items-center row-reverse">
+                    <FlexBoxReversed>
                         <div className="project-media">
 
                             <div className="project-image">
@@ -473,10 +543,10 @@ export default function ProjectsList() {
                                 <span>explore emojiland</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="betical">
-                    <div className="sm-flex align-items-center">
+                    <FlexBox>
                         <div className="project-media">
 
                             <div className="project-image">
@@ -499,7 +569,7 @@ export default function ProjectsList() {
                                 <span>experience betical</span>
                             </a>
                         </div>
-                    </div>
+                    </FlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="humble-roots-media">
                     <div className="project-media">

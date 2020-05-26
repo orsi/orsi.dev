@@ -1,31 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaBandcamp } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa';
 
-const MusicViewContainer = styled.section`
-
-`;
-const CenterSection = styled.section`
-text-align: center;
-`;
-const MusicSocialMediaList = styled.ul`
-list-style: none;
-margin: 0;
-padding: 0;
-`;
-const MusicSocialMediaListItem = styled.li`
-display: inline-block;
-font-size: 0px;
-a {
-    display: inline-block;
-    padding: 8px;
-    font-size: 24px;
-    line-height: 0;
-}
-`;
-const MusicDescription = styled.p`
-`;
+const MusicViewContainer = styled.section``;
+const MusicDescription = styled.p``;
 const ResponsiveYoutubeContainer = styled.div`
 position: relative;
 padding-bottom: 56.25%;
@@ -52,7 +29,7 @@ padding: 0;
 `;
 const YoutubeListItem = styled.li`
 flex: 0 0 100%;
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     flex: 0 0 50%;     
 }
 `;
@@ -65,7 +42,7 @@ padding: 0;
 `;
 const BandcampListItem = styled.li`
 flex: 0 0 100%;
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     flex: 0 0 50%;
 }
 // @media (min-width: 920px) {
@@ -89,19 +66,9 @@ export default function MusicView() {
     return (
         <MusicViewContainer>
 
-            <CenterSection>
-
-                <MusicSocialMediaList>
-                    <MusicSocialMediaListItem><a href="https://orsi.bandcamp.com/"
-                        target="_blank"><FaBandcamp /></a></MusicSocialMediaListItem>
-                    <MusicSocialMediaListItem><a href="https://www.youtube.com/user/JonathonOrsi"
-                        target="_blank"><FaYoutube /></a></MusicSocialMediaListItem>
-                </MusicSocialMediaList>
-            </CenterSection>
-
-            <CenterSection>
+            <section>
                 <MusicDescription>An eclectic variety of styles and immersive soundscapes.</MusicDescription>
-            </CenterSection>
+            </section>
 
             <section>
                 <YoutubeList>

@@ -9,7 +9,8 @@ import MusicView from './components/MusicView/MusicView.js';
 import AboutView from './components/AboutView/AboutView';
 
 const AppContainer = styled.main`
-padding-top: 45px;
+padding-top: 56px;
+min-height: 100vh;
 
 #navigation-view {
   position: fixed;
@@ -19,9 +20,14 @@ padding-top: 45px;
   z-index: 5;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 512px) {
+  padding-top: 68px;
+}
+@media (min-width: 769px) {
+  align-items: center;
   display: flex;
   padding-top: 0;
+  padding-left: 300px;
   postition: relative;
 
   &.view-home {
@@ -44,13 +50,29 @@ padding-top: 45px;
     width: 300px;
   }
   #section-view {
-    margin-left: 300px;
+    max-width: 600px;
     z-index: 1;
   }
 }
 `;
 
 const ViewContainer = styled.div`
+margin: 0 auto;
+
+&#section-view {
+  padding: 16px 48px;
+}
+@media (min-width: 512px) {
+  &#section-view {
+    padding: 16px 72px;
+  }
+}
+@media (min-width: 769px) {
+  &#section-view {
+    padding: 16px 48px;
+  }
+}
+
 .view {
   position: absolute;
   left: 15px;

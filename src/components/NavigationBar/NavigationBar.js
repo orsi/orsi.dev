@@ -6,7 +6,7 @@ import { FcMusic, FcMultipleDevices, FcQuestions } from 'react-icons/fc';
 import { FiMenu, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const NavigationBarContainer = styled.div`
-background-color: #0c0b10;
+background-color: transparent;
 font-size: 24px;
 line-height: 1;
 padding: 16px 2em;
@@ -16,6 +16,7 @@ a {
     text-decoration: none;
 }
 &.is-open {
+    background-color: #0c0b10;
     height: 100vh;
 }
 

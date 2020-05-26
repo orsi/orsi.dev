@@ -37,6 +37,10 @@ export class AutomataService {
         });
     }
 
+    destroy() {
+        this.canvas.parentNode.removeChild(this.canvas);
+    }
+
     setupGrid (width, height) {
         this.gridX = Math.floor(width / this.cellSize) + 1;
         this.gridY = Math.floor(height / this.cellSize) + 1;
@@ -90,7 +94,7 @@ export class AutomataService {
             for (let x = 0; x < this.gridX; x++) {
                 if (this.grid[x][y] === true) {
                     const cellWidth = x * this.cellSize;
-                    this.context.fillStyle = `rgba(0,0,0,${alpha})`;
+                    this.context.fillStyle = `rgba(255,255,255,${alpha})`;
                     this.context.fillRect(
                         cellWidth,
                         cellHeight,

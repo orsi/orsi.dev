@@ -1,210 +1,97 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const SkillsListContainer = styled.section`
-.section-title {
-    padding: 48px 0;
-    text-align: center;
+const SkillsSectionContainer = styled.section``;
+const ExperienceSection = styled.div`
+&:not(:first-of-type) {
+    margin-top: 16px;
 }
-.skills-container {
-    &:not(:last-of-type) {
-        margin-bottom: 24px;
-    }
-}
-.skills-title {
-    font-family: 'IBM Plex Mono', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1;
-    margin: 0 0 16px 0;
-    text-transform: uppercase;
-
-    .small {
-        font-size: 12px;
-        margin-left: 8px;
-        opacity: .2;
-    }
-}
-@media (min-width: 568px) {
-    .skills-container {
-        display: flex;
-        align-items: center;
-    }
-    .skills-title {
-        flex: 0 0 180px;
-        margin: 0 16px 0 0;
-        .small {
-            display: block;
-            margin: 0;
-        }
-    }
-}
-.skills-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.skills-list-item {
-    display: inline-block;
-    position: relative;
-    &:not(:last-of-type) {
-        margin-right: 16px;
-    }
-
-    img {
-        display: inline-block;
-        height: 32px;
-        width: auto;
-    }
-    .sr-only {
-        display: none;
-    }
+`;
+const ExperienceHeader = styled.h3`
+font-weight: 700;
+line-height: 1;
+margin: 0;
+text-transform: uppercase;
+`;
+const SkillsList = styled.ul`
+list-style: none;
+margin: 0;
+padding: 0;
+`;
+const SkillsListItem = styled.li`
+display: inline-block;
+position: relative;
+&:not(:last-of-type) {
+    margin-right: 16px;
 }
 `;
 export default function SkillsSection() {
     return (
-        <SkillsListContainer>
-            <h4 className="skills-title">5+ Years</h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>MS Sql Server</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>.NET MVC</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>.NET Web API</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>.NET Core</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Entity Framework</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Kendo UI</span>
-                </li>
-            </ul>
-            <h4 className="skills-title">3-4 Years</h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>jQuery</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>React</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>ESLint</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>AngularJS</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Angular</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>TypeScript</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>RxJs</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>BootStrap</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Material</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>SASS</span>
-                </li>
-            </ul>
-            <h4 className="skills-title">1-2 Years</h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>npm</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Webpack</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Babel</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Express</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>socket.io</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>mongoDB</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>mongoose</span>
-                </li>
-            </ul>
-            <h4 className="skills-title">Familiar</h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>Adobe Illustrator</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Adobe Photoshop</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Adobe XD</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Sketch</span>
-                </li>
-            </ul>
-            <h4 className="skills-title">Devops</h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>Linux</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Apache</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>NGINX</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>git</span>
-                </li>
-            </ul>
-            <h4 className="skills-title">
-                <span>Other</span>
-                <small className="small">Familiar</small>
-            </h4>
-            <ul className="skills-list">
-                <li className="skills-list-item">
-                    <span>C</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Python</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Shopify</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Swift</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Rust</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>php</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>WordPress</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>MySQL</span>
-                </li>
-                <li className="skills-list-item">
-                    <span>Squarespace</span>
-                </li>
-            </ul>
-        </SkillsListContainer>
+        <SkillsSectionContainer>
+            <ExperienceSection>
+                <ExperienceHeader>5+ Years</ExperienceHeader>
+                <SkillsList>
+                    <SkillsListItem>AngularJS</SkillsListItem>
+                    <SkillsListItem>BootStrap</SkillsListItem>
+                    <SkillsListItem>C#</SkillsListItem>
+                    <SkillsListItem>Express</SkillsListItem>
+                    <SkillsListItem>git/GitHub</SkillsListItem>
+                    <SkillsListItem>HTML5/CSS/JavaScript</SkillsListItem>
+                    <SkillsListItem>jQuery</SkillsListItem>
+                    <SkillsListItem>mongoDB/mongoose</SkillsListItem>
+                    <SkillsListItem>Node.js/npm</SkillsListItem>
+                    <SkillsListItem>SASS/LESS</SkillsListItem>
+                </SkillsList>
+            </ExperienceSection>
+            <ExperienceSection>
+                <ExperienceHeader>3-4 Years</ExperienceHeader>
+                <SkillsList>
+                    <SkillsListItem>.NET Core</SkillsListItem>
+                    <SkillsListItem>.NET MVC</SkillsListItem>
+                    <SkillsListItem>.NET Web API</SkillsListItem>
+                    <SkillsListItem>Adobe Illustrator</SkillsListItem>
+                    <SkillsListItem>Adobe Photoshop</SkillsListItem>
+                    <SkillsListItem>Angular</SkillsListItem>
+                    <SkillsListItem>Babel</SkillsListItem>
+                    <SkillsListItem>Entity Framework</SkillsListItem>
+                    <SkillsListItem>JSX/TSX</SkillsListItem>
+                    <SkillsListItem>Material Design</SkillsListItem>
+                    <SkillsListItem>Mocha/Chai</SkillsListItem>
+                    <SkillsListItem>MS Visio</SkillsListItem>
+                    <SkillsListItem>Razor</SkillsListItem>
+                    <SkillsListItem>React</SkillsListItem>
+                    <SkillsListItem>RxJs</SkillsListItem>
+                    <SkillsListItem>SQL</SkillsListItem>
+                    <SkillsListItem>SQL Management Studio</SkillsListItem>
+                    <SkillsListItem>MS SQL Server</SkillsListItem>
+                    <SkillsListItem>SSIS</SkillsListItem>
+                    <SkillsListItem>Telerik Kendo UI</SkillsListItem>
+                    <SkillsListItem>TypeScript</SkillsListItem>
+                    <SkillsListItem>Webpack</SkillsListItem>
+                </SkillsList>
+            </ExperienceSection>
+            <ExperienceSection>
+                <ExperienceHeader>1-2 Years</ExperienceHeader>
+                <SkillsList>
+                    <SkillsListItem>Adobe XD</SkillsListItem>
+                    <SkillsListItem>Apache</SkillsListItem>
+                    <SkillsListItem>C</SkillsListItem>
+                    <SkillsListItem>Java</SkillsListItem>
+                    <SkillsListItem>MySQL</SkillsListItem>
+                    <SkillsListItem>NGINX</SkillsListItem>
+                    <SkillsListItem>NgRX</SkillsListItem>
+                    <SkillsListItem>php</SkillsListItem>
+                    <SkillsListItem>Python</SkillsListItem>
+                    <SkillsListItem>Rust</SkillsListItem>
+                    <SkillsListItem>Shopify</SkillsListItem>
+                    <SkillsListItem>SignalR</SkillsListItem>
+                    <SkillsListItem>Sketch</SkillsListItem>
+                    <SkillsListItem>socket.io</SkillsListItem>
+                    <SkillsListItem>Squarespace</SkillsListItem>
+                    <SkillsListItem>Styled Components</SkillsListItem>
+                    <SkillsListItem>Swift</SkillsListItem>
+                    <SkillsListItem>WordPress</SkillsListItem>
+                </SkillsList>
+            </ExperienceSection>
+        </SkillsSectionContainer>
     );
 }

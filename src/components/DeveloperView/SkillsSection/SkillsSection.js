@@ -64,8 +64,6 @@ const SkillsListContainer = styled.section`
 export default function SkillsSection() {
     return (
         <SkillsListContainer>
-            <h2 className="section-title">Skills</h2>
-
             <h4 className="skills-title">5+ Years</h4>
             <ul className="skills-list">
                 <li className="skills-list-item">

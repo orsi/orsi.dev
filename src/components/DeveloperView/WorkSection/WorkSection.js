@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const WorksListContainer = styled.section`
+const WorkSectionContainer = styled.section`
 padding-bottom: 48px;
     
     .section-title {
@@ -67,12 +67,9 @@ padding-bottom: 48px;
     }
 `;
 
-export default function WorksList () {
+export default function WorkSection () {
   return (
-    <WorksListContainer>
-      
-        <h2 className="section-title">Work</h2>
-
+    <WorkSectionContainer>
         <ul className="works-list">
 
           <li className="works-list-item">
@@ -107,6 +104,6 @@ export default function WorksList () {
           </li>
 
         </ul>
-    </WorksListContainer>
+    </WorkSectionContainer>
   );
 }

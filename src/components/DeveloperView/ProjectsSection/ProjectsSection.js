@@ -9,152 +9,59 @@ import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
 import imageDiscworld from '../../../assets/project-discworld-360w.gif';
 import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
 
-const FlexBox = styled.div`
-align-items: center;
-display: flex;
+const ProjectsSectionContainer = styled.section``;
+const ResponsiveFlexBox = styled.div`
+@media (min-width: 1081px) {
+    align-items: center;
+    display: flex;
+}
 `;
-const FlexBoxReversed = styled(FlexBox)`
+const ResponsiveFlexBoxReversed = styled(ResponsiveFlexBox)`
 flex-direction: row-reverse;
 `;
-const ProjectsListContainer = styled.section`
-.code {
-    color: #CCFFCC;
-    display: inline;
-    font-weight: 900;
-}
-.container {
-    margin: 0 auto;
-    max-width: 720px;
-    padding: 0 16px;
-}
-
-.section {
-    position: relative;
-}
-.section-title {
-    font-family: 'IBM Plex Mono', sans-serif;
-    font-size: 36px;
-    margin: 0 auto;
-    text-transform: uppercase;
+const ProjectsList = styled.ul`
+list-style: none;
+margin: 0;
+margin-top: 32px;
+padding: 0;
+`;
+const ProjectsListItem = styled.li`
+&:not(:first-of-type) {
+    margin-top: 96px;
 }
 
-.align-items-center {
-    align-items: center;;
-}
-.justify-content-center {
-    justify-content: center;;
-}
-.row-reverse {
-    flex-direction: row-reverse;
+`;
+const ProjectMedia = styled.div`
+display: flex;
+font-size: 0;
+justify-content: center;
+margin: 0 auto;
+
+img {
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.mt-16 {
-    margin-top: 16px;
-}
-
-@media (min-width:568px) {
-    .sm-flex {
-        display: flex;
-        margin: 0 -16px;
-    }
-    .sm-flex > * {
-        padding: 0 16px;
-    } 
-    .sm-ml-16 {
-        margin-left: 16px;
-    }
-    .sm-mr-16 {
-        margin-right: 16px;
-    }
-    .sm-pl-16 {
-        padding-left: 16px;
-    }
-    .sm-pr-16 {
+${ResponsiveFlexBox} & {
+    max-width: 300px;
+    @media (min-width: 1081px) {
+        flex: 0 0 300px;
         padding-right: 16px;
     }
 }
-
-@media (min-width:768px) {
-    .md-flex {
-        display: flex;
-        margin: 0 -16px;
-    }
-    .md-flex > * {
-        padding: 0 16px;
-    } 
-}
-`;
-
-const ProjectsStyledList = styled.ul`
-list-style: none;
-margin: 0;
-padding: 0;
-`;
-
-const ProjectsListItem = styled.li`
-margin-top: 96px;
-
-.project-title {
-    font-family: 'IBM Plex Mono', sans-serif;
-    line-height: 1;
-    margin: 0 0 8px 0;
-}
-.project-description {
-    text-align: justify;
-}
-.project-button {
-    align-items: center;
-    color: inherit;
-    display: flex;
-    font-size: 13.3px;
-    font-variant: small-caps;
-    margin-top: 16px;
-    opacity: .8;
-    text-decoration: none;
-    text-transform: uppercase;
-    span {
-        margin-left: 16px;
-    }
-    &:hover {
-        opacity: 1;
+${ResponsiveFlexBoxReversed} & {
+    @media (min-width: 1081px) {
+        padding-right: 0;
+        padding-left: 16px;
     }
 }
-.project-media img {
-    display: block;
-}
 
-&#jojogun {
-
-    .project-image {
-        border-radius: 4px;
-        overflow: hidden;
-    }
-
-    .project-content {
-        margin-top: 16px;
-    }
-
-}
-
-&#paper-mountain-post {
-    .project-title {
-        align-items: center;
-        display: flex;
-    }
-    .project-media {
-        flex: 0 0 240px;
-        margin: 0 auto;
-        max-width: 240px;
-    }
-    .project-media svg {
-        max-width: 300px;
-        // fill: currentColor;
-    }
-    
-    .sky{
+#paper-mountain-post & {
+    .sky {
         fill:#7dcccc;
     }
-    .mountain{
+
+    .mountain {
         fill:#eba396;
         stroke: #22222f;
         stroke-width: 1px;
@@ -179,49 +86,20 @@ margin-top: 96px;
         stroke: #22222f;
         stroke-width: 64px;
     }
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
-
 }
 
-&#code-x {
-    .project-media {
-        flex: 0 0 240px;
-        margin: 0 auto;
-    }
-    .project-media img {
-        border-radius: 3px;
-    }
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
+#code-x & {
+    flex: 0 0 240px;
+    max-width: 240px;
 }
 
-&#deno {
-    .project-title {
-        align-items: center;
-        display: flex;
-    }
-    .project-media {
-        flex: 0 0 240px;
-        margin: 0 auto;
-        max-width: 240px;
-    }
-    .project-media svg {
-        max-width: 300px;
+#deno & {
+    flex: 0 0 240px;
+    max-width: 240px;
+
+    svg {
         fill: currentColor;
     }
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
-
     .deno-eyes {
         animation: denoBlink 5s step-end infinite;
     }
@@ -243,156 +121,119 @@ margin-top: 96px;
         }
     }
 }
-
-&#discworld {
-    .project-media {
-        flex: 0 0 40%;
-    }
-    .project-media img {
-        border-radius: 3px;
-    }
-    
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
-}
-
-&#emojiland {
-    .project-media {
-        flex: 0 0 40%;
-    }
-    .project-media img {
-        border-radius: 3px;
-    }
-    
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
-}
-
-&#betical {
-    .project-media {
-        flex: 0 0 40%;
-    }
-    .project-media img {
-        border-radius: 3px;
-    }
-    @media (max-width: 567px) {
-        .project-content {
-            margin-top: 16px;
-        }
-    }
-}
-
-&#humble-roots-media {
-    .project-media {
-        flex: 0 0 20%;
-    }
-    .project-media img {
-        border-radius: 3px;
-    }
-    .project-content {
-        margin-top: 16px;
-    }
+`;
+const ProjectContent = styled.div`
+${ProjectsListItem} & {
+    margin-top: 16px;
 }
 `;
-
-export default function ProjectsList() {
+const ProjectTitle = styled.h3`
+font-family: 'IBM Plex Mono', sans-serif;
+line-height: 1;
+margin: 0 0 8px 0;
+`;
+const ProjectTime = styled.small``;
+const ProjectDescription = styled.article`
+text-align: justify;
+`;
+const ProjectButton = styled.a`
+align-items: center;
+color: inherit;
+display: flex;
+font-size: 13.3px;
+font-variant: small-caps;
+margin-top: 16px;
+opacity: .8;
+text-decoration: none;
+text-transform: uppercase;
+span {
+    margin-left: 16px;
+}
+&:hover {
+    opacity: 1;
+}
+`;
+const Code = styled.span`
+color: #53CA49;
+display: inline;
+font-family: monospace;
+font-weight: 900;
+`;
+export default function ProjectsSection() {
     return (
-        <ProjectsListContainer>
-            <ProjectsStyledList>
+        <ProjectsSectionContainer>
+            <ProjectsList>
                 <ProjectsListItem id="jojogun">
-                    <div className="project-media">
-
-                        <div className="project-image">
-                            <img src={imageJojoGun} />
-                        </div>
-
-                    </div>
-                    <div className="project-content">
-
-                        <h4 className="project-title">JoJo Gun & the Bullets</h4>
-                        <div><small>MAY 2020</small></div>
-                        <div className="project-description">
+                    <ProjectMedia>
+                        <img src={imageJojoGun} />
+                    </ProjectMedia>
+                    <ProjectContent>
+                        <ProjectTitle>JoJo Gun & the Bullets</ProjectTitle>
+                        <ProjectTime>MAY 2020</ProjectTime>
+                        <ProjectDescription>
                             <p>A creative "glitch" landing page for Hamilton-based rock band Jojo Gun & the Bullets to direct fans to their social media and music catalogue. Created in React, random glitches happen to elements as you watch.</p>
-                        </div>
-
-                        <a href="https://www.jojogun.ca"
+                        </ProjectDescription>
+                        <ProjectButton href="https://www.jojogun.ca"
                             target="_blank"
                             className="project-button">
                             <FaExternalLinkAlt></FaExternalLinkAlt>
                             <span>visit jojogun</span>
-                        </a>
-                    </div>
+                        </ProjectButton>
+                    </ProjectContent>
                 </ProjectsListItem>
                 <ProjectsListItem id="paper-mountain-post">
-                    <FlexBoxReversed>
-                        <div className="project-media">
-
+                    <ResponsiveFlexBoxReversed id="boo">
+                        <ProjectMedia>
                             <PaperMountainPost />
-
-                        </div>
-                        <div className="project-content">
-
-                            <h4 className="project-title">Paper Mountain Post</h4>
-                            <div><small>FEB 2020</small></div>
-                            <div className="project-description">
+                        </ProjectMedia>
+                        <ProjectContent>
+                            <ProjectTitle>Paper Mountain Post</ProjectTitle>
+                            <ProjectTime>FEB 2020</ProjectTime>
+                            <ProjectDescription>
                                 <p>A post production film company based in Los Angeles and Toronto. They wanted a design that made them stand out from other often bland and similar film production websites they would be compared to. I redesigned and built a custom Squarespace template that they could easily modify text blocks, services, team members, and works from.</p>
-                            </div>
-
-                            <a href="https://papermountainpostltd.com"
+                            </ProjectDescription>
+                            <ProjectButton href="https://papermountainpostltd.com"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>visit paper mountain</span>
-                            </a>
-                        </div>
-                    </FlexBoxReversed>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="code-x">
-                    <FlexBox>
-                        <div className="project-media">
-
-                            <div className="project-image">
-                                <img src={imageCodeX}></img>
-                            </div>
-
-                        </div>
-                        <div className="project-content">
-
-                            <h4 className="project-title">Code X</h4>
-                            <div><small>JAN 2020</small></div>
-                            <div className="project-description">
+                    <ResponsiveFlexBox>
+                        <ProjectMedia>
+                            <img src={imageCodeX}></img>
+                        </ProjectMedia>
+                        <ProjectContent>
+                            <ProjectTitle>Code X</ProjectTitle>
+                            <ProjectTime>JAN 2020</ProjectTime>
+                            <ProjectDescription>
                                 <p>An interactive exploration of text, image and sound. Conceptualized in 1999 during a residency at the Visual Studies Workshop in Rochester, New York by <a href="https://www.wmarksutherland.com/code-x" target="_blank">W. Mark Sutherland</a>. Orginally coded in Adobe Flash, Mark reached out to develop a newer version of Code X built with supported technology. I recreated Code X for the browser using the Web Audio API.</p>
-                            </div>
+                            </ProjectDescription>
 
-                            <a href="https://code-x.live"
+                            <ProjectButton href="https://code-x.live"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>experiment with code x</span>
-                            </a>
-                        </div>
-                    </FlexBox>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="deno">
-                    <FlexBoxReversed>
-                        <div className="project-media">
-
-                            <div className="project-image">
-                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 1024.000000 1024.000000"
-                                    preserveAspectRatio="xMidYMid meet">
-                                    <metadata>
-                                        Created by potrace 1.15, written by Peter Selinger 2001-2017
+                    <ResponsiveFlexBoxReversed>
+                        <ProjectMedia>
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 1024.000000 1024.000000"
+                                preserveAspectRatio="xMidYMid meet">
+                                <metadata>
+                                    Created by potrace 1.15, written by Peter Selinger 2001-2017
                                 </metadata>
-                                    <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
-                                        stroke="none">
-                                        <path d="M4720 9174 c-19 -2 -80 -9 -135 -14 -782 -82 -1552 -413 -2180 -939
+                                <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+                                    stroke="none">
+                                    <path d="M4720 9174 c-19 -2 -80 -9 -135 -14 -782 -82 -1552 -413 -2180 -939
                                 -116 -96 -380 -360 -476 -476 -520 -621 -824 -1318 -936 -2143 -25 -183 -25
                                 -801 0 -984 112 -825 416 -1522 936 -2143 96 -116 360 -380 476 -476 621 -520
                                 1318 -824 2143 -936 183 -25 801 -25 984 0 825 112 1522 416 2143 936 116 96
@@ -467,135 +308,114 @@ export default function ProjectsList() {
                                 -20 210 -4 58 -13 164 -21 235 -19 175 -18 195 4 195 10 0 23 -5 30 -12z m473
                                 -673 c3 -22 9 -104 13 -182 7 -150 4 -161 -37 -130 -12 9 -20 47 -32 161 -21
                                 206 -22 198 17 194 29 -3 33 -7 39 -43z"/>
-                                        <path className="deno-eyes" d="M3184 5756 c-104 -45 -112 -186 -14 -236 71 -36 143 -19 180 43 70
+                                    <path className="deno-eyes" d="M3184 5756 c-104 -45 -112 -186 -14 -236 71 -36 143 -19 180 43 70
                                 114 -44 246 -166 193z"/>
-                                        <path className="deno-eyes" d="M3862 5660 c-96 -59 -96 -201 0 -260 95 -57 218 18 218 132 0 110
+                                    <path className="deno-eyes" d="M3862 5660 c-96 -59 -96 -201 0 -260 95 -57 218 18 218 132 0 110
                                 -126 184 -218 128z"/>
-                                    </g>
-                                </svg>
-                            </div>
+                                </g>
+                            </svg>
 
-                        </div>
-                        <div className="project-content">
+                        </ProjectMedia>
+                        <ProjectContent>
 
-                            <h4 className="project-title">Deno</h4>
-                            <div><small>APRIL 2019</small></div>
-                            <div className="project-description">
+                            <ProjectTitle>Deno</ProjectTitle>
+                            <ProjectTime>APRIL 2019</ProjectTime>
+                            <ProjectDescription>
                                 <p><a href="https://deno.land/" target="_blank">Deno</a> is a JavaScript/TypeScript runtime built on V8, Rust, and Tokio. Deno aims to be a productive and secure scripting environment for the modern programmer from the creator of NodeJS, Ryan Dahl. I initiated the <a href="https://github.com/denoland/deno/commits?author=jorsi" target="_blank">Rust and Typescript TLS features</a>.</p>
-                            </div>
+                            </ProjectDescription>
 
-                            <a href="https://deno.land"
+                            <ProjectButton href="https://deno.land"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>check out the Deno project</span>
-                            </a>
-                        </div>
-                    </FlexBoxReversed>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="discworld">
-                    <FlexBox>
-                        <div className="project-media">
+                    <ResponsiveFlexBox>
+                        <ProjectMedia>
+                            <img src={imageDiscworld} />
+                        </ProjectMedia>
+                        <ProjectContent>
 
-                            <div className="project-image">
-                                <img src={imageDiscworld} />
-                            </div>
+                            <ProjectTitle>Discworld</ProjectTitle>
+                            <ProjectTime>MAR 2018</ProjectTime>
+                            <ProjectDescription>
+                                <p>A browser based procedural discworld generator using cellular automaton, perlin noise, elevation, temperature, and precipitation maps to create a variety of 'biomes' that colour the landscape. Create a new discworld by typing <Code>/destroy</Code>, and then <Code>/create seed width height</Code>, where seed is any non-space phrase, and width and height are numbers (150-300 is ideal, any more will severely impact performance). You can zoom in and out with the mouse scroll wheel and move around by right-clicking the mouse in any direction.</p>
+                            </ProjectDescription>
 
-                        </div>
-                        <div className="project-content">
-
-                            <h4 className="project-title">Discworld</h4>
-                            <div><small>MAR 2018</small></div>
-                            <div className="project-description">
-                                <p>A browser based procedural discworld generator using cellular automaton, perlin noise, elevation, temperature, and precipitation maps to create a variety of 'biomes' that colour the landscape. Create a new discworld by typing <span className="code">/destroy</span>, and then <span className="code">/create seed width height</span>, where seed is any non-space phrase, and width and height are numbers (150-300 is ideal, any more will severely impact performance). You can zoom in and out with the mouse scroll wheel and move around by right-clicking the mouse in any direction.</p>
-                            </div>
-
-                            <a href="https://jonorsi.com/discworld/"
+                            <ProjectButton href="https://jonorsi.com/discworld/"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>create a discworld</span>
-                            </a>
-                        </div>
-                    </FlexBox>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="emojiland">
-                    <FlexBoxReversed>
-                        <div className="project-media">
+                    <ResponsiveFlexBoxReversed>
+                        <ProjectMedia>
+                            <img src={imageEmojiland} />
+                        </ProjectMedia>
+                        <ProjectContent>
 
-                            <div className="project-image">
-                                <img src={imageEmojiland} />
-                            </div>
+                            <ProjectTitle>Emojiland</ProjectTitle>
+                            <ProjectTime>DEC 2017</ProjectTime>
+                            <ProjectDescription>
+                                <p>Inspired by Dwarf Fortress, one of the most complex simulation games made, I wanted to learn about procedural generation, perlin noise, and graphics rendering. Users can explore the map, generate a new world, and chat with other users on screen. Right-click the mouse button in the direction you want to walk, type and press enter to chat, and type <Code>/generate hello world</Code> to make a new map (replace 'hello world' with different phrases for different maps). Built in Typescript using NodeJS, socket.io, and browserify.</p>
+                            </ProjectDescription>
 
-                        </div>
-                        <div className="project-content">
-
-                            <h4 className="project-title">Emojiland</h4>
-                            <div><small>DEC 2017</small></div>
-                            <div className="project-description">
-                                <p>Inspired by Dwarf Fortress, one of the most complex simulation games made, I wanted to learn about procedural generation, perlin noise, and graphics rendering. Users can explore the map, generate a new world, and chat with other users on screen. Right-click the mouse button in the direction you want to walk, type and press enter to chat, and type <span className="code">/generate hello world</span> to make a new map (replace 'hello world' with different phrases for different maps). Built in Typescript using NodeJS, socket.io, and browserify.</p>
-                            </div>
-
-                            <a href="https://jonorsi.com/emojiland/"
+                            <ProjectButton href="https://jonorsi.com/emojiland/"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>explore emojiland</span>
-                            </a>
-                        </div>
-                    </FlexBoxReversed>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBoxReversed>
                 </ProjectsListItem>
                 <ProjectsListItem id="betical">
-                    <FlexBox>
-                        <div className="project-media">
-
-                            <div className="project-image">
-                                <img src={imageBetical} />
-                            </div>
-
-                        </div>
-                        <div className="project-content">
-
-                            <h4 className="project-title">Betical</h4>
-                            <div><small>APRIL 2017</small></div>
-                            <div className="project-description">
+                    <ResponsiveFlexBox>
+                        <ProjectMedia>
+                            <img src={imageBetical} />
+                        </ProjectMedia>
+                        <ProjectContent>
+                            <ProjectTitle>Betical</ProjectTitle>
+                            <ProjectTime>APRIL 2017</ProjectTime>
+                            <ProjectDescription>
                                 <p>A born-digital paragraph generator composed with remixed typed assemblage-letters by Dani Spinosa of <a href="https://genericpronoun.com/" target="_blank">Generic Pronoun</a>. A randomly generated combination of letters turn into words, words into paragraphs, and the reader is left with the impression of a familiar language.</p>
-                            </div>
-
-                            <a href="https://jonorsi.com/betical"
+                            </ProjectDescription>
+                            <ProjectButton href="https://jonorsi.com/betical"
                                 target="_blank"
                                 className="project-button">
                                 <FaExternalLinkAlt></FaExternalLinkAlt>
                                 <span>experience betical</span>
-                            </a>
-                        </div>
-                    </FlexBox>
+                            </ProjectButton>
+                        </ProjectContent>
+                    </ResponsiveFlexBox>
                 </ProjectsListItem>
                 <ProjectsListItem id="humble-roots-media">
-                    <div className="project-media">
-
-                        <div className="project-image">
-                            <img src={imageHumbleRootsMedia} />
-                        </div>
-
-                    </div>
-                    <div className="project-content">
-
-                        <h4 className="project-title">Humble Roots Media</h4>
-                        <div><small>MAY 2014</small></div>
-                        <div className="project-description">
+                    <ProjectMedia>
+                        <img src={imageHumbleRootsMedia} />
+                    </ProjectMedia>
+                    <ProjectContent>
+                        <ProjectTitle>Humble Roots Media</ProjectTitle>
+                        <ProjectTime>MAY 2014</ProjectTime>
+                        <ProjectDescription>
                             <p>A digital content creator for businesses and corporations. They wanted a redesign of their website to better reflect their business personality and needed someone who could work with them to implement their vision. Built on Wordpress, I developed a new theme template and presented their beautiful cinemagraphs front and center.</p>
-                        </div>
-
-                        <a href="https://www.humblerootsmedia.com"
+                        </ProjectDescription>
+                        <ProjectButton href="https://www.humblerootsmedia.com"
                             target="_blank"
                             className="project-button">
                             <FaExternalLinkAlt></FaExternalLinkAlt>
                             <span>visit humble roots media</span>
-                        </a>
-                    </div>
+                        </ProjectButton>
+                    </ProjectContent>
                 </ProjectsListItem>
-            </ProjectsStyledList>
-        </ProjectsListContainer>
+            </ProjectsList>
+        </ProjectsSectionContainer>
     );
 }

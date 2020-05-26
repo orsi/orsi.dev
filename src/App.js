@@ -50,7 +50,6 @@ min-height: 100vh;
     width: 300px;
   }
   #section-view {
-    max-width: 600px;
     z-index: 1;
   }
 }

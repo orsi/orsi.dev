@@ -1,28 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
 import Automata from './Automata/Automata.js';
 import ProjectsSection from './ProjectsSection/ProjectsSection.js';
 import SkillsSection from './SkillsSection/SkillsSection.js';
 import WorkSection from './WorkSection/WorkSection.js';
 
-export default class DeveloperView extends React.Component {
-    render() {
-        return (
-            <div className="DeveloperView">
-                {/* <section>
-                    <Automata></Automata>
-                </section> */}
+const DeveloperViewContainer = styled.section``;
+const DeveloperViewTitle = styled.h2``;
+const DescriptionSection = styled.p``;
+const ContactSection = styled.p``;
+export default function DeveloperView() {
+    return (
+        <DeveloperViewContainer>
+            <Automata></Automata>
 
-                <p>Creative digital spaces and elegant user experiences.</p>
+            <DeveloperViewTitle>Web Design and Development</DeveloperViewTitle>
 
-                <SkillsSection />
-                <WorkSection></WorkSection>
-                <ProjectsSection></ProjectsSection>
-                
-                <section>
-                    <p>Interested in creating a digital presence together? Feel free to <a href="mailto:jonathon.orsi@gmail.com">send me a message.</a></p>
-                </section>
+            <DescriptionSection>As a full-stack developer and creative designer, I build full-featured web applications and digital spaces for individuals, small-businesses, and enterprises.</DescriptionSection>
 
-            </div>
-        );
-    }
+            <ContactSection>Interested in creating an online presence together? Feel free to <a href="mailto:jonathon.orsi@gmail.com">send me a message.</a></ContactSection>
+
+            <SkillsSection />
+            <WorkSection></WorkSection>
+            <ProjectsSection></ProjectsSection>
+            
+
+        </DeveloperViewContainer>
+    );
 }

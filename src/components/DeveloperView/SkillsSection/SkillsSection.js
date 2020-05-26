@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 const SkillsSectionContainer = styled.section``;
+const SkillsSectionTitle = styled.h2``;
 const ExperienceSection = styled.div`
 &:not(:first-of-type) {
     margin-top: 16px;
@@ -27,6 +28,7 @@ position: relative;
 export default function SkillsSection() {
     return (
         <SkillsSectionContainer>
+            <SkillsSectionTitle id="skills">Skills</SkillsSectionTitle>
             <ExperienceSection>
                 <ExperienceHeader>5+ Years</ExperienceHeader>
                 <SkillsList>

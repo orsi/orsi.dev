@@ -10,6 +10,7 @@ import imageDiscworld from '../../../assets/project-discworld-360w.gif';
 import imageEmojiland from '../../../assets/project-emojiland-360w.gif';
 
 const ProjectsSectionContainer = styled.section``;
+const ProjectsSectionTitle = styled.h2``;
 const ResponsiveFlexBox = styled.div`
 @media (min-width: 1081px) {
     align-items: center;
@@ -162,6 +163,7 @@ font-weight: 900;
 export default function ProjectsSection() {
     return (
         <ProjectsSectionContainer>
+            <ProjectsSectionTitle id="projects">Projects</ProjectsSectionTitle>
             <ProjectsList>
                 <ProjectsListItem id="jojogun">
                     <ProjectMedia>

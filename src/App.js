@@ -24,11 +24,11 @@ min-height: 100vh;
   padding-top: 68px;
 }
 @media (min-width: 769px) {
-  align-items: center;
   display: flex;
   padding-top: 0;
-  padding-left: 300px;
-  postition: relative;
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
 
   &.view-home {
     #navigation-view {
@@ -43,21 +43,24 @@ min-height: 100vh;
     align-items: center;
     display: flex;
     height: 100vh;
+    flex: 0 0 300px;
     justify-content: center;
-    left: 0;
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 300px;
+    left: 0;
   }
   #section-view {
+    align-items: center;
+    display: flex;
+    flex: 0 1 auto;
+    min-width: 0px;
+    min-height: 100vh;
     z-index: 1;
   }
 }
 `;
 
 const ViewContainer = styled.div`
-margin: 0 auto;
-
 &#section-view {
   padding: 16px 48px;
 }
@@ -120,8 +123,8 @@ export default function App() {
       </ViewContainer>
       <ViewContainer id="section-view">
         {routes.map(({ path, Component }) => (
-            <Route key={path} 
-              exact 
+            <Route key={path}
+              exact
               path={path}>
               {({ match }) => (
                 <CSSTransition

@@ -20,9 +20,9 @@ export default function DeveloperView() {
 
             <ContactSection>Interested in creating an online presence together? Feel free to <a href="mailto:jonathon.orsi@gmail.com">send me a message.</a></ContactSection>
 
-            <SkillsSection />
-            <WorkSection></WorkSection>
             <ProjectsSection></ProjectsSection>
+            <WorkSection></WorkSection>
+            <SkillsSection />
             
 
         </DeveloperViewContainer>

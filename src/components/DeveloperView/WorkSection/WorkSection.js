@@ -11,7 +11,7 @@ margin: 0 auto;
 padding: 0;
 `;
 const WorksListItem = styled.li`
-padding-left: 20px;
+padding-left: 16px;
 position: relative;
 &:not(:first-of-type) {
   margin-top: 24px;
@@ -22,7 +22,7 @@ position: relative;
     position: absolute;
     bottom: 0px;
     top: 0px;
-    left: 6px;
+    left: 0;
     width: 3px;
 }
 `;
@@ -38,8 +38,10 @@ line-height: 1;
 `;
 const Duration = styled.time`
 color: #999;
+display: block;
 font-size: smaller;
-line-height: 1;
+line-height: 1.2;
+margin-top: 4px;
 `;
 
 export default function WorkSection() {

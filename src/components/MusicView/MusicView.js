@@ -66,9 +66,9 @@ export default function MusicView() {
     return (
         <MusicViewContainer>
 
-            <section>
+            {/* <section>
                 <MusicDescription>An eclectic variety of styles and immersive soundscapes.</MusicDescription>
-            </section>
+            </section> */}
 
             <section>
                 <YoutubeList>

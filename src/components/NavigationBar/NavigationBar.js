@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 &.is-open {
-    background-color: #0c0b10;
+    background-color: #040e1e;
     height: 100vh;
 }
 
@@ -43,6 +43,9 @@ const NameH1 = styled.h1`
 font-size: 1em;
 font-weight: 900;
 margin: 0;
+a {
+    color: inherit;
+}
 `;
 const HamburgerButton = styled.button`
 background: none;
@@ -91,6 +94,7 @@ padding: 0;
 `;
 const MenuListItem = styled.li`
 a {
+    color: inherit;
     display: flex;
     align-items: center;
     padding: 8px 0;

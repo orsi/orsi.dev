@@ -94,7 +94,7 @@ export class AutomataService {
             for (let x = 0; x < this.gridX; x++) {
                 if (this.grid[x][y] === true) {
                     const cellWidth = x * this.cellSize;
-                    this.context.fillStyle = `rgba(255,255,255,${alpha})`;
+                    this.context.fillStyle = `rgba(100, 255, 218, ${alpha})`;
                     this.context.fillRect(
                         cellWidth,
                         cellHeight,

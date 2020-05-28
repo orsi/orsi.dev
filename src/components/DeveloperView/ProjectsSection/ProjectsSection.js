@@ -33,10 +33,10 @@ const ProjectsListItem = styled.li`
 
 `;
 const ProjectMedia = styled.div`
-display: flex;
 font-size: 0;
 justify-content: center;
 margin: 0 auto;
+text-align: center;
 
 img {
     border-radius: 4px;

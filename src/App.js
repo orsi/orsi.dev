@@ -25,6 +25,7 @@ min-height: 100vh;
 }
 @media (min-width: 769px) {
   display: flex;
+  justify-content: center;
   padding-top: 0;
   position: relative;
   max-width: 1170px;

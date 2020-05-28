@@ -6,7 +6,6 @@ import { FcMusic, FcMultipleDevices, FcQuestions } from 'react-icons/fc';
 import { FiMenu, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const NavigationBarContainer = styled.div`
-background-color: transparent;
 font-size: 24px;
 line-height: 1;
 padding: 16px 2em;
@@ -14,10 +13,6 @@ position: relative;
 
 a {
     text-decoration: none;
-}
-&.is-open {
-    background-color: #040e1e;
-    height: 100vh;
 }
 
 @media (min-width: 512px) {
@@ -62,23 +57,30 @@ padding: 0;
 }
 `;
 const PrimaryNavigation = styled.nav`
-display: none;
+background-color: #040e1e;
+display: flex;
 flex-direction: column;
-height: 100%;
+height: 100vh;
 justify-content: center;
+opacity: 0;
 padding: 1em 2em;
+pointer-events: none;
 position: absolute;
 top: 0;
+transition: opacity 300ms;
 left: 0;
 width: 100%;
 z-index: 0;
 ${NavigationBarContainer}.is-open & {
-    display: flex;
+    opacity: 1;
+    pointer-events: initial;
 }
 @media (min-width: 769px) {
     display: block;
     height: initial;
+    opacity: 1;
     padding: 0;
+    pointer-events: initial;
     position: relative;
 }
 `;

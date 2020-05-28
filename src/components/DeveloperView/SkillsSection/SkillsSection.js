@@ -22,7 +22,10 @@ const SkillsListItem = styled.li`
 display: inline-block;
 position: relative;
 &:not(:last-of-type) {
-    margin-right: 16px;
+    margin-right: 4px;
+}
+&:not(:last-of-type)::after {
+    content: ',';
 }
 `;
 export default function SkillsSection() {

@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MusicViewContainer = styled.section``;
+const MusicViewContainer = styled.section`
+align-items: center;
+display: flex;
+min-height: 100%;
+`;
 const MusicDescription = styled.p``;
 const ResponsiveYoutubeContainer = styled.div`
 position: relative;
@@ -65,66 +69,68 @@ font-size: 0;
 export default function MusicView() {
     return (
         <MusicViewContainer>
+            <div>
 
-            {/* <section>
+                {/* <section>
                 <MusicDescription>An eclectic variety of styles and immersive soundscapes.</MusicDescription>
             </section> */}
 
-            <section>
-                <YoutubeList>
-                    <YoutubeListItem>
-                        <ResponsiveYoutubeContainer>
-                            <iframe width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/Ae3a2k8xAEs"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        </ResponsiveYoutubeContainer>
-                    </YoutubeListItem>
-                    <YoutubeListItem>
-                        <ResponsiveYoutubeContainer>
-                            <iframe width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/kJyRSvX__0M"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        </ResponsiveYoutubeContainer>
-                    </YoutubeListItem>
-                </YoutubeList>
+                <section>
+                    <YoutubeList>
+                        <YoutubeListItem>
+                            <ResponsiveYoutubeContainer>
+                                <iframe width="560"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/Ae3a2k8xAEs"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            </ResponsiveYoutubeContainer>
+                        </YoutubeListItem>
+                        <YoutubeListItem>
+                            <ResponsiveYoutubeContainer>
+                                <iframe width="560"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/kJyRSvX__0M"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            </ResponsiveYoutubeContainer>
+                        </YoutubeListItem>
+                    </YoutubeList>
 
-            </section>
-            <section>
-                <BandcampList>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2906715428/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/role-playing-pizza-game">Role Playing Pizza Game by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/track=2247218558/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/track/thomas-the-rocket-engine">Thomas the Rocket Engine by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1438955147/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/oddities">Oddities by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3353210599/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/sol-survivor">Sol Survivor by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3032009350/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/unleeched">UnLeeched by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                    <BandcampListItem>
-                        <ResponsiveBandcampContainer>
-                            <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3706494023/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/battle-bits">Battle Bits by Jonathon Orsi</a></iframe>
-                        </ResponsiveBandcampContainer>
-                    </BandcampListItem>
-                </BandcampList>
-            </section>
+                </section>
+                <section>
+                    <BandcampList>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2906715428/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/role-playing-pizza-game">Role Playing Pizza Game by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/track=2247218558/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/track/thomas-the-rocket-engine">Thomas the Rocket Engine by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1438955147/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/oddities">Oddities by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3353210599/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/sol-survivor">Sol Survivor by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3032009350/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/unleeched">UnLeeched by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                        <BandcampListItem>
+                            <ResponsiveBandcampContainer>
+                                <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3706494023/size=large/bgcol=333333/linkcol=fe7eaf/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://orsi.bandcamp.com/album/battle-bits">Battle Bits by Jonathon Orsi</a></iframe>
+                            </ResponsiveBandcampContainer>
+                        </BandcampListItem>
+                    </BandcampList>
+                </section>
+            </div>
         </MusicViewContainer>
     );
 }

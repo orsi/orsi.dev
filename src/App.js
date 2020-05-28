@@ -52,7 +52,7 @@ min-height: 100vh;
   #section-view {
     align-items: center;
     display: flex;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     min-width: 0px;
     min-height: 100vh;
     z-index: 1;
@@ -63,6 +63,7 @@ min-height: 100vh;
 const ViewContainer = styled.div`
 &#section-view {
   padding: 16px 48px;
+  position: relative;
 }
 @media (min-width: 512px) {
   &#section-view {
@@ -75,33 +76,24 @@ const ViewContainer = styled.div`
   }
 }
 
-.view {
-  position: absolute;
-  left: 15px;
-  right: 15px;
-}
-
+// route change animations
 .view-enter {
   opacity: 0;
-  transform: scale(1.1);
 }
-
 .view-enter-active {
   opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms;
 }
-
 .view-exit {
   opacity: 1;
-  transform: scale(1);
+  position: absolute;
+  top: 0;
 }
-
 .view-exit-active {
   opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
-}`;
+  transition: opacity 300ms;
+}
+`;
 
 const routes = [
   { path: '/', name: 'Home', Component: null },
@@ -115,6 +107,21 @@ export default function App() {
   let { pathname } = useLocation();
   pathname = pathname.substr(1);
   if (pathname.length === 0) pathname = 'home';
+
+  function onViewEnter(element) {
+    document.body.style.overflow = 'hidden';
+  }
+  function onViewExit(element) {
+    const paddingTop = window.getComputedStyle(element.parentElement, null).getPropertyValue('padding-top');
+    const paddingLeft = window.getComputedStyle(element.parentElement, null).getPropertyValue('padding-left');
+    const innerWidth = element.parentElement.clientWidth - (parseInt(paddingLeft) * 2);
+    element.style.width = innerWidth + 'px';
+    element.style.top = paddingTop;
+    element.style.left = paddingLeft;
+  }
+  function onViewExited(element) {
+    document.body.style.overflow = 'auto';
+  }
 
   return (
     <AppContainer className={"view-" + pathname }>
@@ -131,6 +138,9 @@ export default function App() {
                   in={match != null}
                   timeout={300}
                   classNames="view"
+                  onEnter={onViewEnter}
+                  onExit={onViewExit}
+                  onExited={onViewExited}
                   unmountOnExit>
                   { Component !== null ? <Component /> : <span></span> }
                 </CSSTransition>

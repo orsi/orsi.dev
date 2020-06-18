@@ -174,7 +174,7 @@ export default function NavigationBar() {
                 <SecondaryNavigation>
                     <SocialMediaList>
                         <SocialMediaListItem>
-                            <a href="https://github.com/jorsi"
+                            <a href="https://github.com/orsi"
                                 target="_blank"><FiGithub /></a>
                         </SocialMediaListItem>
                         <SocialMediaListItem>

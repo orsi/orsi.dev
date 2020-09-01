@@ -4,6 +4,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import PaperMountainPost from './project-paper-mountain-post.svg';
 import imageBetical from '../../../assets/project-betical.gif';
 import imageCodeX from '../../../assets/project-code-x.gif';
+import imageUltimaXna from '../../../assets/UltimaXNALogo1024.png';
 import imageHumbleRootsMedia from '../../../assets/project-humble-roots-media.gif';
 import imageJojoGun from '../../../assets/project-jojogun-960w.gif';
 import imageDiscworld from '../../../assets/project-discworld-360w.gif';
@@ -398,6 +399,25 @@ export default function ProjectsSection() {
                             </ProjectButton>
                         </ProjectContent>
                     </ResponsiveFlexBox>
+                </ProjectsListItem>
+                <ProjectsListItem id="ultima-xna">
+                    <ProjectMedia>
+                        <img src={imageUltimaXna} />
+                    </ProjectMedia>
+                    <ProjectContent>
+                        <ProjectTitle>Ultima XNA</ProjectTitle>
+                        <ProjectTime>September 2015</ProjectTime>
+                        <ProjectDescription>
+                            <p>UltimaXNA is an isometric massively multiplayer online role playing client that supports playing Ultima Online on freeshards.</p>
+                            <p>I contributed the <a href="https://github.com/ZaneDubya/UltimaXNA/commits?author=orsi" target="_blank">implementation of various GUI and graphical displays including books, spellbooks, chat text, and fixing bugs</a>.</p>
+                        </ProjectDescription>
+                        <ProjectButton href="https://github.com/ZaneDubya/UltimaXNA"
+                            target="_blank"
+                            className="project-button">
+                            <FaExternalLinkAlt></FaExternalLinkAlt>
+                            <span>view the UltimaXNA project</span>
+                        </ProjectButton>
+                    </ProjectContent>
                 </ProjectsListItem>
                 <ProjectsListItem id="humble-roots-media">
                     <ProjectMedia>

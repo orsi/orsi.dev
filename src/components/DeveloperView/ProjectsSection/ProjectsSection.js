@@ -324,7 +324,7 @@ export default function ProjectsSection() {
                             <ProjectTitle>Deno</ProjectTitle>
                             <ProjectTime>APRIL 2019</ProjectTime>
                             <ProjectDescription>
-                                <p><a href="https://deno.land/" target="_blank">Deno</a> is a JavaScript/TypeScript runtime built on V8, Rust, and Tokio. Deno aims to be a productive and secure scripting environment for the modern programmer from the creator of NodeJS, Ryan Dahl. I initiated the <a href="https://github.com/denoland/deno/commits?author=jorsi" target="_blank">Rust and Typescript TLS features</a>.</p>
+                                <p><a href="https://deno.land/" target="_blank">Deno</a> is a JavaScript/TypeScript runtime built on V8, Rust, and Tokio. Deno aims to be a productive and secure scripting environment for the modern programmer from the creator of NodeJS, Ryan Dahl. I initiated the <a href="https://github.com/denoland/deno/commits?author=orsi" target="_blank">Rust and Typescript TLS features</a>.</p>
                             </ProjectDescription>
 
                             <ProjectButton href="https://deno.land"

@@ -15,7 +15,7 @@ export default function TypeBox() {
     useEffect(() => {
         var typed = new Typed('#type-box', {
             strings: [
-                "Hi^450, my name is Jonathon Orsi^450, a software developer."
+                "Hi^450, my name is Jonathon Orsi^450, a software developer"
             ],
             typeSpeed: 55,
             // loop: true,

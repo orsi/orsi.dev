@@ -15,12 +15,12 @@ export class AutomataService {
     lastTick = new Date().getTime();
     lastUpdate = 0;
     lastRender = 0;
-    backgroundFillStyle = 'rgba(10,10,10,.2)';
+    backgroundFillStyle = 'rgba(10,10,10,.35)';
     fillColour = {
         red: 150,
         green: 90,
         blue: 150,
-        alpha: .04
+        alpha: .06
     };
     isMouseDown = false;
     currentMousePosition = 0;

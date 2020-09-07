@@ -6,9 +6,8 @@ const TypeBoxContainer = styled.div`
 h1 {
     color: #fafafa;
     display: inline-block;
-    font-family: Instructions;
-    font-size: 64px;
-    line-height: 1;
+    font-family: 'Press Start 2P';
+    font-size: 32px;
 }
 `;
 export default function TypeBox() {

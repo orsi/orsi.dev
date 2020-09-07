@@ -3,16 +3,29 @@ export class AutomataService {
     canvas;
     container;
     context;
-    cellSize = 3;
+    cellSize = 8;
     fadeOut;
-    fps = 12;
-    fpsMs = 1000 / this.fps;
+    updateTimeInMs = 1000 / 8;
+    renderTimeInMs = 1000 / 24;
     grid;
-    gridX;
-    gridY;
+    gridWidth;
+    gridHeight;
+    gridArrayLength;
     isRunning = false;
-    lastRender = new Date().getTime();
     lastTick = new Date().getTime();
+    lastUpdate = 0;
+    lastRender = 0;
+    backgroundFillStyle = 'rgba(10,10,10,.2)';
+    fillColour = {
+        red: 150,
+        green: 90,
+        blue: 150,
+        alpha: .04
+    };
+    isMouseDown = false;
+    currentMousePosition = 0;
+    currentMousePositionY = 0;
+
     constructor(element, fadeOut = false) {
         this.fadeOut = fadeOut;
         this.container = element;
@@ -29,12 +42,53 @@ export class AutomataService {
         this.render(); // render initial state immediately
 
         // resize
-        window.addEventListener('resize', () => {
-            this.canvas.width = this.container.clientWidth;
-            this.canvas.height = this.container.clientHeight;
-            this.grid = this.setupGrid(this.canvas.width, this.canvas.height);
-            this.render(); // render initial state immediately
-        });
+        window.addEventListener('resize', this.onWindowResize.bind(this));
+        window.addEventListener('mousedown', this.onMouseDown.bind(this));
+        window.addEventListener('mouseup', this.onMouseUp.bind(this));
+        window.addEventListener('touchstart', this.onMouseDown.bind(this));
+        window.addEventListener('touchend', this.onMouseUp.bind(this));
+        window.addEventListener('mousemove', this.onMouseMove.bind(this));
+        window.addEventListener('touchmove', this.onMouseMove.bind(this));
+    }
+
+    onWindowResize() {
+        this.canvas.width = this.container.clientWidth;
+        this.canvas.height = this.container.clientHeight;
+        this.grid = this.setupGrid(this.canvas.width, this.canvas.height);
+        this.render(); // render initial state immediately
+    }
+
+    /**
+     * Starts drawing cells as alive.
+     */
+    onMouseDown() {
+        this.isMouseDown = true;
+    }
+
+    /**
+     * Stops drawing cells into grid on mouse up.
+     */
+    onMouseUp() {
+        this.isMouseDown = false;
+    }
+
+    /**
+     * Saves the current mouse coordinates so we can render a ghost
+     * cell on the grid.
+     */
+    onMouseMove(e) {
+        let { clientX , clientY } = e;
+
+        if (e.touches) {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        }
+
+        // figure out location in grid
+        let gridX = Math.floor(clientX / this.cellSize);
+        let gridY = Math.floor(clientY / this.cellSize);
+        
+        this.currentMousePosition = this.getGridArrayLocation(gridX, gridY);
     }
 
     destroy() {
@@ -42,16 +96,18 @@ export class AutomataService {
     }
 
     setupGrid (width, height) {
-        this.gridX = Math.floor(width / this.cellSize) + 1;
-        this.gridY = Math.floor(height / this.cellSize) + 1;
-        const grid = [];
-        for (let x = 0; x < this.gridX; x++) {
-            grid[x] = [];
-            for (let y = 0; y < this.gridY; y++) {
-                grid[x][y] = Math.random() < this.aliveProbability;
-            }
+        this.gridWidth = Math.floor(width / this.cellSize) + 1;
+        this.gridHeight = Math.floor(height / this.cellSize) + 1;
+        this.gridArrayLength = this.gridWidth * this.gridHeight;
+        const grid = new Uint8Array(this.gridArrayLength);
+        for (let i = 0; i < this.gridArrayLength; i++) {
+            grid[i] = Math.random() < this.aliveProbability;
         }
         return grid;
+    }
+
+    getGridArrayLocation(x, y) {
+        return (y * this.gridWidth) + x;
     }
 
     countAliveNeighbours(x, y) {
@@ -65,12 +121,12 @@ export class AutomataService {
                 let jy = y + j;
 
                 // normalize indexes to wrap around grid
-                if (ix < 0) ix = this.gridX - 1;
-                if (ix >= this.gridX) ix = 0;
-                if (jy < 0) jy = this.gridY - 1;
-                if (jy >= this.gridY) jy = 0;
+                if (ix < 0) ix = this.gridWidth - 1;
+                if (ix >= this.gridWidth) ix = 0;
+                if (jy < 0) jy = this.gridHeight - 1;
+                if (jy >= this.gridHeight) jy = 0;
 
-                if (this.grid[ix][jy]) aliveCellsCount++;
+                if (this.grid[this.getGridArrayLocation(ix, jy)]) aliveCellsCount++;
             }
         }
         return aliveCellsCount;
@@ -86,34 +142,58 @@ export class AutomataService {
     }
 
     render () {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        for (let y = 0; y < this.gridY; y++) {
-            const cellHeight = y * this.cellSize;
-            const distance = (this.canvas.height - cellHeight) / this.canvas.height
-            const alpha = this.fadeOut ? distance * .4 : 1;
-            for (let x = 0; x < this.gridX; x++) {
-                if (this.grid[x][y] === true) {
-                    const cellWidth = x * this.cellSize;
-                    this.context.fillStyle = `rgba(100, 255, 218, ${alpha})`;
-                    this.context.fillRect(
-                        cellWidth,
-                        cellHeight,
-                        this.cellSize,
-                        this.cellSize
-                    );
-                }
-            }  
+        this.context.fillStyle = this.backgroundFillStyle;
+        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        for (let i = 0; i < this.gridArrayLength; i++) {
+            // determine pixel position of grid cell
+            const x = i % this.gridWidth;
+            const cellLeft = x * this.cellSize;
+            const y = Math.floor(i / this.gridWidth);
+            const cellTop = y * this.cellSize;
+
+            if (this.grid[i] === 1) {
+                this.context.fillStyle = 
+                    `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, ${this.fillColour.alpha})`;
+                this.context.fillRect(
+                    cellLeft,
+                    cellTop,
+                    this.cellSize - 1,
+                    this.cellSize - 1
+                );
+            } else if (this.currentMousePosition === i) {
+                this.context.fillStyle = 
+                    `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, .4)`;
+                this.context.fillRect(
+                    cellLeft,
+                    cellTop,
+                    this.cellSize - 1,
+                    this.cellSize - 1
+                );
+            }
         }
     }
 
     tick() {
         const now = new Date().getTime();
         const delta = now - this.lastTick;
+        this.lastTick = now;
 
-        if (delta > this.fpsMs) {
+        if (this.isMouseDown) {
+            // turn grid coordinate to alive
+            this.grid[this.currentMousePosition] = 1;
+        }
+
+        this.lastUpdate += delta;
+        if (this.lastUpdate > this.updateTimeInMs) {
             this.update();
-            this.render();
             this.lastTick = now;
+            this.lastUpdate = 0;
+        }
+        
+        this.lastRender += delta;
+        if (this.lastRender > this.renderTimeInMs) {
+            this.render();
+            this.lastRender = 0;
         }
 
         if (this.isRunning) {
@@ -122,20 +202,20 @@ export class AutomataService {
     }
 
     update() {
-        const newGrid = [];
-        for (let x = 0; x < this.gridX; x++) {
-            newGrid[x] = [];
-            for (let y = 0; y < this.gridY; y++) {
-                const isAlive = this.grid[x][y];
-                const aliveNeighbours = this.countAliveNeighbours(x, y);
+        const newGrid = new Uint8Array(this.gridArrayLength);
+        for (let i = 0; i < this.gridArrayLength; i++) {
+            const isAlive = this.grid[i];
 
-                // rules of survivability, modified from Conway's game to increase the
-                // amount of alive cells on grid
-                if (isAlive) {
-                    newGrid[x][y] = (aliveNeighbours === 2 || aliveNeighbours === 3);
-                } else {
-                    newGrid[x][y] = aliveNeighbours === 3;
-                }
+            const x = i % this.gridWidth;
+            const y = Math.floor(i / this.gridWidth);
+            const aliveNeighbours = this.countAliveNeighbours(x, y);
+
+            // rules of survivability, modified from Conway's game to increase the
+            // amount of alive cells on grid
+            if (isAlive) {
+                newGrid[i] = (aliveNeighbours === 2 || aliveNeighbours === 3);
+            } else {
+                newGrid[i] = aliveNeighbours === 3;
             }
         }
         this.grid = newGrid;

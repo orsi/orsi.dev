@@ -18,7 +18,8 @@
   "dependencies": {
     "@ibm/plex": "4.0.2",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "typed.js": "^2.0.11"
   },
   "devDependencies": {
     "@babel/core": "7.8.4",
@@ -36,7 +37,6 @@
     "react-dom": "16.12.0",
     "react-icons": "^3.10.0",
     "react-router-dom": "5.1.2",
-    "react-svg-loader": "^3.0.3",
     "sass-loader": "8.0.2",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",

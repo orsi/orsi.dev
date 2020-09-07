@@ -1,11 +1,10 @@
 const emojiList = [
     '👾',
-    '⚗',
     '🍷',
     '👨‍💻',
     '🧙‍',
     '🎸',
-    '🎹',
+    '🎹'
 ];
 export const start = () => {
     const canvas = document.createElement('canvas');

@@ -7,7 +7,11 @@ h1 {
     color: #fafafa;
     display: inline-block;
     font-family: 'Press Start 2P';
-    font-size: 32px;
+    font-size: 24px;
+
+    @media(min-width: 768px) {
+        font-size: 40px;
+    }
 }
 `;
 export default function TypeBox() {

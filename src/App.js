@@ -8,11 +8,12 @@ import DeveloperView from './components/DeveloperView/DeveloperView.js';
 import About from './components/About/About';
 
 const AppContainer = styled.main`
-height: 100%;`;
+  height: 100%;
+`;
 const AppWell = styled.div`
-margin: 0 auto;
-max-width: 720px;
-padding: 0 24px;
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 0 24px;
 `;
 
 const BackgroundContainer = styled.div`
@@ -27,7 +28,6 @@ z-index: -1;
 `;
 
 export default function App() {
-
   useEffect(() => {
     FaviconService.start();
   });
@@ -35,13 +35,13 @@ export default function App() {
   return (
     <AppContainer>
       <BackgroundContainer id="background">
-          <Automata></Automata>
+        <Automata></Automata>
       </BackgroundContainer>
       <AppWell>
-          <Header />
-          <About />
-          <DeveloperView />
-        </AppWell>
+        <Header />
+        <About />
+        <DeveloperView />
+      </AppWell>
     </AppContainer>
   );
 }

@@ -10,9 +10,16 @@ export default function About() {
     >
       <h2>About Me</h2>
       <p>
-        I design and build web applications, digital art showcases, and
-        experimental tools. I have over 5 years of professional experience
-        between freelancing and working for Bombardier Aerospace.
+        I design and develop web applications, digital art showcases, and
+        experimental tools. I have 7 years of professional experience working with{' '}
+        <a href="https://thrillworks.com" target="_blank">
+          Thrillworks
+        </a>
+        ,{' '}
+        <a href="https://bombardier.com" target="_blank">
+          Bombardier Inc.
+        </a>
+        , and freelancing.
       </p>
       <p>
         When I am not programming, I compose music, design sound, mix, and
@@ -25,7 +32,7 @@ export default function About() {
           bandcamp.
         </a>
       </p>
-      <p>I live in Toronto.</p>
+      <p>I live in Toronto, Ontario, Canada.</p>
     </div>
   );
 }

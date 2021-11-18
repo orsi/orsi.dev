@@ -8,7 +8,7 @@
       "@babel/plugin-proposal-class-properties"
     ]
   },
-  "name": "jonorsi.com",
+  "name": "orsi.dev",
   "version": "1.0.0",
   "private": true,
   "scripts": {

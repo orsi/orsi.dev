@@ -66,7 +66,7 @@ const projects = [
   {
     title: 'UltimaXNA',
     href: 'https://github.com/ZaneDubya/UltimaXNA',
-    imageSrc: '/ultimaxna.gif',
+    imageSrc: '/UltimaXNALogo1024.png',
     tech: ['C#', 'XNA Framework'],
   },
 ];

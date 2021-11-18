@@ -62,7 +62,7 @@ const projects = [
   },
   {
     title: 'Betical',
-    href: 'https://jonorsi.com/betical/',
+    href: 'https://orsi.dev/betical/',
     imageSrc: imageBetical,
   },
   {

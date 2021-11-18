@@ -47,7 +47,7 @@ const projects = [
   {
     id: 'deno',
     title: 'Deno',
-    href: 'https://deno.land/',
+    href: 'https://github.com/denoland/deno/commit/045e74bb39d7743b774cfd2b889bc6ce1e1ad245',
     svg: DenoLogo,
     isSvg: true,
     tech: ['Rust', 'Python', 'Typescript'],

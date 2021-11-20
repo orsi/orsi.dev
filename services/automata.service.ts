@@ -1,21 +1,21 @@
 export class AutomataService {
   aliveProbability = 0.2;
-  canvas;
+  canvas: HTMLCanvasElement | undefined;
   container;
   context;
   cellSize = 8;
   fadeOut;
   updateTimeInMs = 1000 / 8;
   renderTimeInMs = 1000 / 24;
-  grid;
-  gridWidth;
-  gridHeight;
-  gridArrayLength;
+  grid: boolean[];
+  gridWidth = 300;
+  gridHeight = 400;
+  gridArrayLength = 0;
   isRunning = false;
   lastTick = new Date().getTime();
   lastUpdate = 0;
   lastRender = 0;
-  backgroundFillStyle = 'rgba(10,10,10,.35)';
+  backgroundFillStyle = "rgba(10,10,10,.35)";
   fillColour = {
     red: 150,
     green: 90,
@@ -26,32 +26,34 @@ export class AutomataService {
   currentMousePosition = 0;
   currentMousePositionY = 0;
 
-  constructor(element, fadeOut = false) {
+  constructor(element: HTMLElement, fadeOut = false) {
     this.fadeOut = fadeOut;
     this.container = element;
 
     // create a canvas
-    this.canvas = document.createElement('canvas');
+    this.canvas = document.createElement("canvas");
     this.canvas.width = this.container.clientWidth;
     this.canvas.height = this.container.clientHeight;
     this.container.appendChild(this.canvas);
-    this.context = this.canvas.getContext('2d');
+    this.context = this.canvas.getContext("2d");
 
     // init grid
     this.grid = this.setupGrid(this.canvas.width, this.canvas.height);
     this.render(); // render initial state immediately
 
     // resize
-    window.addEventListener('resize', this.onWindowResize.bind(this));
-    window.addEventListener('mousedown', this.onMouseDown.bind(this));
-    window.addEventListener('mouseup', this.onMouseUp.bind(this));
-    window.addEventListener('touchstart', this.onMouseDown.bind(this));
-    window.addEventListener('touchend', this.onMouseUp.bind(this));
-    window.addEventListener('mousemove', this.onMouseMove.bind(this));
-    window.addEventListener('touchmove', this.onMouseMove.bind(this));
+    globalThis.addEventListener("resize", this.onWindowResize.bind(this));
+    globalThis.addEventListener("mousedown", this.onMouseDown.bind(this));
+    globalThis.addEventListener("mouseup", this.onMouseUp.bind(this));
+    globalThis.addEventListener("touchstart", this.onMouseDown.bind(this));
+    globalThis.addEventListener("touchend", this.onMouseUp.bind(this));
+    globalThis.addEventListener("mousemove", this.onMouseMove.bind(this));
+    globalThis.addEventListener("touchmove", this.onTouchMove.bind(this));
   }
 
   onWindowResize() {
+    if (!this.canvas) return;
+
     this.canvas.width = this.container.clientWidth;
     this.canvas.height = this.container.clientHeight;
     this.grid = this.setupGrid(this.canvas.width, this.canvas.height);
@@ -76,41 +78,52 @@ export class AutomataService {
    * Saves the current mouse coordinates so we can render a ghost
    * cell on the grid.
    */
-  onMouseMove(e) {
-    let { clientX, clientY } = e;
-
-    if (e.touches) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
-    }
+  onMouseMove(e: MouseEvent) {
+    const { clientX, clientY } = e;
 
     // figure out location in grid
-    let gridX = Math.floor(clientX / this.cellSize);
-    let gridY = Math.floor(clientY / this.cellSize);
+    const gridX = Math.floor(clientX / this.cellSize);
+    const gridY = Math.floor(clientY / this.cellSize);
+
+    this.currentMousePosition = this.getGridArrayLocation(gridX, gridY);
+  }
+
+  /**
+   * Saves the current mouse coordinates so we can render a ghost
+   * cell on the grid.
+   */
+  onTouchMove(e: TouchEvent) {
+    const { clientX, clientY } = e.touches[0];
+
+    // figure out location in grid
+    const gridX = Math.floor(clientX / this.cellSize);
+    const gridY = Math.floor(clientY / this.cellSize);
 
     this.currentMousePosition = this.getGridArrayLocation(gridX, gridY);
   }
 
   destroy() {
-    this.canvas.parentNode.removeChild(this.canvas);
+    if (!this.canvas) return;
+
+    this.canvas.parentNode?.removeChild(this.canvas);
   }
 
-  setupGrid(width, height) {
+  setupGrid(width: number, height: number) {
     this.gridWidth = Math.floor(width / this.cellSize) + 1;
     this.gridHeight = Math.floor(height / this.cellSize) + 1;
     this.gridArrayLength = this.gridWidth * this.gridHeight;
-    const grid = new Uint8Array(this.gridArrayLength);
+    const grid = new Array(this.gridArrayLength);
     for (let i = 0; i < this.gridArrayLength; i++) {
       grid[i] = Math.random() < this.aliveProbability;
     }
     return grid;
   }
 
-  getGridArrayLocation(x, y) {
+  getGridArrayLocation(x: number, y: number) {
     return y * this.gridWidth + x;
   }
 
-  countAliveNeighbours(x, y) {
+  countAliveNeighbours(x: number, y: number) {
     let aliveCellsCount = 0;
     for (let i = -1; i <= 1; i++) {
       for (let j = -1; j <= 1; j++) {
@@ -142,6 +155,8 @@ export class AutomataService {
   }
 
   render() {
+    if (!this.context || !this.canvas) return;
+
     this.context.fillStyle = this.backgroundFillStyle;
     this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
     for (let i = 0; i < this.gridArrayLength; i++) {
@@ -151,21 +166,23 @@ export class AutomataService {
       const y = Math.floor(i / this.gridWidth);
       const cellTop = y * this.cellSize;
 
-      if (this.grid[i] === 1) {
-        this.context.fillStyle = `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, ${this.fillColour.alpha})`;
+      if (this.grid[i]) {
+        this.context.fillStyle =
+          `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, ${this.fillColour.alpha})`;
         this.context.fillRect(
           cellLeft,
           cellTop,
           this.cellSize - 1,
-          this.cellSize - 1
+          this.cellSize - 1,
         );
       } else if (this.currentMousePosition === i) {
-        this.context.fillStyle = `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, .4)`;
+        this.context.fillStyle =
+          `rgba(${this.fillColour.red}, ${this.fillColour.green}, ${this.fillColour.blue}, .4)`;
         this.context.fillRect(
           cellLeft,
           cellTop,
           this.cellSize - 1,
-          this.cellSize - 1
+          this.cellSize - 1,
         );
       }
     }
@@ -178,7 +195,7 @@ export class AutomataService {
 
     if (this.isMouseDown) {
       // turn grid coordinate to alive
-      this.grid[this.currentMousePosition] = 1;
+      this.grid[this.currentMousePosition] = true;
     }
 
     this.lastUpdate += delta;
@@ -200,7 +217,7 @@ export class AutomataService {
   }
 
   update() {
-    const newGrid = new Uint8Array(this.gridArrayLength);
+    const newGrid = new Array(this.gridArrayLength);
     for (let i = 0; i < this.gridArrayLength; i++) {
       const isAlive = this.grid[i];
 

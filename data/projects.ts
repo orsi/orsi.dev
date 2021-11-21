@@ -45,12 +45,6 @@ export default [
     "tech": ["Typescript", ""],
   },
   {
-    "title": "Betical",
-    "href": "https://orsi.dev/betical/",
-    "imageSrc": "/project-betical.gif",
-    "imageAlt": "Betical",
-  },
-  {
     "title": "Humble Roots Media",
     "href": "http://humblerootsmedia.com",
     "imageSrc": "/project-humble-roots-media.gif",

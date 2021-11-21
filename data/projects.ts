@@ -3,12 +3,14 @@ export default [
     "title": "Chip-8C",
     "href": "https://github.com/orsi/chip8c",
     "imageSrc": "/chip8c.gif",
+    "imageAlt": "Chip 8C - A Chip 8 emulator written in C",
     "tech": ["C/C++", "SDL2"],
   },
   {
     "title": "Jojo Gun & the Bullets",
     "href": "https://jojogun.ca",
     "imageSrc": "/project-jojogun.gif",
+    "imageAlt": "Jojo Gun & the Bullets",
     "tech": ["HTML", "CSS", "Javascript", "SASS", "React"],
   },
   {
@@ -16,12 +18,14 @@ export default [
     "title": "A Dark Room",
     "href": "https://orsi.github.io/adarkroom",
     "imageSrc": "/adarkroom.jpg",
+    "imageAlt": "A Dark Room",
     "tech": ["Rust", "Python", "Typescript"],
   },
   {
     "title": "Code X",
     "href": "https://code-x.live",
     "imageSrc": "/project-code-x.gif",
+    "imageAlt": "Code X",
   },
   {
     "id": "deno",
@@ -29,7 +33,7 @@ export default [
     "href":
       "https://github.com/denoland/deno/commit/045e74bb39d7743b774cfd2b889bc6ce1e1ad245",
     "imageSrc": "/deno-logo.svg",
-    "isSvg": true,
+    "imageAlt": "Deno",
     "tech": ["Rust", "Python", "Typescript"],
   },
   {
@@ -37,22 +41,26 @@ export default [
     "title": "zenHTML",
     "href": "https://github.com/orsi/zen-html",
     "imageSrc": "/zen-html-logo.svg",
+    "imageAlt": "zen HTML",
     "tech": ["Typescript", ""],
   },
   {
     "title": "Betical",
     "href": "https://orsi.dev/betical/",
     "imageSrc": "/project-betical.gif",
+    "imageAlt": "Betical",
   },
   {
     "title": "Humble Roots Media",
     "href": "http://humblerootsmedia.com",
     "imageSrc": "/project-humble-roots-media.gif",
+    "imageAlt": "Humble Roots Media",
   },
   {
     "title": "UltimaXNA",
     "href": "https://github.com/ZaneDubya/UltimaXNA",
     "imageSrc": "/ultima-xna-logo.png",
+    "imageAlt": "Ultima XNA - An Ultima Online Client written in C# XNA",
     "tech": ["C#", "XNA Framework"],
   },
 ];

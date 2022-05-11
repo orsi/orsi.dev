@@ -1,19 +1,23 @@
-/** @jsx h */
 import { serve } from "https://deno.land/std@0.137.0/http/server.ts";
-import { h } from "https://esm.sh/preact@10.5.15";
-import { renderToString } from "https://esm.sh/preact-render-to-string@5.1.19?deps=preact@10.5.15";
+import { renderToString } from "https://deno.land/x/jsx@v0.1.5/mod.ts";
+import { HTML } from "./src/app.tsx";
 
-function handler(_req: Request): Response {
-  const page = (
-    <div>
-      <h1>Current time</h1>
-      <p>{new Date().toLocaleString()}</p>
-    </div>
-  );
-  const html = renderToString(page);
-  return new Response(html, {
-    headers: { "content-type": "text/html; charset=utf-8" },
-  });
+async function handleRequest(request: Request): Promise<Response> {
+  const { pathname } = new URL(request.url);
+
+  if (pathname.startsWith("/styles.css")) {
+    const file = await Deno.readFile("./src/styles.css");
+    return new Response(file, {
+      headers: {
+        "content-type": "text/css",
+      },
+    });
+  } else {
+    const html = await renderToString(HTML);
+    return new Response(html, {
+      headers: { "content-type": "text/html; charset=utf-8" },
+    });
+  }
 }
 
-serve(handler);
+serve(handleRequest);

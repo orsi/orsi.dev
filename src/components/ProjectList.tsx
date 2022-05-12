@@ -1,15 +1,15 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Component, Fragment, h } from "https://deno.land/x/jsx@v0.1.5/mod.ts";
+import { Fragment, h } from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
 
-export const ProjectList: Component<{ projects: any[] }> = (props) => {
+export const ProjectList = (props: any) => {
   if (!props.projects) {
     return <></>;
   }
 
   return (
     <ul>
-      {props.projects.map((project) => (
+      {props.projects.map((project: any) => (
         <li>
           <a href={project.href} target="_blank">{project.title}</a>
         </li>

@@ -1,11 +1,14 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Component, Fragment, h } from "https://deno.land/x/jsx@v0.1.5/mod.ts";
+import {
+  Fragment,
+  h,
+} from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
 
 const TODAY_DATE = new Date();
 const START_YEAR = 2014;
 
-export const AboutSection: Component = (props) => {
+export const AboutSection = () => {
   const yearsOfExperience = TODAY_DATE.getFullYear() - START_YEAR;
   return (
     <>

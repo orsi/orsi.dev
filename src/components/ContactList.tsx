@@ -1,15 +1,15 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Component, Fragment, h } from "https://deno.land/x/jsx@v0.1.5/mod.ts";
+import { Fragment, h } from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
 
-export const ContactList: Component<{ links: any[] }> = (props) => {
+export const ContactList = (props: any) => {
   if (!props.links) {
     return <></>;
   }
 
   return (
     <ul>
-      {props.links.map((link) => (
+      {props.links.map((link: any) => (
         <li>
           <a href={link.url} target="_blank" rel="noreferrer">
             {link.name.toLowerCase()}

@@ -36,11 +36,19 @@ const AppCSS = `
     --accent-colour: #bed;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 body {
     background-color: var(--background-colour);
     color: var(--primary-colour);
     font-family: 'BitCasual', 'Times New Roman', Times, serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
     padding-bottom: 64px;
     margin: 0;
@@ -49,12 +57,6 @@ body {
 .container {
     margin: 0 auto;
     max-width: 320px;
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
 }
 
 .gutter {

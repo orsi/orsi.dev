@@ -4,12 +4,14 @@ import projects from "../../data/projects.ts";
 
 export const Projects: Component = (props) => {
   return (
-    <ul>
-      {projects.map((project) => (
-        <li>
-          <a href={project.href} target="_blank">{project.title}</a>
-        </li>
-      ))}
-    </ul>
+    <div class="container gutter">
+      <ul>
+        {projects.map((project) => (
+          <li>
+            <a href={project.href} target="_blank">{project.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

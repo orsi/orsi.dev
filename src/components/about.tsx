@@ -8,7 +8,7 @@ const START_YEAR = 2014;
 export const About: Component = (props) => {
   const yearsOfExperience = TODAY_DATE.getFullYear() - START_YEAR;
   return (
-    <>
+    <div class="conatiner gutter">
       <h2>About Me</h2>
       <p>
         I design and develop web applications, digital art showcases, and
@@ -33,6 +33,6 @@ export const About: Component = (props) => {
         </a>
       </p>
       <p>I live in Toronto, Ontario, Canada.</p>
-    </>
+    </div>
   );
 };

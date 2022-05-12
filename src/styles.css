@@ -1,4 +1,36 @@
+:root {
+    --primary-colour: #eee;
+    --secondary-colour: #aaa;
+    --background-colour: #111;
+    --accent-colour: #bed;
+}
+
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--background-colour);
+    color: var(--primary-colour);
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.gutter {
+    padding: 0 30px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: var(--accent-colour);
+}
+
+a > svg {
+    fill: currentColor;
 }

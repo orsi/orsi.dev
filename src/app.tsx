@@ -1,11 +1,10 @@
 /** @jsx h */
-/** @jsxFrag Fragment */
 import { h } from "https://deno.land/x/jsx@v0.1.5/mod.ts";
 import { About } from "./components/about.tsx";
 import { Projects } from "./components/projects.tsx";
 import { SocialList } from "./components/SocialList.tsx";
 export const HTML = (
-  <html>
+  <html lang="en">
     <head>
       <link rel="stylesheet" href="styles.css" />
     </head>

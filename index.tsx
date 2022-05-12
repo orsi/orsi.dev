@@ -13,7 +13,8 @@ async function handleRequest(request: Request): Promise<Response> {
       },
     });
   } else {
-    const html = await renderToString(HTML);
+    let html = await renderToString(HTML);
+    html = `<!DOCTYPE html>${html}`;
     return new Response(html, {
       headers: { "content-type": "text/html; charset=utf-8" },
     });

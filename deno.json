@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "serve": "deno run --no-check=remote --allow-all --watch index.tsx"
+  }
+}

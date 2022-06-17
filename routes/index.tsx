@@ -1,7 +1,7 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
 import { h } from "$fresh/runtime.ts";
-import Container from "../components/Container.tsx";
+import Container from "../islands/Container.tsx";
 import AboutSection from "../islands/AboutSection.tsx";
 import ProjectList from "../islands/ProjectList.tsx";
 import ContactList from "../islands/ContactList.tsx";

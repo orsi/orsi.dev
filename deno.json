@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "serve": "deno run --no-check=remote --allow-all --watch index.tsx"
-  }
+    "start": "deno run -A --watch=static/,routes/,islands/ --no-check dev.ts"
+  },
+  "importMap": "./import_map.json"
 }

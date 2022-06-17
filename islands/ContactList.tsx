@@ -1,8 +1,8 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Fragment, h } from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
+import { Fragment, h } from "$fresh/runtime.ts";
 
-export const ContactList = (props: any) => {
+export default function ContactList(props: any) {
   if (!props.links) {
     return <></>;
   }
@@ -18,4 +18,4 @@ export const ContactList = (props: any) => {
       ))}
     </ul>
   );
-};
+}

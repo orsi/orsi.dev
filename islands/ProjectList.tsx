@@ -1,8 +1,8 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import { Fragment, h } from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
+import { Fragment, h } from "$fresh/runtime.ts";
 
-export const ProjectList = (props: any) => {
+export default function ProjectList(props: any) {
   if (!props.projects) {
     return <></>;
   }
@@ -16,4 +16,4 @@ export const ProjectList = (props: any) => {
       ))}
     </ul>
   );
-};
+}

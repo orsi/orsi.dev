@@ -1,17 +1,13 @@
 /** @jsx h */
-/** @jsxFrag Fragment */
-import {
-  Fragment,
-  h,
-} from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
+import { h } from "$fresh/runtime.ts";
 
 const TODAY_DATE = new Date();
 const START_YEAR = 2014;
 
-export const AboutSection = () => {
+export default function AboutSection() {
   const yearsOfExperience = TODAY_DATE.getFullYear() - START_YEAR;
   return (
-    <>
+    <div>
       <h2>About Me</h2>
       <p>
         I design and develop web applications, digital art showcases, and
@@ -36,6 +32,6 @@ export const AboutSection = () => {
         </a>
       </p>
       <p>I live in Toronto, Ontario, Canada.</p>
-    </>
+    </div>
   );
-};
+}

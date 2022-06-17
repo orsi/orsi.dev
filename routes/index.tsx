@@ -1,14 +1,10 @@
 /** @jsx h */
 /** @jsxFrag Fragment */
-import {
-  Fragment,
-  h,
-  Helmet,
-  withStyles,
-} from "https://deno.land/x/nano_jsx@v0.0.30/mod.ts";
-import { AboutSection } from "./components/AboutSection.tsx";
-import { ProjectList } from "./components/ProjectList.tsx";
-import { ContactList } from "./components/ContactList.tsx";
+import { h } from "$fresh/runtime.ts";
+import Container from "../components/Container.tsx";
+import AboutSection from "../islands/AboutSection.tsx";
+import ProjectList from "../islands/ProjectList.tsx";
+import ContactList from "../islands/ContactList.tsx";
 import pageData from "../data/page-data.json" assert {
   type: "json",
 };
@@ -83,14 +79,13 @@ p>a {
     min-height: auto;
 }
 `;
-export const App = withStyles(AppCSS)(() => {
-  console.log("hi");
+export default function Home() {
   return (
-    <>
-      <Helmet>
-        <title>Jonathon Orsi</title>
-        <meta name="description" content="Jonathon Orsi's website" />
-      </Helmet>
+    //   <Helmet>
+    //   <title>Jonathon Orsi</title>
+    //   <meta name="description" content="Jonathon Orsi's website" />
+    // </Helmet>
+    <Container>
       <header>
         <div class="container gutter">
           <h1>Jonathon Orsi</h1>
@@ -107,6 +102,6 @@ export const App = withStyles(AppCSS)(() => {
           </section>
         </div>
       </main>
-    </>
+    </Container>
   );
-});
+}

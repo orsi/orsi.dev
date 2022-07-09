@@ -21,7 +21,7 @@ export default function Home() {
           <h1 class={tw`sr-only`}>Jon Orsi</h1>
           <div class={tw`flex flex-col md:flex-row gap-8`}>
             <div class={tw`flex-none flex`}>
-              <img src={data.logo} width="150" height="150" />
+              <img src={data.logo} width="150" />
               <ul class={tw`flex flex-col ml-4 justify-between`}>
                 {data.socials.map((social) => (
                   <li key={social.title}>

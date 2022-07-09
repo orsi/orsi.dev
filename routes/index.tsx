@@ -12,49 +12,54 @@ export default function Home() {
       <Head>
         <link rel="stylesheet" href="/global.css" />
       </Head>
-      <Background />
+      {/* <Background /> */}
       <main
         class={tw
           `container mx-auto p-4 relative z-1 min-h-screen h-full flex flex-col justify-center`}
       >
         <header>
           <h1 class={tw`sr-only`}>Jon Orsi</h1>
-          <div class={tw`flex`}>
-            <img src={data.logo} width="150" height="150" />
-            <ul class={tw`flex flex-col ml-4 justify-between`}>
-              {data.socials.map((social) => (
-                <li key={social.title}>
-                  <a
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {social.icon}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div class={tw`flex flex-col md:flex-row gap-8`}>
+            <div class={tw`flex-none flex`}>
+              <img src={data.logo} width="150" height="150" />
+              <ul class={tw`flex flex-col ml-4 justify-between`}>
+                {data.socials.map((social) => (
+                  <li key={social.title}>
+                    <a
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {social.icon}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class={tw`flex-1`}>
+              <p>
+                I am a software developer with 8 years of professional
+                experience in web technologies. When I am not programming, I
+                compose music, design sound, mix, and master audio for all
+                media.
+              </p>
+              <p class={tw`mt-8`}>
+                You may also see me performing in{" "}
+                <a target="_blank" href="https://jojogun.ca">
+                  JoJo Gun &amp; the Bullets
+                </a>{" "}
+                around Toronto, Canada.
+              </p>
+            </div>
           </div>
         </header>
-        <section class={tw`mt-8`}>
-          <p>
-            I am a software developer with 8 years of professional experience in
-            web technologies. When I am not programming, I compose music, design
-            sound, mix, and master audio for all media. You may also see me
-            performing in{" "}
-            <a target="_blank" href="https://jojogun.ca">
-              JoJo Gun &amp; the Bullets
-            </a>. You can listen to my original music and compositions on{" "}
-            <a target="_blank" href="https://orsi.bandcamp.com/">bandcamp.</a>
-          </p>
-          <p class={tw`mt-8`}>I live in Toronto, Ontario, Canada.</p>
-        </section>
+
         <section class={tw`mt-8`}>
           <iframe
             style="border-radius:12px"
             src="https://open.spotify.com/embed/artist/1tSaSVwi5i2ZJfOYbomSnM?utm_source=generator"
             width="100%"
-            height="380"
+            height="200"
             frameBorder="0"
             allowFullScreen={true}
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -78,11 +83,9 @@ export default function Home() {
                       href={work.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class={tw
-                        `text-blue-300 border border-0 border-b border-blue-300`}
                     >
                       {work.title}
-                      <span class={tw`ml-2`}>&rarr;</span>
+                      {` `}&rarr;
                     </a>
                   </h2>
                   {work.description}
@@ -109,11 +112,9 @@ export default function Home() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class={tw
-                        `text-blue-300 border border-0 border-b border-blue-300`}
                     >
                       {project.title}
-                      <span class={tw`ml-2`}>&rarr;</span>
+                      {` `}&rarr;
                     </a>
                   </h2>
                   {project.description}

@@ -115,12 +115,11 @@ export default {
   projects: [{
     description: (
       <p>
-        Created the javascript audio engine and composed all sound effects and
-        liet motifs.
+        Created the javascript audio engine and composed all sound effects and music.
       </p>
     ),
     image: "/images/a-dark-room.jpg",
-    link: "https://orsi.github.io/adarkroom",
+    link: "https://adarkroom.doublespeakgames.com",
     title: "A Dark Room",
   }, {
     description: (

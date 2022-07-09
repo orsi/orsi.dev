@@ -6,6 +6,7 @@ body {
     position: relative;
 }
 
-h1 {
-    margin: 0;
+a {
+    color: lightcoral;
+    text-decoration: underline;
 }

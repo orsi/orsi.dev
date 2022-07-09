@@ -1,16 +1,6 @@
 {
-  "compilerOptions": {
-    "allowJs": true,
-    "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "dom.asynciterable",
-      "deno.ns",
-      "deno.unstable"
-    ],
-    "jsx": "react"
+  "tasks": {
+    "start": "deno run -A --watch=static/,routes/,islands/ --no-check dev.ts"
   },
-  "lint": {},
-  "format": {}
+  "importMap": "./import_map.json"
 }

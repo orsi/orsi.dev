@@ -7,10 +7,6 @@ export default function Background() {
   // takes place inside the canvas context with requestAnimationFrame
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D>();
-  const canvasState = useRef({
-    x: 0,
-    y: 0,
-  });
   const animationFrameRef = useRef(0);
   const previousTimeRef = useRef(0);
 
@@ -25,31 +21,24 @@ export default function Background() {
     if (!ctx) {
       return;
     }
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
     contextRef.current = ctx;
   };
 
   const animate = (time: number) => {
     if (previousTimeRef.current != undefined) {
       const deltaTime = time - previousTimeRef.current;
-      if ((deltaTime > 1000 / 10) && contextRef.current) {
-        console.log('update', deltaTime);
-        contextRef.current.clearRect(
-          0,
-          0,
-          contextRef.current.canvas.width,
-          contextRef.current.canvas.height,
-        );
-        contextRef.current.fillStyle = "grey";
+      if ((deltaTime > 1000 / 60) && contextRef.current) {
+        contextRef.current.fillStyle = `rgba(${
+          Math.floor(Math.random() * 256)
+        },${Math.floor(Math.random() * 256)},${
+          Math.floor(Math.random() * 256)
+        },${Math.random()})`;
         contextRef.current.fillRect(
           Math.random() * contextRef.current?.canvas.width,
           Math.random() * contextRef.current?.canvas.height,
-          10,
-          10,
+          Math.floor(Math.random() * 5) + 1,
+          Math.floor(Math.random() * 5) + 1,
         );
-        canvasState.current.x += 10;
-        canvasState.current.y += 10;
         previousTimeRef.current = time;
       }
     }

@@ -2,12 +2,14 @@
 /** @jsxFrag Fragment */
 import { h } from "preact";
 export default {
+  about:
+    "A musician and software developer in Toronto, making analog  waves and digital spaces.",
   logo: "/images/logo-orsi.png",
   socials: [{
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        height="24"
+        height="32"
         viewBox="0 0 1024 1024"
         fill="none"
       >
@@ -27,13 +29,7 @@ export default {
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-        height="24"
-        focusable="false"
-        data-prefix="fab"
-        data-icon="linkedin"
-        class="svg-inline--fa fa-linkedin fa-w-14"
-        role="img"
+        height="32"
         viewBox="0 0 448 512"
       >
         <path
@@ -49,13 +45,7 @@ export default {
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        aria-hidden="true"
-        focusable="false"
-        data-prefix="fas"
-        data-icon="envelope"
-        class="svg-inline--fa fa-envelope fa-w-16"
-        role="img"
+        height="32"
         viewBox="0 0 512 512"
       >
         <path
@@ -69,7 +59,11 @@ export default {
     title: "Mail",
   }, {
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 496 512">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="32"
+        viewBox="0 0 496 512"
+      >
         <desc>
           By Font Awesome Free 5.4.1 by @fontawesome - https://fontawesome.com,
           CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=73686233
@@ -91,7 +85,9 @@ export default {
         landing page hosted on AWS S3 bucket delivered at-edge Cloudfront CDN.
       </p>
     ),
-    image: "/images/jo-jo-gun.gif",
+    image: "/images/jojogun.png",
+    imageDescription:
+      "The band Jo Jo Gun & the Bullets standing on hay barrels.",
     link: "https://jojogun.ca",
     title: "Jo Jo Gun & the Bullets",
   }, {
@@ -103,22 +99,22 @@ export default {
         </a>. Hosted on AWS S3 and delivered via Cloudfront CDN.
       </p>
     ),
-    image: "/images/code-x.gif",
+    image: "/images/codex.png",
     link: "https://code-x.live",
     title: "Code X",
   }, {
     description: <p>Design and develop custom Wordpress theme and plugins.</p>,
-    image: "/images/humble-roots-media.gif",
+    image: "/images/humblerootsmedia.png",
     link: "https://humblerootsmedia.com",
     title: "Humble Roots Media",
-  }],
-  projects: [{
+  }, {
     description: (
       <p>
-        Created the javascript audio engine and composed all sound effects and music.
+        Created the javascript audio engine and composed all sound effects and
+        music.
       </p>
     ),
-    image: "/images/a-dark-room.jpg",
+    image: "/images/adarkroom.png",
     link: "https://adarkroom.doublespeakgames.com",
     title: "A Dark Room",
   }, {
@@ -131,9 +127,15 @@ export default {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.0"
+        height="1024"
+        width="1024"
         viewBox="0 0 1024 1024"
         preserveAspectRatio="xMidYMid meet"
-        style="width:100%;height:100%"
+        style={{
+          maxWidth: "100px",
+          maxHeight: "100px",
+          width: "100%",
+        }}
       >
         <desc>
           Created by potrace 1.15, written by Peter Selinger 2001-2017

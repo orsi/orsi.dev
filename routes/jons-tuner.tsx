@@ -22,11 +22,11 @@ export default function PrivacyPage() {
           `container mx-auto p-6 relative z-1 min-h-screen h-full flex flex-col justify-center`}
       >
         <header>
-          <h1 class={tw`text-xl`}>Privacy Policy</h1>
+          <h1 class={tw`text-xl`}>Jon's Tuner</h1>
         </header>
 
         <section class={tw`relative z-10 mt-10`}>
-          <h2 class={tw`text-lg font-bold`}>Jon's Tuner</h2>
+          <h2 class={tw`text-lg font-bold`}>Privacy Policy</h2>
           <p class={tw`text-sm`}>
             Jon's Tuner records audio from your microphone to analyze and
             display musical note and frequency information. All recorded audio

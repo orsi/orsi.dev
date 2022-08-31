@@ -5,7 +5,7 @@ import { Head } from "$fresh/runtime.ts";
 import { tw } from "@twind";
 import Background from "../islands/Background.tsx";
 
-export default function PrivacyPage() {
+export default function JonsTuner() {
   return (
     <>
       <Head>

@@ -4,12 +4,14 @@
 
 import * as $0 from "./routes/index.tsx";
 import * as $1 from "./routes/jons-tuner.tsx";
+import * as $2 from "./routes/privacy.tsx";
 import * as $$0 from "./islands/Background.tsx";
 
 const manifest = {
   routes: {
     "./routes/index.tsx": $0,
     "./routes/jons-tuner.tsx": $1,
+    "./routes/privacy.tsx": $2,
   },
   islands: {
     "./islands/Background.tsx": $$0,

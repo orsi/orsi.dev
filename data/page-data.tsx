@@ -1,6 +1,3 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { h } from "preact";
 export default {
   about:
     "A musician and software developer in Toronto, making analog  waves and digital spaces.",

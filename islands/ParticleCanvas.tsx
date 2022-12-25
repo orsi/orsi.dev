@@ -1,8 +1,6 @@
 import { useCallback, useEffect } from "preact/hooks";
 import * as THREE from "three";
 
-const MAX_SIZE = 500;
-
 interface IParticle {
   x: number;
   y: number;
@@ -10,18 +8,16 @@ interface IParticle {
   vy: number;
   color: string;
 }
-
-export default function Canvas() {
+export default function ParticleCanvas() {
   const frameDuration = 1000 / 30;
+  let height: number, width: number;
   let lastUpdate = Date.now();
-  let camera: THREE.PerspectiveCamera,
-    scene: THREE.Scene,
-    renderer: THREE.WebGLRenderer;
+  let camera: THREE.OrthographicCamera, renderer: THREE.WebGLRenderer;
+  const scene: THREE.Scene = new THREE.Scene();
   const geometry = new THREE.BufferGeometry();
 
   const particles: IParticle[] = [];
   const groups: IParticle[][] = [];
-  let yellow: IParticle[], red: IParticle[], green: IParticle[];
 
   const containerRef = useCallback((node: HTMLElement) => {
     if (node !== null) {
@@ -35,8 +31,8 @@ export default function Canvas() {
     for (let i = 0; i < total; i++) {
       // create random particle positions
       const particle = {
-        x: Math.random() * MAX_SIZE,
-        y: Math.random() * MAX_SIZE,
+        x: Math.random() * width,
+        y: Math.random() * height,
         vx: 0,
         vy: 0,
         color,
@@ -73,10 +69,10 @@ export default function Canvas() {
       a.vy = (a.vy + fy) * 0.5;
       a.x += a.vx;
       a.y += a.vy;
-      if (a.x <= 0 || a.x >= MAX_SIZE) {
+      if (a.x <= 0 || a.x >= width) {
         a.vx *= -1;
       }
-      if (a.y <= 0 || a.y >= MAX_SIZE) {
+      if (a.y <= 0 || a.y >= height) {
         a.vy *= -1;
       }
       if (a.x <= 0) {
@@ -85,11 +81,11 @@ export default function Canvas() {
       if (a.y <= 0) {
         a.y = 0;
       }
-      if (a.x >= MAX_SIZE) {
-        a.x = MAX_SIZE;
+      if (a.x >= width) {
+        a.x = width;
       }
-      if (a.y >= MAX_SIZE) {
-        a.y = MAX_SIZE;
+      if (a.y >= height) {
+        a.y = height;
       }
     }
   };
@@ -114,28 +110,31 @@ export default function Canvas() {
   };
 
   function init(container: HTMLElement) {
+    width = window.innerWidth;
+    height = window.innerHeight;
+
     // data
     groups[0] = createGroup(500, "yellow");
     groups[1] = createGroup(400, "red");
     groups[2] = createGroup(500, "green");
 
     // threejs
-    scene = new THREE.Scene();
-
-    camera = new THREE.PerspectiveCamera(
-      50,
-      window.innerWidth / window.innerHeight,
+    camera = new THREE.OrthographicCamera(
+      0,
+      width,
+      height,
+      0,
       1,
-      500
+      1000
     );
-    camera.position.z = 499;
-    camera.position.x = MAX_SIZE / 2;
-    camera.position.y = MAX_SIZE / 2;
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 1;
 
     renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.autoClearColor = false;
+    renderer.setSize(width, height);
+    renderer.autoClear = false;
     container.appendChild(renderer.domElement);
 
     // create initial particle state

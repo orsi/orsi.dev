@@ -9,7 +9,6 @@ export default function Home() {
         <body class="overflow-x-hidden font-mono dark:bg-gray-800 dark:text-gray-200" />
       </Head>
       <main>
-        <h1>Orsi</h1>
         <ParticleCanvas />
       </main>
     </>

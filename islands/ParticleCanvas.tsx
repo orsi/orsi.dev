@@ -1,23 +1,60 @@
-import { useCallback, useEffect } from "preact/hooks";
+import { useCallback, useEffect, useRef } from "preact/hooks";
 import * as THREE from "three";
+import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+interface IColour {
+  red: number;
+  green: number;
+  blue: number;
+  alpha: number;
+}
 
 interface IParticle {
   x: number;
   y: number;
+  z: number;
   vx: number;
   vy: number;
-  color: string;
+  colour: IColour;
 }
-export default function ParticleCanvas() {
-  const frameDuration = 1000 / 30;
-  let height: number, width: number;
-  let lastUpdate = Date.now();
-  let camera: THREE.OrthographicCamera, renderer: THREE.WebGLRenderer;
-  const scene: THREE.Scene = new THREE.Scene();
-  const geometry = new THREE.BufferGeometry();
 
-  const particles: IParticle[] = [];
-  const groups: IParticle[][] = [];
+interface IState {
+  renderFrameMs: number;
+  updateFrameMs: number;
+  lastRenderUpdate: number;
+  lastLogicUpdate: number;
+  height: number;
+  width: number;
+  camera: THREE.PerspectiveCamera | undefined;
+  renderer: THREE.WebGLRenderer | undefined;
+  scene: THREE.Scene;
+  geometry: THREE.BufferGeometry;
+  controls: OrbitControls | undefined;
+  particles: IParticle[];
+  groups: IParticle[][];
+}
+
+const MAX_SIZE = 500;
+const MAX_SIZE_OFFSET = MAX_SIZE - MAX_SIZE / 2;
+
+export default function ParticleCanvas() {
+  const threeState = useRef<IState>({
+    renderFrameMs: 1000 / 60,
+    updateFrameMs: 1000 / 30,
+    lastRenderUpdate: Date.now(),
+    lastLogicUpdate: Date.now(),
+    height: 0,
+    width: 0,
+    camera: undefined,
+    renderer: undefined,
+    scene: new THREE.Scene(),
+    geometry: new THREE.BufferGeometry(),
+    controls: undefined,
+    particles: [],
+    groups: [],
+  });
 
   const containerRef = useCallback((node: HTMLElement) => {
     if (node !== null) {
@@ -26,24 +63,33 @@ export default function ParticleCanvas() {
     }
   }, []);
 
-  const createGroup = (total: number, color: string) => {
-    const group = [];
+  useEffect(() => {
+    addEventListener("resize", onWindowResize);
+
+    return () => {
+      removeEventListener("resize", onWindowResize);
+    };
+  }, []);
+
+  const createGroup = (total: number, colour: IColour) => {
+    const group: IParticle[] = [];
     for (let i = 0; i < total; i++) {
       // create random particle positions
       const particle = {
-        x: Math.random() * width,
-        y: Math.random() * height,
+        x: Math.random() * MAX_SIZE - MAX_SIZE_OFFSET,
+        y: Math.random() * MAX_SIZE - MAX_SIZE_OFFSET,
+        z: 0,
         vx: 0,
         vy: 0,
-        color,
+        colour,
       };
       group.push(particle);
-      particles.push(group[i]);
+      threeState.current.particles.push(group[i]);
     }
-    return group;
+    threeState.current.groups.push(group);
   };
 
-  const rule = (
+  const applyRule = (
     particles1: IParticle[],
     particles2: IParticle[],
     gravity: number
@@ -69,140 +115,198 @@ export default function ParticleCanvas() {
       a.vy = (a.vy + fy) * 0.5;
       a.x += a.vx;
       a.y += a.vy;
-      if (a.x <= 0 || a.x >= width) {
+      if (a.x <= -MAX_SIZE_OFFSET || a.x >= MAX_SIZE_OFFSET) {
         a.vx *= -1;
       }
-      if (a.y <= 0 || a.y >= height) {
+      if (a.y <= -MAX_SIZE_OFFSET || a.y >= MAX_SIZE_OFFSET) {
         a.vy *= -1;
       }
-      if (a.x <= 0) {
-        a.x = 0;
+      if (a.x <= -MAX_SIZE_OFFSET) {
+        a.x = -MAX_SIZE_OFFSET;
       }
-      if (a.y <= 0) {
-        a.y = 0;
+      if (a.y <= -MAX_SIZE_OFFSET) {
+        a.y = -MAX_SIZE_OFFSET;
       }
-      if (a.x >= width) {
-        a.x = width;
+      if (a.x >= MAX_SIZE_OFFSET) {
+        a.x = MAX_SIZE_OFFSET;
       }
-      if (a.y >= height) {
-        a.y = height;
+      if (a.y >= MAX_SIZE_OFFSET) {
+        a.y = MAX_SIZE_OFFSET;
       }
     }
-  };
-
-  const update = () => {
-    const now = Date.now();
-    const delta = now - lastUpdate;
-
-    if (delta > frameDuration) {
-      rule(groups[2], groups[2], -0.32);
-      rule(groups[2], groups[1], -0.17);
-      rule(groups[2], groups[0], 0.34);
-      rule(groups[1], groups[1], -0.1);
-      rule(groups[1], groups[2], -0.34);
-      rule(groups[0], groups[0], 0.15);
-      rule(groups[0], groups[2], -0.2);
-
-      render();
-      lastUpdate = now;
-    }
-    requestAnimationFrame(update);
   };
 
   function init(container: HTMLElement) {
-    width = window.innerWidth;
-    height = window.innerHeight;
+    threeState.current.width = window.innerWidth;
+    threeState.current.height = Math.floor(window.innerHeight * 0.66);
+
+    // camera
+    threeState.current.camera = new THREE.PerspectiveCamera(
+      75,
+      threeState.current.width / threeState.current.height,
+      0.1,
+      10000
+    );
+    threeState.current.camera.lookAt(0, 0, 0);
+    threeState.current.camera.position.set(0, 0, 500);
+
+    // renderer
+    threeState.current.renderer = new THREE.WebGLRenderer();
+    threeState.current.renderer.setPixelRatio(window.devicePixelRatio);
+    threeState.current.renderer.setSize(
+      threeState.current.width,
+      threeState.current.height
+    );
+    // threeState.current.renderer.autoClear = false;
+    container.appendChild(threeState.current.renderer.domElement);
+
+    //grid helper
+    const size = 10;
+    const divisions = 10;
+    const gridHelper = new THREE.GridHelper(size, divisions);
+    threeState.current.scene.add(gridHelper);
+
+    const axesHelper = new THREE.AxesHelper(5);
+    threeState.current.scene.add(axesHelper);
+
+    // orbit control
+    threeState.current.controls = new OrbitControls(
+      threeState.current.camera,
+      container
+    );
+
+    // font
+    const loader = new FontLoader();
+    loader.load(
+      "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
+      (font: any) => {
+        const textGeo = new TextGeometry("ORSI", {
+          font: font,
+          size: 50,
+          height: 1,
+        });
+        textGeo.computeBoundingBox();
+        const textMaterial = new THREE.MeshBasicMaterial();
+        const mesh = new THREE.Mesh(textGeo, textMaterial);
+        mesh.geometry.center();
+        threeState.current.scene.add(mesh);
+      }
+    );
 
     // data
-    groups[0] = createGroup(500, "yellow");
-    groups[1] = createGroup(400, "red");
-    groups[2] = createGroup(500, "green");
-
-    // threejs
-    camera = new THREE.OrthographicCamera(
-      0,
-      width,
-      height,
-      0,
-      1,
-      1000
-    );
-    camera.position.x = 0;
-    camera.position.y = 0;
-    camera.position.z = 1;
-
-    renderer = new THREE.WebGLRenderer();
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(width, height);
-    renderer.autoClear = false;
-    container.appendChild(renderer.domElement);
+    createGroup(400, {
+      red: 1,
+      green: 0,
+      blue: 0,
+      alpha: 1.0,
+    });
+    createGroup(300, {
+      red: 0.2,
+      green: 0.7,
+      blue: 0.2,
+      alpha: 1.0,
+    });
+    createGroup(200, {
+      red: 0,
+      green: 0,
+      blue: 1,
+      alpha: 0.5,
+    });
 
     // create initial particle state
     const positions = [];
-    const colors = [];
     const color = new THREE.Color();
-    for (let i = 0; i < particles.length; i++) {
-      positions.push(particles[i].x, particles[i].y, 0);
-      switch (particles[i].color) {
-        case "red": {
-          color.setRGB(255, 0, 0);
-          colors.push(color.r, color.g, color.b);
-          break;
-        }
-        case "green": {
-          color.setRGB(0, 255, 0);
-          colors.push(color.r, color.g, color.b);
-          break;
-        }
-        case "yellow": {
-          color.setRGB(255, 255, 0);
-          colors.push(color.r, color.g, color.b);
-          break;
-        }
-      }
+    const colors: number[] = [];
+    for (let i = 0; i < threeState.current.particles.length; i++) {
+      const currentParticle = threeState.current.particles[i];
+      positions.push(currentParticle.x, currentParticle.y, currentParticle.z);
+      color.setRGB(
+        currentParticle.colour.red,
+        currentParticle.colour.green,
+        currentParticle.colour.blue
+      );
+      colors.push(color.r, color.g, color.b);
     }
-    geometry.setAttribute(
+    threeState.current.geometry.setAttribute(
       "position",
       new THREE.Float32BufferAttribute(positions, 3)
     );
-    geometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
-
+    threeState.current.geometry.setAttribute(
+      "color",
+      new THREE.Float32BufferAttribute(colors, 3)
+    );
     const material = new THREE.PointsMaterial({
       size: 2,
       vertexColors: true,
     });
-    const points = new THREE.Points(geometry, material);
+    const points = new THREE.Points(threeState.current.geometry, material);
+    threeState.current.scene.add(points);
 
-    scene.add(points);
-
+    // update
     update();
   }
 
+  const update = () => {
+    const now = Date.now();
+
+    const logicDelta = now - threeState.current.lastLogicUpdate;
+    if (logicDelta > threeState.current.updateFrameMs) {
+      applyRule(threeState.current.groups[0], threeState.current.groups[0], -0.12);
+      applyRule(threeState.current.groups[0], threeState.current.groups[1], 0.51);
+      applyRule(threeState.current.groups[0], threeState.current.groups[2], -0.34);
+      applyRule(threeState.current.groups[1], threeState.current.groups[1], 0.1);
+      applyRule(threeState.current.groups[1], threeState.current.groups[2], -0.34);
+      applyRule(threeState.current.groups[2], threeState.current.groups[2], -0.32);
+      threeState.current.lastLogicUpdate = now;
+    }
+
+    const renderDelta = now - threeState.current.lastRenderUpdate;
+    if (renderDelta > threeState.current.renderFrameMs) {
+      render();
+      threeState.current.lastRenderUpdate = now;
+    }
+
+    requestAnimationFrame(update);
+  };
+
   function render() {
-    const positions = geometry.getAttribute("position").array;
-    for (let i = 0; i < particles.length; i++) {
+    if (!threeState.current.renderer) {
+      return;
+    }
+
+    const positions =
+      threeState.current.geometry.getAttribute("position").array;
+    for (let i = 0; i < threeState.current.particles.length; i++) {
       const positionIndex = i * 3;
-      positions[positionIndex] = particles[i].x;
-      positions[positionIndex + 1] = particles[i].y;
+      positions[positionIndex] = threeState.current.particles[i].x;
+      positions[positionIndex + 1] = threeState.current.particles[i].y;
       positions[positionIndex + 2] = 0;
     }
-    geometry.attributes.position.needsUpdate = true;
-    renderer.render(scene, camera);
+    threeState.current.geometry.attributes.position.needsUpdate = true;
+
+    threeState.current.controls.update();
+
+    threeState.current.renderer.render(
+      threeState.current.scene,
+      threeState.current.camera
+    );
   }
 
   function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (!threeState.current.camera || !threeState.current.renderer) {
+      return;
+    }
+
+    threeState.current.width = window.innerWidth;
+    threeState.current.height = Math.floor(window.innerHeight * 0.66);
+
+    threeState.current.camera.aspect =
+      threeState.current.width / threeState.current.height;
+    threeState.current.renderer.setSize(
+      threeState.current.width,
+      threeState.current.height
+    );
   }
-
-  useEffect(() => {
-    addEventListener("resize", onWindowResize);
-
-    return () => {
-      removeEventListener("resize", onWindowResize);
-    };
-  }, []);
 
   return <section ref={containerRef}></section>;
 }

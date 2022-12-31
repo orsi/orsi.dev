@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef } from "preact/hooks";
 import * as THREE from "three";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { FlyControls } from "three/addons/controls/FlyControls.js";
 
 const MAX_SIZE = 500;
 
@@ -23,7 +24,9 @@ export default function ParticleCanvas() {
     objects: [],
   });
 
-  const containerRef = useCallback((node: HTMLElement | null) => {
+  const clock = new THREE.Clock();
+
+  const containerRef = useCallback(async (node: HTMLElement | null) => {
     if (node !== null) {
       // setup threejs
       state.current.width = window.innerWidth;
@@ -57,7 +60,15 @@ export default function ParticleCanvas() {
       state.current.scene.add(axesHelper);
 
       // orbit control
-      state.current.controls = new OrbitControls(state.current.camera, node);
+      state.current.controls = new FlyControls(
+        state.current.camera,
+        state.current.renderer.domElement
+      );
+      state.current.controls.movementSpeed = 100;
+      state.current.controls.domElement = state.current.renderer.domElement;
+      state.current.controls.rollSpeed = Math.PI / 3;
+      state.current.controls.autoForward = false;
+      state.current.controls.dragToLook = true;
 
       // light
       const light = new THREE.AmbientLight(0x404040, 1); // soft white light
@@ -132,12 +143,23 @@ export default function ParticleCanvas() {
         state.current.objects.push(object);
       }
 
+      // dat gui
+      const dat = await import("https://esm.sh/dat.gui@0.7.9");
+      const gui = new dat.GUI();
+      const cameraFolder = gui.addFolder("Camera");
+      cameraFolder.add(state.current.camera.position, "x", -500, 500);
+      cameraFolder.add(state.current.camera.position, "y", -500, 500);
+      cameraFolder.add(state.current.camera.position, "z", -500, 500);
+      cameraFolder.open();
+
       // update
       animate();
     }
   }, []);
 
   const animate = () => {
+    const delta = clock.getDelta();
+
     // update positions
     for (let i = 0; i < state.current.objects.length; i++) {
       const randomPositionX = Math.random() * 2 - 1;
@@ -155,7 +177,7 @@ export default function ParticleCanvas() {
       state.current.text.rotation.z += 0.01;
     }
 
-    state.current.controls.update();
+    state.current.controls.update(delta);
     state.current.renderer.render(state.current.scene, state.current.camera);
 
     requestAnimationFrame(animate);

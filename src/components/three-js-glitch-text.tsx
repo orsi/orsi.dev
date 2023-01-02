@@ -1,13 +1,16 @@
-import { useCallback, useEffect } from "preact/hooks";
+import useAsset from "ultra/hooks/use-asset.js";
+import { useCallback, useEffect } from "react";
 import * as THREE from "three";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { GlitchPass } from "three/addons/postprocessing/GlitchPass.js";
+import { tw } from "../twind/twind.ts";
 
-const HEIGHT_RATIO = 0.4;
-export default function ThreeOrsiGlitch() {
+const HEIGHT_RATIO = 0.33;
+
+export default function ThreeJsGlitchText() {
   let width, height;
   let camera: THREE.PerspectiveCamera | null = null;
   let composer: EffectComposer | null = null;
@@ -24,19 +27,24 @@ export default function ThreeOrsiGlitch() {
       // setup threejs
       const boundingRects = node.getBoundingClientRect();
       width = boundingRects.width;
-      height = boundingRects.width * HEIGHT_RATIO;
+      height = boundingRects.height;
 
       // camera
-      camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 10000);
-      camera.position.set(0, 25, 50);
+      camera = new THREE.PerspectiveCamera(80, width / height, 0.1, 10000);
+      camera.position.set(0, 10, 50);
       camera.lookAt(0, 0, 0);
 
       // renderer
       renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
-      renderer.autoClear = false;
+      renderer.autoClear = true;
       node.appendChild(renderer.domElement);
+
+      // light
+      const dirLight = new THREE.DirectionalLight(0xffffff, 2);
+      dirLight.position.set(0, 100, 50).normalize();
+      scene.add(dirLight);
 
       // postprocessing
       composer = new EffectComposer(renderer);
@@ -44,25 +52,26 @@ export default function ThreeOrsiGlitch() {
       renderPass.clear = false;
       composer.addPass(renderPass);
       glitchPass = new GlitchPass();
+      glitchPass.clear = false;
       composer.addPass(glitchPass);
 
       // font
       const loader = new FontLoader();
-      loader.load(
-        "https://threejs.org/examples/fonts/helvetiker_regular.typeface.json",
-        (font: any) => {
-          const textGeo = new TextGeometry("ORSI", {
-            font: font,
-            size: 30,
-            height: 1,
-          });
-          textGeo.computeBoundingBox();
-          const textMaterial = new THREE.MeshBasicMaterial();
-          text = new THREE.Mesh(textGeo, textMaterial);
-          text.geometry.center();
-          scene.add(text);
-        }
-      );
+      loader.load("/fonts/Pixel_Pirate_Regular.json", (font: any) => {
+        const geometry = new TextGeometry("ORSI", {
+          font: font,
+          size: 28,
+          height: 5,
+        });
+        geometry.computeBoundingBox();
+        const material = new THREE.MeshPhongMaterial({
+          color: 0xffffff,
+        });
+        text = new THREE.Mesh(geometry, material);
+        text.geometry.center();
+        text.position.set(0, 0, 0);
+        scene.add(text);
+      });
 
       // update
       animate();
@@ -81,8 +90,9 @@ export default function ThreeOrsiGlitch() {
       if (container && composer) {
         const boundingRects = container.getBoundingClientRect();
         width = boundingRects.width;
-        height = boundingRects.width * HEIGHT_RATIO;
+        height = boundingRects.height;
         camera.aspect = width / height;
+        camera.updateProjectionMatrix();
         renderer.setSize(width, height);
         composer.setSize(width, height);
       }
@@ -94,5 +104,10 @@ export default function ThreeOrsiGlitch() {
     };
   }, []);
 
-  return <div ref={containerRef}></div>;
+  return (
+    <div
+      className={tw(`mx-auto h-[40vw] max-h-[280px]`)}
+      ref={containerRef}
+    ></div>
+  );
 }

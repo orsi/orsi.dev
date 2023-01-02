@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useRef } from "preact/hooks";
+import { useCallback, useEffect } from "react";
+import { tw } from "../twind/twind.ts";
 import * as THREE from "three";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPixelatedPass } from "three/addons/postprocessing/RenderPixelatedPass.js";
 import { FlyControls } from "three/addons/controls/FlyControls.js";
 
-export default function ThreeBackground() {
+export default function ThreeJsBackground() {
   let width, height;
   let camera: THREE.PerspectiveCamera | null = null;
   let renderer: THREE.WebGLRenderer | null = null;
@@ -26,15 +27,14 @@ export default function ThreeBackground() {
 
       // renderer
       renderer = new THREE.WebGLRenderer();
-      // renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
       renderer.autoClear = true;
-      // renderer.shadowMap.enabled = true;
       node.appendChild(renderer.domElement);
 
       // postprocessing
       composer = new EffectComposer(renderer);
-      const renderPixelatedPass = new RenderPixelatedPass(2, scene, camera);
+      const renderPixelatedPass = new RenderPixelatedPass(3, scene, camera);
       composer.addPass(renderPixelatedPass);
 
       // helpers
@@ -88,7 +88,7 @@ export default function ThreeBackground() {
       object = new THREE.Mesh(geometry, material);
     }
 
-    const x = Math.random() * -4 - 11;
+    const x = Math.random() * -2 - 8;
     const y = Math.random() * 40;
     const z = Math.random() * 5 + 45;
     object.name = crypto.getRandomValues(new Uint32Array(2)).toString();
@@ -130,7 +130,7 @@ export default function ThreeBackground() {
     const now = Date.now();
     const delta = now - lastUpdate;
 
-    if (delta > 1000 + Math.random() * 3000) {
+    if (delta > 2000 + Math.random() * 3000) {
       createObject();
       lastUpdate = now;
     }
@@ -166,5 +166,5 @@ export default function ThreeBackground() {
     };
   }, []);
 
-  return <div class="fixed h-full w-full" ref={containerRef}></div>;
+  return <div className={tw(`fixed h-full w-full`)} ref={containerRef}></div>;
 }

@@ -1,6 +1,4 @@
 {
-  "deno.enable": true,
-  "deno.unstable": true,
-  "deno.lint": true,
-  "deno.suggest.autoImports": true
+    "deno.enable": true,
+    "deno.unstable": true
 }

@@ -57,7 +57,7 @@ export default function ThreeJsGlitchText() {
 
       // font
       const loader = new FontLoader();
-      loader.load("/fonts/Pixel_Pirate_Regular.json", (font: any) => {
+      loader.load("/fonts/pixel-pirate.json", (font: any) => {
         const geometry = new TextGeometry("ORSI", {
           font: font,
           size: 28,

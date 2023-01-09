@@ -75,23 +75,27 @@ export default function ThreeJsGlitchText() {
   }, []);
 
   const animate = () => {
-    if (composer) {
-      composer.render();
+    if (!composer) {
+      return;
     }
+
+    composer.render();
     requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     const onWindowResize = () => {
-      if (container && composer) {
-        const boundingRects = container.getBoundingClientRect();
-        width = boundingRects.width;
-        height = boundingRects.height;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-        composer.setSize(width, height);
+      if (!camera || !renderer || !container || !composer) {
+        return;
       }
+
+      const boundingRects = container.getBoundingClientRect();
+      width = boundingRects.width;
+      height = boundingRects.height;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+      composer.setSize(width, height);
     };
 
     addEventListener("resize", onWindowResize);

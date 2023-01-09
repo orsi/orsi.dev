@@ -91,22 +91,26 @@ export default function ThreeJsBackground() {
     const y = Math.random() * 40;
     const z = Math.random() * 5 + 45;
     object.name = crypto.getRandomValues(new Uint32Array(2)).toString();
-    object.vPosition = Math.random() * 0.02 + 0.01;
-    object.vRotation = Math.random() * 0.05 + 0.01;
+    object.userData.vPosition = Math.random() * 0.02 + 0.01;
+    object.userData.vRotation = Math.random() * 0.05 + 0.01;
     object.position.set(x, y, z);
     scene.add(object);
     objects.push(object);
   };
 
   const updateObjects = () => {
+    if (!camera) {
+      return;
+    }
+
     // rotate objects
     for (let i = 0; i < objects.length; i++) {
       const object = objects[i];
-      object.position.x += object.vPosition;
-      object.position.y -= object.vPosition;
-      object.position.z -= object.vPosition;
-      object.rotation.x += object.vRotation;
-      object.rotation.y -= object.vRotation;
+      object.position.x += object.userData.vPosition;
+      object.position.y -= object.userData.vPosition;
+      object.position.z -= object.userData.vPosition;
+      object.rotation.x += object.userData.vRotation;
+      object.rotation.y -= object.userData.vRotation;
 
       // check if object has exited out of right side of screen
       const frustum = new THREE.Frustum();
@@ -117,6 +121,9 @@ export default function ThreeJsBackground() {
       frustum.setFromProjectionMatrix(matrix);
       if (!frustum.containsPoint(object.position) && object.position.x > 0) {
         const selectedObject = scene.getObjectByName(object.name);
+        if (!selectedObject) {
+          return;
+        }
         scene.remove(selectedObject);
         objects.splice(i, 1);
         createObject();
@@ -126,6 +133,10 @@ export default function ThreeJsBackground() {
 
   let lastUpdate = Date.now();
   const animate = () => {
+    if (!controls || !composer) {
+      return;
+    }
+
     const now = Date.now();
     const delta = now - lastUpdate;
 
@@ -135,17 +146,17 @@ export default function ThreeJsBackground() {
     }
 
     updateObjects();
-    if (controls) {
-      controls.update(0.1);
-    }
-    if (composer) {
-      composer.render();
-    }
+    controls.update(0.1);
+    composer.render();
     requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     const onWindowResize = () => {
+      if (!camera || !renderer || !composer) {
+        return;
+      }
+
       width = window.innerWidth;
       height = window.innerHeight;
 
@@ -154,9 +165,7 @@ export default function ThreeJsBackground() {
       camera.lookAt(scene.position);
 
       renderer.setSize(width, height);
-      if (composer) {
-        composer.setSize(width, height);
-      }
+      composer.setSize(width, height);
     };
 
     addEventListener("resize", onWindowResize);

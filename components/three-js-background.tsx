@@ -1,9 +1,8 @@
 import { useCallback, useEffect } from "react";
-import { tw } from "../twind/twind.ts";
 import * as THREE from "three";
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-import { RenderPixelatedPass } from "three/addons/postprocessing/RenderPixelatedPass.js";
-import { FlyControls } from "three/addons/controls/FlyControls.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
+import { RenderPixelatedPass } from "three/examples/jsm/postprocessing/RenderPixelatedPass";
+import { FlyControls } from "three/examples/jsm/controls/FlyControls";
 
 export default function ThreeJsBackground() {
   let width, height;
@@ -166,5 +165,5 @@ export default function ThreeJsBackground() {
     };
   }, []);
 
-  return <div className={tw(`fixed h-full w-full`)} ref={containerRef}></div>;
+  return <div className={`fixed h-full w-full`} ref={containerRef}></div>;
 }

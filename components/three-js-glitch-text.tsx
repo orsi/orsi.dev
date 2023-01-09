@@ -1,14 +1,10 @@
-import useAsset from "ultra/hooks/use-asset.js";
 import { useCallback, useEffect } from "react";
 import * as THREE from "three";
-import { FontLoader } from "three/addons/loaders/FontLoader.js";
-import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
-import { GlitchPass } from "three/addons/postprocessing/GlitchPass.js";
-import { tw } from "../twind/twind.ts";
-
-const HEIGHT_RATIO = 0.33;
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass.js";
 
 export default function ThreeJsGlitchText() {
   let width, height;
@@ -105,9 +101,6 @@ export default function ThreeJsGlitchText() {
   }, []);
 
   return (
-    <div
-      className={tw(`mx-auto h-[40vw] max-h-[280px]`)}
-      ref={containerRef}
-    ></div>
+    <div className={`mx-auto h-[40vw] max-h-[280px]`} ref={containerRef}></div>
   );
 }

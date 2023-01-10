@@ -2,13 +2,11 @@ import { useCallback, useEffect } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 import { RenderPixelatedPass } from "three/examples/jsm/postprocessing/RenderPixelatedPass";
-import { FlyControls } from "three/examples/jsm/controls/FlyControls";
 
 export default function ThreeJsBackground() {
   let width, height;
   let camera: THREE.PerspectiveCamera | null = null;
   let renderer: THREE.WebGLRenderer | null = null;
-  let controls: FlyControls | null = null;
   let composer: EffectComposer | null = null;
   const scene = new THREE.Scene();
   const objects: THREE.Mesh[] = [];
@@ -133,7 +131,7 @@ export default function ThreeJsBackground() {
 
   let lastUpdate = Date.now();
   const animate = () => {
-    if (!controls || !composer) {
+    if (!composer) {
       return;
     }
 
@@ -146,7 +144,6 @@ export default function ThreeJsBackground() {
     }
 
     updateObjects();
-    controls.update(0.1);
     composer.render();
     requestAnimationFrame(animate);
   };

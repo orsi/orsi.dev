@@ -24,7 +24,7 @@ export default function Home() {
         <div className={`mt-2 max-w-[640px] mx-auto px-4`}>
           <p>
             Jonathon Orsi is a musician and software developer living in
-            Toronto, Canada. test
+            Toronto, Canada.
           </p>
           <p>
             Contact me via <a href="mailto:jonathon.orsi@gmail.com">email</a>.

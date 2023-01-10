@@ -1,14 +1,10 @@
-import useAsset from "ultra/hooks/use-asset.js";
 import { useCallback, useEffect } from "react";
 import * as THREE from "three";
-import { FontLoader } from "three/addons/loaders/FontLoader.js";
-import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
-import { GlitchPass } from "three/addons/postprocessing/GlitchPass.js";
-import { tw } from "../twind/twind.ts";
-
-const HEIGHT_RATIO = 0.33;
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass.js";
 
 export default function ThreeJsGlitchText() {
   let width, height;
@@ -79,23 +75,27 @@ export default function ThreeJsGlitchText() {
   }, []);
 
   const animate = () => {
-    if (composer) {
-      composer.render();
+    if (!composer) {
+      return;
     }
+
+    composer.render();
     requestAnimationFrame(animate);
   };
 
   useEffect(() => {
     const onWindowResize = () => {
-      if (container && composer) {
-        const boundingRects = container.getBoundingClientRect();
-        width = boundingRects.width;
-        height = boundingRects.height;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-        composer.setSize(width, height);
+      if (!camera || !renderer || !container || !composer) {
+        return;
       }
+
+      const boundingRects = container.getBoundingClientRect();
+      width = boundingRects.width;
+      height = boundingRects.height;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+      composer.setSize(width, height);
     };
 
     addEventListener("resize", onWindowResize);
@@ -105,9 +105,6 @@ export default function ThreeJsGlitchText() {
   }, []);
 
   return (
-    <div
-      className={tw(`mx-auto h-[40vw] max-h-[280px]`)}
-      ref={containerRef}
-    ></div>
+    <div className={`mx-auto h-[40vw] max-h-[280px]`} ref={containerRef}></div>
   );
 }

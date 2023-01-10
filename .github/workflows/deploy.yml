@@ -18,7 +18,7 @@ jobs:
           node-version: 16
 
       - name: Install
-      - run: npm ci
+        run: npm ci
 
       - name: NextJS Build
         run: npm run build

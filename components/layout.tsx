@@ -17,7 +17,7 @@ export default function Layout({ children }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Background />
-      <main className={`relative z-10`}>
+      <main className={`relative z-10 pb-16`}>
         <Nav />
         {children}
       </main>

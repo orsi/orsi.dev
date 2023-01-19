@@ -7,6 +7,7 @@ import {
   Pixelation,
 } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
+import { Vector2 } from "three";
 
 export default function Logo() {
   return (
@@ -22,9 +23,9 @@ export default function Logo() {
         </Text>
         <EffectComposer>
           <Glitch
-            delay={[1.5, 3.5]} // min and max glitch delay
-            duration={[0.6, 1.0]} // min and max glitch duration
-            strength={[0.3, 1.0]} // min and max glitch strength
+            delay={[1.5, 3.5] as unknown as Vector2} // min and max glitch delay
+            duration={[0.6, 1.0] as unknown as Vector2} // min and max glitch duration
+            strength={[0.3, 1.0] as unknown as Vector2} // min and max glitch strength
             mode={GlitchMode.SPORADIC} // glitch mode
             active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
             ratio={0.3} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.

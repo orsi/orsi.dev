@@ -2,8 +2,11 @@ import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { EffectComposer, Noise, Pixelation, Scanline } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import {
+  EffectComposer,
+  Pixelation,
+  Scanline,
+} from "@react-three/postprocessing";
 
 function Sphere(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!);

@@ -13,7 +13,7 @@ export default function Logo() {
   return (
     <Suspense>
       <div className={`h-[250px]`}>
-        <Canvas frameloop="demand">
+        <Canvas>
           <Suspense>
             <Text
               scale={[4, 5, 5]}

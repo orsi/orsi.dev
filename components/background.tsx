@@ -92,7 +92,7 @@ export default function Background() {
   return (
     <Suspense>
       <div className={`fixed h-screen w-screen `}>
-        <Canvas frameloop="demand">
+        <Canvas>
           {shape}
           <Stars count={2000} fade={true} />
           <EffectComposer>

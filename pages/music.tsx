@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import spotifyOrsiImage from "../public/spotify-orsi.jpeg";
-import aDarkRoomImage from "../public/a-dark-room.gif";
+import spotifyOrsiImage from "../public/images/spotify-orsi.jpeg";
+import aDarkRoomImage from "../public/images/a-dark-room.gif";
 
 export default function Music() {
   return (
@@ -61,7 +61,6 @@ export default function Music() {
             <Image
               src={aDarkRoomImage}
               alt="A Dark Room"
-              // placeholder="blur"
               height={300}
             />
           </div>

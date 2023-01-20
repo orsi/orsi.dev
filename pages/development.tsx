@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import jonsTunerImage from "../public/jons-tuner.png";
-import joJoGunCaImage from "../public/jojogun-ca.png";
-import codeXLiveImage from "../public/code-x-live.png";
-import humbleRootsMediaComImage from "../public/humblerootsmedia-com.png";
-import beticalDigitalImage from "../public/betical-digital.png";
+import jonsTunerImage from "../public/images/jons-tuner.png";
+import joJoGunCaImage from "../public/images/jojogun-ca.png";
+import codeXLiveImage from "../public/images/code-x-live.png";
+import humbleRootsMediaComImage from "../public/images/humblerootsmedia-com.png";
+import beticalDigitalImage from "../public/images/betical-digital.png";
 
 export default function Development() {
   return (
@@ -52,8 +52,9 @@ export default function Development() {
             <Image
               className={`rounded-lg`}
               src={joJoGunCaImage}
-              alt=""
+              alt="Jo Jo Gun and the Bullets"
               placeholder="blur"
+              height={300}
             />
           </div>
           <div className={`mt-8 sm:mt-0 sm:ml-4`}>
@@ -68,8 +69,9 @@ export default function Development() {
             <Image
               className={`rounded-lg`}
               src={codeXLiveImage}
-              alt=""
+              alt="Code X"
               placeholder="blur"
+              height={300}
             />
           </div>
           <div className={`mt-8 sm:mt-0 sm:ml-4`}>
@@ -84,8 +86,9 @@ export default function Development() {
             <Image
               className={`rounded-lg`}
               src={humbleRootsMediaComImage}
-              alt=""
+              alt="Humble Roots Media"
               placeholder="blur"
+              height={300}
             />
           </div>
           <div className={`mt-8 sm:mt-0 sm:ml-4`}>
@@ -104,8 +107,9 @@ export default function Development() {
             <Image
               className={`rounded-lg`}
               src={beticalDigitalImage}
-              alt=""
+              alt="Betical"
               placeholder="blur"
+              height={300}
             />
           </div>
           <div className={`mt-8 sm:mt-0 sm:ml-4`}>

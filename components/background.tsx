@@ -1,14 +1,14 @@
-import * as THREE from "three";
-import React, { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import * as THREE from 'three';
+import React, { useEffect, useRef, useState } from 'react';
+import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
 import {
   EffectComposer,
   Pixelation,
   Scanline,
-} from "@react-three/postprocessing";
+} from '@react-three/postprocessing';
 
-function Sphere(props: ThreeElements["mesh"]) {
+function Sphere(props: ThreeElements['mesh']) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -22,7 +22,7 @@ function Sphere(props: ThreeElements["mesh"]) {
   );
 }
 
-function Pyramid(props: ThreeElements["mesh"]) {
+function Pyramid(props: ThreeElements['mesh']) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -36,7 +36,7 @@ function Pyramid(props: ThreeElements["mesh"]) {
   );
 }
 
-function Box(props: ThreeElements["mesh"]) {
+function Box(props: ThreeElements['mesh']) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -51,12 +51,10 @@ function Box(props: ThreeElements["mesh"]) {
 }
 
 export default function Background() {
-  const [shape, setShape] = useState<React.ReactNode>(
-    <Box position={[0, 0, 0]} />
-  );
+  const [shape, setShape] = useState<React.ReactNode>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const getRandomShape = () => {
       const random = Math.random();
       const shape =
         random < 0.33 ? (
@@ -70,6 +68,16 @@ export default function Background() {
             position={[-10, Math.random() * 10 - 5, Math.random() * -5]}
           />
         );
+      return shape;
+    };
+    
+    // initialize
+    const shape = getRandomShape();
+    setShape(shape);
+
+    // setup interval
+    const interval = setInterval(() => {
+      const shape = getRandomShape();
       setShape(shape);
     }, 20000);
     return () => {
@@ -84,7 +92,7 @@ export default function Background() {
         <Stars count={2000} fade={true} />
         <EffectComposer>
           <Pixelation
-            granularity={4} // pixel granularity
+            granularity={3} // pixel granularity
           />
           <Scanline density={5.5} />
         </EffectComposer>

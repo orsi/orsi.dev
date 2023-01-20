@@ -31,7 +31,7 @@ export default function Logo() {
             ratio={0.3} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
           />
           <Pixelation
-            granularity={30} // pixel granularity
+            granularity={12} // pixel granularity
           />
         </EffectComposer>
       </Canvas>

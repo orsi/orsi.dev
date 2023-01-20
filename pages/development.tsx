@@ -73,7 +73,7 @@ export default function Development() {
             />
           </div>
           <div className={`mt-8 sm:mt-0 sm:ml-4`}>
-            <a href="https://code-x.sectionve" target="_blank" rel="noreferrer">
+            <a href="https://code-x.live" target="_blank" rel="noreferrer">
               Code X
             </a>
             <p>Web audio digital poem</p>

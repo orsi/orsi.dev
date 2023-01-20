@@ -1,14 +1,18 @@
-import * as THREE from 'three';
-import React, { useEffect, useRef, useState } from 'react';
-import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
+import * as THREE from "three";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
+import { Stars } from "@react-three/drei";
 import {
   EffectComposer,
   Pixelation,
   Scanline,
-} from '@react-three/postprocessing';
+} from "@react-three/postprocessing";
 
-function Sphere(props: ThreeElements['mesh']) {
+const wireframeMeshMaterial = (
+  <meshBasicMaterial wireframe={true} color={`rgb(60,120,40)`} />
+);
+
+function Sphere(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -17,12 +21,12 @@ function Sphere(props: ThreeElements['mesh']) {
   return (
     <mesh {...props} ref={ref}>
       <sphereGeometry args={[1, 5, 5]} />
-      <meshBasicMaterial wireframe={true} color={`rgb(60,120,40)`} />
+      {wireframeMeshMaterial}
     </mesh>
   );
 }
 
-function Pyramid(props: ThreeElements['mesh']) {
+function Pyramid(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -31,12 +35,12 @@ function Pyramid(props: ThreeElements['mesh']) {
   return (
     <mesh {...props} ref={ref}>
       <coneGeometry args={[1, 1, 3]} />
-      <meshBasicMaterial wireframe={true} color={`rgb(60,120,40)`} />
+      {wireframeMeshMaterial}
     </mesh>
   );
 }
 
-function Box(props: ThreeElements['mesh']) {
+function Box(props: ThreeElements["mesh"]) {
   const ref = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => {
     ref.current.rotation.x += delta;
@@ -45,7 +49,7 @@ function Box(props: ThreeElements['mesh']) {
   return (
     <mesh {...props} ref={ref}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial wireframe={true} color={`rgb(60,120,40)`} />
+      {wireframeMeshMaterial}
     </mesh>
   );
 }
@@ -70,7 +74,7 @@ export default function Background() {
         );
       return shape;
     };
-    
+
     // initialize
     const shape = getRandomShape();
     setShape(shape);
@@ -86,17 +90,19 @@ export default function Background() {
   }, []);
 
   return (
-    <div className={`fixed h-screen w-screen `}>
-      <Canvas>
-        {shape}
-        <Stars count={2000} fade={true} />
-        <EffectComposer>
-          <Pixelation
-            granularity={3} // pixel granularity
-          />
-          <Scanline density={5.5} />
-        </EffectComposer>
-      </Canvas>
-    </div>
+    <Suspense>
+      <div className={`fixed h-screen w-screen `}>
+        <Canvas frameloop="demand">
+          {shape}
+          <Stars count={2000} fade={true} />
+          <EffectComposer>
+            <Pixelation
+              granularity={3} // pixel granularity
+            />
+            <Scanline density={5.5} />
+          </EffectComposer>
+        </Canvas>
+      </div>
+    </Suspense>
   );
 }

@@ -24,6 +24,9 @@
     "noUncheckedSideEffectImports": true,
     /* JSX */
     "jsx": "preserve",
+    "types": [
+      "jinx"
+    ],
     "paths": {
       "jinx": [
         "./vendor/jinx/packages/jinx"

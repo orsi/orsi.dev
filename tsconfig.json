@@ -29,7 +29,7 @@
     ],
     "paths": {
       "jinx": [
-        "./vendor/jinx/packages/jinx"
+        "./vendor/jinx/packages/core"
       ]
     }
   },

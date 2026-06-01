@@ -10,7 +10,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      jinx: path.resolve(__dirname, './vendor/jinx/packages/jinx'),
+      jinx: path.resolve(__dirname, './vendor/jinx/packages/core'),
     },
   },
 });

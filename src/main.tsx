@@ -1,5 +1,8 @@
-import { useEffect, useState } from 'jinx';
 import './global.css';
+import { useEffect, useState } from 'jinx';
+import snes9xOsxUiImageSrc from './snes9x-osx-ui.gif';
+import beticalImageSrc from './betical.png';
+import discworldImageSrc from './discworld.gif';
 
 const App = () => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -131,14 +134,176 @@ const App = () => {
           </button>
         </div>
       </nav>
-      <p>Welcome, I'm Jonathon Orsi, a full-stack developer.</p>
       <p>
-        I've worked as an L5 Tech Lead at Meltwater, an online media, social,
-        and consumer intelligence company. A senior software developer at
-        Bombardier, Canada's largest aerospace manufacturer of business jets. A
-        senior tech lead At Thrillworks, a digital development agency
+        L5 Tech Lead at Meltwater, an online media, social, and consumer
+        intelligence company.
+      </p>
+      <p>
+        Senior software developer at Bombardier, Canada's largest aerospace
+        manufacturer of business jets.
+      </p>
+      <p>
+        Senior tech lead At Thrillworks, a digital development agency
         specializing in web, mobile, and marketing solutions.
       </p>
+
+      <h2>side projects</h2>
+      <ul>
+        <li>
+          <p>
+            jinx is a barebones, reactive, functional JSX library for building
+            web-based UI in Javascript. This site is built completely with jinx.
+          </p>
+        </li>
+        <li>
+          <p>roxanne is an experimental language compiler written in C.</p>
+        </li>
+        <li>
+          <p>
+            Chromatic Tuner is an iOS/Android React Native mobile application
+            for musicians to tune their instrument.
+          </p>
+        </li>
+        <li>
+          <p>
+            chip-8c is an emulator for the CHIP-8 interpreted programming
+            language developed for 8-bit machines in 1970s.
+          </p>
+        </li>
+        <li>
+          <p>
+            react-gamin is a library for creating browser games in the
+            functional, hook-based React way.
+          </p>
+        </li>
+        <li>
+          <p>SimpleEQ is a C++ audio plugin created with the JUCE framework.</p>
+        </li>
+        <li>
+          <p>
+            zen-html is a Javascript template string based component library for
+            rendering HTML elements.
+          </p>
+        </li>
+      </ul>
+
+      <h2>contributions to open-source</h2>
+      <ul>
+        <li>
+          <p>
+            <a href="https://adarkroom.doublespeakgames.com/" target="_blank">
+              A Dark Room
+            </a>{' '}
+            is an open-source text-based role-playing game. see
+            <a
+              href="https://github.com/doublespeakgames/adarkroom/pulls?q=+is%3Apr+author%3Aorsi+"
+              target="_blank"
+            >
+              contributions
+            </a>
+            .
+          </p>
+        </li>
+        <li>
+          <p>
+            deno TLS features added in v2.8.2 (
+            <a
+              href="https://github.com/denoland/deno/commit/045e74bb39d7743b774cfd2b889bc6ce1e1ad245"
+              target="_blank"
+            >
+              commit
+            </a>
+            ). Written in Rust and Typescript.
+          </p>
+        </li>
+        <li>
+          <img
+            src={snes9xOsxUiImageSrc}
+            style={{
+              maxWidth: '100%',
+            }}
+          />
+          <p>
+            <a href="https://www.snes9x.com/" target="_blank">
+              Snes9x
+            </a>{' '}
+            is a portable, freeware Super Nintendo Entertainment System (SNES)
+            emulator. Designed and built the macOS UI within Interface Builder
+            and Objective-C. see{' '}
+            <a
+              href="https://github.com/snes9xgit/snes9x/pulls?q=is%3Apr+author%3Aorsi+"
+              target="_blank"
+            >
+              contributions
+            </a>
+            .
+          </p>
+        </li>
+        <li>
+          <p>
+            <a href="https://github.com/ZaneDubya/UltimaXNA" target="_blank">
+              UltimaXNA
+            </a>
+            : Open Source Ultima Online Client in C#/XNA. Contributed various
+            features, fixes, and performance improvements related to real-time
+            messaing chat systems, GUI elements, and TCP/IP packet
+            writing/parsing (see{' '}
+            <a
+              href="https://github.com/ZaneDubya/UltimaXNA/pulls?q=is%3Apr+author%3Aorsi+"
+              target="_blank"
+            >
+              pull request contributions
+            </a>
+            ).
+          </p>
+        </li>
+      </ul>
+
+      <h2>web</h2>
+      <ul>
+        <li>
+          <p>
+            <a href="https://code-x.live/" target="_blank">
+              Code X
+            </a>
+            {` `}is a sound poem, a visual poem, a bookwork, a gallery
+            installation piece, and a public or private performance vehicle.
+          </p>
+        </li>
+        <li>
+          <a href="https://jojogun.ca" target="_blank">
+            jojogun.ca
+          </a>
+        </li>
+      </ul>
+
+      <h2>art</h2>
+      <ul>
+        <li>
+          <img
+            src={discworldImageSrc}
+            style={{
+              maxWidth: '100%',
+            }}
+          />
+          <p>
+            discworld procedurally generates a dynamic world, simulating 13
+            colourful biomes from an initial text seed.
+          </p>
+        </li>
+        <li>
+          <img
+            src={beticalImageSrc}
+            style={{
+              maxWidth: '100%',
+            }}
+          />
+          <p>
+            betical, a born-digital paragraph generator composed with remixed
+            typed assemblage-letters. co-authored with Dani Spinosa
+          </p>
+        </li>
+      </ul>
     </main>
   );
 };

@@ -18,6 +18,7 @@ const App = () => {
   const onClickCopyEmail = (_e: Event) => {
     navigator.clipboard.writeText('jonathon.orsi@gmail.com');
     setShowTooltip(true);
+    ``;
     const tooltip = document.querySelector<HTMLSpanElement>('#tooltip-copied');
     if (tooltip) {
       tooltip.style.display = 'block';
@@ -30,22 +31,14 @@ const App = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        margin: '0 auto',
-        marginTop: '60px',
-        padding: '20px 40px',
         maxWidth: '600px',
+        margin: '0 auto',
       }}
     >
+      <h1>jon/orsi</h1>
+
       <nav>
-        <ul
-          style={{
-            display: 'flex',
-            gap: '8px',
-            listStyle: 'none',
-            margin: '0px',
-            padding: '0px',
-          }}
-        >
+        <ul class="inline">
           <li>
             <a href="https://github.com/orsi" target="_blank">
               <svg
@@ -76,249 +69,255 @@ const App = () => {
               </svg>
             </a>
           </li>
-        </ul>
-        <div>
-          <span style={{ fontFamily: 'monospace' }}>
-            {showTooltip
-              ? 'jonathon.orsi@gmail.com'
-              : 'j••••••••••••@•••••.•••'}
-          </span>
-          <button
-            onClick={onClickCopyEmail}
-            style={{
-              cursor: 'pointer',
-              backgroundColor: 'transparent',
-              border: 'none',
-              color: 'inherit',
-              position: 'relative',
-            }}
-          >
-            <svg
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                stroke="white"
-                x="5"
-                y="7"
-                width="10"
-                height="10"
-                rx="2"
-                ry="2"
-              />
-              <rect
-                stroke="white"
-                x="2"
-                y="12"
-                width="10"
-                height="10"
-                rx="2"
-                ry="2"
-              />
-            </svg>
-            <span
-              id="tooltip-copied"
+          <li>
+            <button
+              onClick={onClickCopyEmail}
               style={{
-                display: showTooltip ? 'block' : 'none',
-                fontSize: '8px',
-                position: 'absolute',
-                top: '0px',
-                left: '100%',
-                transform: 'translate(-50%,-50%)',
+                alignItems: 'center',
+                backgroundColor: 'transparent',
+                border: 'none',
+                color: 'inherit',
+                cursor: 'pointer',
+                display: 'flex',
+                fontFamily: 'inherit',
+                fontSize: '.6rem',
+                gap: 'var(--spacing-2)',
+                position: 'relative',
               }}
             >
-              Copied!
-            </span>
-          </button>
-        </div>
+              {showTooltip
+                ? 'jonathon.orsi@gmail.com'
+                : 'j••••••••••••@•••••.•••'}
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  stroke="white"
+                  x="8"
+                  y="4"
+                  width="12"
+                  height="12"
+                  rx="2"
+                  ry="2"
+                />
+                <rect
+                  stroke="white"
+                  x="5"
+                  y="8"
+                  width="12"
+                  height="12"
+                  rx="2"
+                  ry="2"
+                />
+              </svg>
+              <span
+                id="tooltip-copied"
+                style={{
+                  display: showTooltip ? 'block' : 'none',
+                  fontSize: '.5rem',
+                  position: 'absolute',
+                  top: '100%',
+                  left: '100%',
+                  transform: 'translate(-25%,-50%)',
+                }}
+              >
+                Copied!
+              </span>
+            </button>
+          </li>
+        </ul>
       </nav>
 
       <h2>work</h2>
       <ul>
         <li>
-          <p>
-            L5 Tech Lead at Meltwater, an online media, social, and consumer
-            intelligence company.
-          </p>
+          Software Engineer (L5) at{' '}
+          <a href="https://www.meltwater.com" target="_blank">
+            Meltwater
+          </a>
+          , an online media, social, and consumer intelligence company.
         </li>
         <li>
-          <p>
-            Senior software developer at Bombardier, Canada's largest aerospace
-            manufacturer of business jets.
-          </p>
+          Senior Developer at{' '}
+          <a href="https://bombardier.com" target="_blank">
+            Bombardier
+          </a>
+          , Canada's largest aerospace manufacturer of business jets.
         </li>
         <li>
-          <p>
-            Senior tech lead At Thrillworks, a digital development agency
-            specializing in web, mobile, and marketing solutions.
-          </p>
+          Lead Software Engineer at{' '}
+          <a href="https://thrillworks.com" target="_blank">
+            Thrillworks
+          </a>
+          , a digital development agency specializing in web, mobile, and
+          marketing solutions.
         </li>
       </ul>
 
       <h2>side projects</h2>
       <ul>
         <li>
-          <p>
-            jinx is a barebones, reactive, functional JSX library for building
-            web-based UI in Javascript. This site is built completely with jinx.
-          </p>
+          <a href="https://github.com/orsi/jinx" target="_blank">
+            jinx
+          </a>{' '}
+          is a barebones, reactive, functional JSX library for building
+          web-based UI in Javascript. This site is built completely with jinx.
         </li>
         <li>
-          <p>roxanne is an experimental language compiler written in C.</p>
+          <a href="https://github.com/orsi/roxanne" target="_blank">
+            roxanne
+          </a>{' '}
+          is an experimental language compiler written in C.
         </li>
         <li>
-          <p>
-            Chromatic Tuner is an iOS/Android React Native mobile application
-            for musicians to tune their instrument.
-          </p>
+          <a href="https://github.com/orsi/chromatic-tuner" target="_blank">
+            Chromatic Tuner
+          </a>{' '}
+          was released in August 2022 on the App Store and Google Play as a
+          React Native iOS/Android mobile application for tuning instruments.
         </li>
         <li>
-          <p>
-            chip-8c is an emulator for the CHIP-8 interpreted programming
-            language developed for 8-bit machines in 1970s.
-          </p>
+          <a href="https://github.com/orsi/chip-8c" target="_blank">
+            chip-8c
+          </a>{' '}
+          is an emulator for the CHIP-8 interpreted programming language
+          developed for 8-bit machines in the 1970s.
         </li>
         <li>
-          <p>
-            react-gamin is a library for creating browser games in the
-            functional, hook-based React way.
-          </p>
+          <a href="https://github.com/orsi/react-gamin" target="_blank">
+            react-gamin
+          </a>{' '}
+          is a library for creating browser games in the functional, hook-based
+          React way.
         </li>
         <li>
-          <p>SimpleEQ is a C++ audio plugin created with the JUCE framework.</p>
+          <a href="https://github.com/orsi/simpleeq" target="_blank">
+            SimpleEQ
+          </a>{' '}
+          is a C++ audio plugin created with the JUCE framework.
         </li>
         <li>
-          <p>
-            zen-html is a Javascript template string based component library for
-            rendering HTML elements.
-          </p>
+          <a href="https://github.com/orsi/zen-html" target="_blank">
+            zen-html
+          </a>{' '}
+          is a Javascript, template string based, component library for
+          rendering HTML elements.
         </li>
       </ul>
 
       <h2>contributions to open-source</h2>
       <ul>
         <li>
-          <p>
-            <a href="https://adarkroom.doublespeakgames.com/" target="_blank">
-              A Dark Room
-            </a>{' '}
-            is an open-source text-based role-playing game. Built a JavaScript
-            audio engine with the Web Audio API, and composed 88 original
-            compositions to create a seamless, immersive audio experience. see{' '}
-            <a
-              href="https://github.com/doublespeakgames/adarkroom/pulls?q=+is%3Apr+author%3Aorsi+"
-              target="_blank"
-            >
-              contributions
-            </a>
-            .
-          </p>
-          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+          <a href="https://adarkroom.doublespeakgames.com/" target="_blank">
+            A Dark Room
+          </a>{' '}
+          is an open-source, text-based, browser role-playing game. I built the
+          audio engine with the Web Audio API and composed 88 original
+          compositions to create a seamless, immersive audio experience.
+          <a
+            href="https://github.com/doublespeakgames/adarkroom/pulls?q=+is%3Apr+author%3Aorsi+"
+            target="_blank"
+            class="contribution"
+          >
+            see contributions
+          </a>
+          {/* <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
             <li>JavaScrit</li>
             <li>Web Audio API</li>
             <li>Audio Playback Engine</li>
             <li>Sound Asset</li>
             <li>Pipeline</li>
-          </ul>
+          </ul> */}
         </li>
         <li>
-          <p>
-            deno, a modern JavaScript/TypeScript runtime. Contributed async TLS
-            networking to Deno v2.8.2 in Rust, working across the JS-to-Rust op
-            layer with Tokio and tokio-rustls, with code review from Ryan Dahl
-            (creator of Node.js and Deno). see{' '}
-            <a
-              href="https://github.com/denoland/deno/pull/3007"
-              target="_blank"
-            >
-              pull request
-            </a>
-            .
-          </p>
-          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+          <a href="https://deno.com/" target="_blank">
+            deno
+          </a>
+          , a modern JavaScript/TypeScript runtime. I contributed async TLS
+          networking in Rust, working across the JS-to-Rust op layer with Tokio.
+          Code reviewed by Ryan Dahl (creator of Node.js and Deno).{' '}
+          <a
+            href="httdivs://github.com/denoland/deno/pull/3007"
+            target="_blank"
+            class="contribution"
+          >
+            see contributions
+          </a>
+          {/* <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
             <li>Rust</li>
             <li>Javascript/Typescript</li>
             <li>Tokio</li>
             <li>tokio-rustls</li>
             <li>Async/Futures</li>
             <li>TLS</li>
-          </ul>
+          </ul> */}
         </li>
         <li>
           <img
             src={snes9xOsxUiImageSrc}
-            style={{
-              maxWidth: '100%',
-            }}
+            alt="The image shows the Snes9x emulator's settings UI."
           />
-          <p>
-            <a href="https://www.snes9x.com/" target="_blank">
-              Snes9x
-            </a>{' '}
-            is a portable, freeware Super Nintendo Entertainment System (SNES)
-            emulator. Contributed to the macOS port of Snes9x, redesigning the
-            preferences UI to native macOS conventions, and extending the
-            preferences system with new user-facing controls in
-            Objective-C/Cocoa. see{' '}
-            <a
-              href="https://github.com/snes9xgit/snes9x/pulls?q=is%3Apr+author%3Aorsi+"
-              target="_blank"
-            >
-              contributions
-            </a>
-            .
-          </p>
-          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+          <a href="https://www.snes9x.com/" target="_blank">
+            Snes9x
+          </a>{' '}
+          is a portable, freeware Super Nintendo Entertainment System (SNES)
+          emulator. Contributed to the macOS port of Snes9x, redesigning the
+          preferences UI to native macOS conventions, and extending the
+          preferences system with new user-facing controls in Objective-C/Cocoa.
+          <a
+            href="https://github.com/snes9xgit/snes9x/pulls?q=is%3Apr+author%3Aorsi+"
+            target="_blank"
+            class="contribution"
+          >
+            see contributions
+          </a>
+          {/* <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
             <li>Objective-C</li>
             <li>Cocoa</li>
             <li>AppKit</li>
-          </ul>
+          </ul> */}
         </li>
         <li>
-          <p>
-            <a href="https://github.com/ZaneDubya/UltimaXNA" target="_blank">
-              UltimaXNA
-            </a>
-            : Open-source Ultima Online client in C#/XNA. Contributed spellbook
-            and in-game book features end-to-end, from UI to reverse-engineered
-            client-server packet handling across legacy and modern protocol
-            formats. (see{' '}
-            <a
-              href="https://github.com/ZaneDubya/UltimaXNA/pulls?q=is%3Apr+author%3Aorsi+"
-              target="_blank"
-            >
-              pull request contributions
-            </a>
-            ).
-          </p>
-          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+          <a href="https://github.com/ZaneDubya/UltimaXNA" target="_blank">
+            UltimaXNA
+          </a>
+          : Open-source Ultima Online client in C#/XNA. Contributed spellbook
+          and in-game features, from UI to reverse-engineered client-server
+          packet handling.
+          <a
+            href="https://github.com/ZaneDubya/UltimaXNA/pulls?q=is%3Apr+author%3Aorsi+"
+            target="_blank"
+            class="contribution"
+          >
+            see contributions
+          </a>
+          {/* <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
             <li>C#</li>
             <li>XNA</li>
             <li>TCP/IP</li>
             <li>UTF-8 Serialization</li>
             <li>Binary Protocol Parsing</li>
-          </ul>
+          </ul> */}
         </li>
       </ul>
 
       <h2>web</h2>
       <ul>
         <li>
-          <p>
-            <a href="https://code-x.live/" target="_blank">
-              Code X
-            </a>
-            {` `}is a sound poem and a gallery installation piece by{' '}
-            <a href="https://www.wmarksutherland.com/" target="_blank">
-              W. Mark Sutherland
-            </a>
-            . Working with Mark, I ported his Adobe Flash version of Code X to
-            the web, rebuilding the audio engine from scratch with a custom DSP
-            chain — convolution reverb, wave shaping, and mouse-driven pitch and
-            stereo panning.
-          </p>
+          <a href="https://code-x.live/" target="_blank">
+            Code X
+          </a>
+          {` `}is a sound poem and a gallery installation piece by{' '}
+          <a href="https://www.wmarksutherland.com/" target="_blank">
+            W. Mark Sutherland
+          </a>
+          . Working with Mark, I ported his Adobe Flash version of Code X to the
+          web, rebuilding the audio engine from scratch with a custom DSP chain
+          — convolution reverb, wave shaping, and mouse-driven pitch and stereo
+          panning.
         </li>
         <li>
           <a href="https://jojogun.ca" target="_blank">
@@ -330,31 +329,33 @@ const App = () => {
         </li>
       </ul>
 
-      <h2>art</h2>
+      <h2>procedural art</h2>
       <ul>
         <li>
           <img
             src={discworldImageSrc}
-            style={{
-              maxWidth: '100%',
-            }}
+            alt="An overview of a procedurally generated 'disc' world, with varying colours representing different biomes."
           />
-          <p>
-            discworld procedurally generates a dynamic world, simulating 13
-            colourful biomes from an initial text seed.
-          </p>
+          <a href="https://github.com/orsi/discworld" target="_blank">
+            discworld
+          </a>{' '}
+          procedurally generates a dynamic world, simulating 13 colourful biomes
+          from an initial text seed.
         </li>
         <li>
           <img
             src={beticalImageSrc}
-            style={{
-              maxWidth: '100%',
-            }}
+            alt="A passage from betical, displaying a poem-like structure composed of unrecognizable letters."
           />
-          <p>
-            betical, a born-digital paragraph generator composed with remixed
-            typed assemblage-letters. co-authored with Dani Spinosa
-          </p>
+          <a href="https://github.com/orsi/betical" target="_blank">
+            betical
+          </a>
+          , a born-digital paragraph generator composed with remixed typed
+          assemblage-letters. co-created with{' '}
+          <a href="https://genericpronoun.com/" target="_blank">
+            Dani Spinosa
+          </a>
+          .
         </li>
       </ul>
     </main>

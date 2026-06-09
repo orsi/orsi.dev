@@ -134,18 +134,28 @@ const App = () => {
           </button>
         </div>
       </nav>
-      <p>
-        L5 Tech Lead at Meltwater, an online media, social, and consumer
-        intelligence company.
-      </p>
-      <p>
-        Senior software developer at Bombardier, Canada's largest aerospace
-        manufacturer of business jets.
-      </p>
-      <p>
-        Senior tech lead At Thrillworks, a digital development agency
-        specializing in web, mobile, and marketing solutions.
-      </p>
+
+      <h2>work</h2>
+      <ul>
+        <li>
+          <p>
+            L5 Tech Lead at Meltwater, an online media, social, and consumer
+            intelligence company.
+          </p>
+        </li>
+        <li>
+          <p>
+            Senior software developer at Bombardier, Canada's largest aerospace
+            manufacturer of business jets.
+          </p>
+        </li>
+        <li>
+          <p>
+            Senior tech lead At Thrillworks, a digital development agency
+            specializing in web, mobile, and marketing solutions.
+          </p>
+        </li>
+      </ul>
 
       <h2>side projects</h2>
       <ul>
@@ -194,7 +204,9 @@ const App = () => {
             <a href="https://adarkroom.doublespeakgames.com/" target="_blank">
               A Dark Room
             </a>{' '}
-            is an open-source text-based role-playing game. see
+            is an open-source text-based role-playing game. Built a JavaScript
+            audio engine with the Web Audio API, and composed 88 original
+            compositions to create a seamless, immersive audio experience. see{' '}
             <a
               href="https://github.com/doublespeakgames/adarkroom/pulls?q=+is%3Apr+author%3Aorsi+"
               target="_blank"
@@ -203,18 +215,36 @@ const App = () => {
             </a>
             .
           </p>
+          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+            <li>JavaScrit</li>
+            <li>Web Audio API</li>
+            <li>Audio Playback Engine</li>
+            <li>Sound Asset</li>
+            <li>Pipeline</li>
+          </ul>
         </li>
         <li>
           <p>
-            deno TLS features added in v2.8.2 (
+            deno, a modern JavaScript/TypeScript runtime. Contributed async TLS
+            networking to Deno v2.8.2 in Rust, working across the JS-to-Rust op
+            layer with Tokio and tokio-rustls, with code review from Ryan Dahl
+            (creator of Node.js and Deno). see{' '}
             <a
-              href="https://github.com/denoland/deno/commit/045e74bb39d7743b774cfd2b889bc6ce1e1ad245"
+              href="https://github.com/denoland/deno/pull/3007"
               target="_blank"
             >
-              commit
+              pull request
             </a>
-            ). Written in Rust and Typescript.
+            .
           </p>
+          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+            <li>Rust</li>
+            <li>Javascript/Typescript</li>
+            <li>Tokio</li>
+            <li>tokio-rustls</li>
+            <li>Async/Futures</li>
+            <li>TLS</li>
+          </ul>
         </li>
         <li>
           <img
@@ -228,8 +258,10 @@ const App = () => {
               Snes9x
             </a>{' '}
             is a portable, freeware Super Nintendo Entertainment System (SNES)
-            emulator. Designed and built the macOS UI within Interface Builder
-            and Objective-C. see{' '}
+            emulator. Contributed to the macOS port of Snes9x, redesigning the
+            preferences UI to native macOS conventions, and extending the
+            preferences system with new user-facing controls in
+            Objective-C/Cocoa. see{' '}
             <a
               href="https://github.com/snes9xgit/snes9x/pulls?q=is%3Apr+author%3Aorsi+"
               target="_blank"
@@ -238,16 +270,21 @@ const App = () => {
             </a>
             .
           </p>
+          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+            <li>Objective-C</li>
+            <li>Cocoa</li>
+            <li>AppKit</li>
+          </ul>
         </li>
         <li>
           <p>
             <a href="https://github.com/ZaneDubya/UltimaXNA" target="_blank">
               UltimaXNA
             </a>
-            : Open Source Ultima Online Client in C#/XNA. Contributed various
-            features, fixes, and performance improvements related to real-time
-            messaing chat systems, GUI elements, and TCP/IP packet
-            writing/parsing (see{' '}
+            : Open-source Ultima Online client in C#/XNA. Contributed spellbook
+            and in-game book features end-to-end, from UI to reverse-engineered
+            client-server packet handling across legacy and modern protocol
+            formats. (see{' '}
             <a
               href="https://github.com/ZaneDubya/UltimaXNA/pulls?q=is%3Apr+author%3Aorsi+"
               target="_blank"
@@ -256,6 +293,13 @@ const App = () => {
             </a>
             ).
           </p>
+          <ul style={{ display: 'flex', gap: '16px', listStyle: 'none' }}>
+            <li>C#</li>
+            <li>XNA</li>
+            <li>TCP/IP</li>
+            <li>UTF-8 Serialization</li>
+            <li>Binary Protocol Parsing</li>
+          </ul>
         </li>
       </ul>
 
@@ -266,14 +310,23 @@ const App = () => {
             <a href="https://code-x.live/" target="_blank">
               Code X
             </a>
-            {` `}is a sound poem, a visual poem, a bookwork, a gallery
-            installation piece, and a public or private performance vehicle.
+            {` `}is a sound poem and a gallery installation piece by{' '}
+            <a href="https://www.wmarksutherland.com/" target="_blank">
+              W. Mark Sutherland
+            </a>
+            . Working with Mark, I ported his Adobe Flash version of Code X to
+            the web, rebuilding the audio engine from scratch with a custom DSP
+            chain — convolution reverb, wave shaping, and mouse-driven pitch and
+            stereo panning.
           </p>
         </li>
         <li>
           <a href="https://jojogun.ca" target="_blank">
             jojogun.ca
-          </a>
+          </a>{' '}
+          is the the online presence of Jo Jo Gun and the Bullets. I setup,
+          built, and deployed the site in AWS. Frontend crafted in React,
+          brought to life through a procedural glitch animation system.
         </li>
       </ul>
 

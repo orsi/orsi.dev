@@ -71,10 +71,10 @@ img {
     display: block;
     max-width: 100%;
     margin-bottom: var(--spacing-2);
+    border-radius: var(--spacing-2);
 }
 
 a.contribution {
-    display: block;
     font-style: italic;
     font-size: .7rem;
     margin-top: var(--spacing-1);
